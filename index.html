@@ -1,69 +1,163 @@
 <!DOCTYPE html>
-<html lang="pt"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="pt">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Frederico Ricardo Nguingui Konde Kola</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<style>.grad{background:linear-gradient(90deg,#22d3ee,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent}.card{background:#111c32;border:1px solid #1e293b}.pill{background:#0f172a;border:1px solid #1e293b;padding:6px 14px;border-radius:999px;font-size:12px;display:inline-block;margin:3px}</style>
-</head><body class="bg-[#070a14] text-white">
+<style>
+body{background:#070a14;color:white;font-family:Inter,sans-serif}
+.ring{width:290px;height:290px;border-radius:50%;background:conic-gradient(from 0deg,#f97316,#ec4899,#8b5cf6,#22d3ee,#f97316);padding:3px;margin:0 auto;position:relative}
+.ring-inner{width:100%;height:100%;border-radius:50%;background:#070a14;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.ring-inner img{width:100%;height:100%;object-fit:cover}
+.badge{position:absolute;background:#121a2e;border:1px solid #1e293b;padding:6px 14px;border-radius:999px;font-size:12px;font-weight:700;white-space:nowrap}
+.grad{background:linear-gradient(90deg,#22d3ee,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.card{background:#111c32;border:1px solid #1e293b}
+</style>
+</head>
+<body>
 
-<header class="flex justify-between p-4 border-b border-white/5"><b>FREDERICO K.</b><span class="text-xs bg-white/10 px-3 py-1 rounded-full">Luanda AO</span></header>
+<header class="flex justify-between p-4"><b>FREDERICO K.</b><span class="text-xs bg-white/10 px-3 py-1 rounded-full">Luanda AO</span></header>
 
-<section class="text-center px-5 pt-10">
-<h1 class="text-[30px] font-black grad leading-tight">Transformo Ideias em Soluções Digitais Modernas, Seguras e Inteligentes</h1>
-<p class="text-zinc-400 mt-4 text-sm">Fullstack • Design Motion • Video Maker • PWA • IA</p>
-<div class="flex flex-col gap-3 max-w-sm mx-auto mt-6">
-<a href="#projetos" class="py-4 rounded-full bg-gradient-to-r from-cyan-400 to-purple-600 font-bold">Ver Projetos →</a>
-<a href="https://wa.me/244" class="py-4 rounded-full border border-white/10 text-pink-400 font-bold">💬 Falar Comigo</a>
+<!-- HERO COM CIRCULO -->
+<section class="text-center px-4 pt-6">
+<div style="position:relative;width:340px;height:340px;margin:0 auto">
+<div class="ring"><div class="ring-inner"><img src="profile.jpg" onerror="this.src='https://via.placeholder.com/300'"></div></div>
+<span class="badge" style="top:0;left:50%;transform:translateX(-50%);color:#fde68a">Design Motion</span>
+<span class="badge" style="top:15%;right:-10%;color:#22d3ee">React / Next</span>
+<span class="badge" style="top:42%;right:-18%;color:#67e8f9">Cybersecurity</span>
+<span class="badge" style="bottom:25%;right:-10%;color:#fb923c">Web Designer</span>
+<span class="badge" style="bottom:5%;right:5%;color:#fff">Website+</span>
+<span class="badge" style="bottom:5%;left:5%;color:#7dd3fc">Marketing</span>
+<span class="badge" style="bottom:28%;left:-12%;color:#f9a8d4">Foto Edit</span>
+<span class="badge" style="top:42%;left:-15%;color:#f472b6">Fullstack</span>
+<span class="badge" style="top:15%;left:-10%;color:#6ee7b7">Vídeo Maker</span>
+</div>
+
+<h1 class="text-[32px] font-black leading-tight mt-10 grad">Transformo Ideias em Solução Digitais<br>Modernas, Seguras e Inteligentes</h1>
+<p class="text-zinc-400 mt-4 text-sm">Fullstack • Design Motion • Video Maker • PWA • IA • Cybersecurity</p>
+</section>
+
+<!-- SOBRE MIM -->
+<section id="sobre" class="px-6 py-16">
+<h2 class="text-center text-3xl font-black grad">Sobre Mim</h2>
+<p class="text-center text-zinc-300 mt-6 max-w-md mx-auto text-sm">Sou <b class="text-white">Frederico Ricardo Nguingui Konde Kola</b>, nascido em <b class="text-white">10 de Setembro de 2000</b>, dev Fullstack focado em performance, PWA, acessibilidade e segurança.</p>
+
+<div class="max-w-md mx-auto mt-8 grid grid-cols-2 gap-4">
+<div class="card rounded-2xl p-5"><p class="text-[10px] text-slate-500 tracking-widest">EXPERIÊNCIA</p><p class="text-2xl font-black mt-1 text-cyan-400">2+ anos</p><p class="text-xs text-slate-400 mt-2">Entrega contínua e boas práticas.</p></div>
+<div class="card rounded-2xl p-5"><p class="text-[10px] text-slate-500 tracking-widest">PROJETOS</p><p class="text-2xl font-black mt-1 text-purple-400">20+ entregues</p><p class="text-xs text-slate-400 mt-2">Landing pages, PWAs, APIs.</p></div>
+<div class="card rounded-2xl p-5"><p class="text-[10px] text-slate-500 tracking-widest">FOCO</p><p class="font-bold mt-1">Performance • PWA • A11y</p><p class="text-xs text-slate-400 mt-2">Web Vitals e acessibilidade real.</p></div>
+<div class="card rounded-2xl p-5"><p class="text-[10px] text-slate-500 tracking-widest">STACK ATUAL</p><p class="font-bold mt-2 text-cyan-400">React / Next.js / Node</p><p class="text-xs text-slate-400 mt-2">TypeScript • Tailwind • Node</p></div>
+</div>
+
+<div class="max-w-md mx-auto mt-8 space-y-4">
+<div class="card rounded-2xl p-6"><h3 class="font-bold">🚀 Trajetória</h3><p class="text-slate-400 text-sm mt-2">3 anos evoluindo com código limpo e entrega consistente.</p></div>
+<div class="card rounded-2xl p-6"><h3 class="font-bold">🤖 IA & Automação</h3><p class="text-slate-400 text-sm mt-2">Uso estratégico de LLMs e automação para acelerar.</p></div>
+<div class="card rounded-2xl p-6"><h3 class="font-bold">🛡️ Segurança</h3><p class="text-slate-400 text-sm mt-2">OWASP, validações robustas e controle de acesso.</p></div>
 </div>
 </section>
 
-<section id="sobre" class="px-6 py-14">
-<h2 class="text-center text-3xl font-black grad mb-8">Sobre Mim</h2>
-<div class="max-w-md mx-auto text-center">
-<p class="text-zinc-300">Sou <b class="text-white">Frederico Ricardo Nguingui Konde Kola</b>, nascido em <b class="text-white">10 de Setembro de 2000</b>, dev Fullstack focado em performance, PWA, acessibilidade e segurança.</p>
-<div class="mt-6"><span class="pill">Fullstack</span><span class="pill">PWA</span><span class="pill">IA</span><span class="pill">React/Next</span><span class="pill">Design Motion</span><span class="pill">Foto Edit</span><span class="pill">Marketing</span><span class="pill">Website+</span></div>
-<div class="card rounded-2xl p-6 mt-8"><h3 class="font-bold">🚀 Trajetória</h3><p class="text-slate-400 text-sm mt-2">3 anos evoluindo com código limpo e entrega consistente em Luanda.</p></div>
-<div class="card rounded-2xl p-6 mt-4"><h3 class="font-bold">🤖 IA & Automação</h3><p class="text-slate-400 text-sm mt-2">Uso estratégico de LLMs e automação para acelerar dev e docs.</p></div>
-<div class="card rounded-2xl p-6 mt-4"><h3 class="font-bold">🛡️ Segurança</h3><p class="text-slate-400 text-sm mt-2">Princípios OWASP, validações robustas e controle de acesso.</p></div>
+<!-- STACK + CONECTE-SE + FINAL -->
+<section class="px-6 py-10 border-t border-white/5">
+<div class="max-w-md mx-auto">
+<p class="text-[10px] text-slate-500 tracking-widest">STACK DO SITE</p>
+<p class="text-sm text-slate-400 mt-3">Utility-first + tokens custom, componentes sem framework pesado, PWA base, Acessibilidade & Dark Mode.</p>
+<div class="mt-4 flex flex-wrap gap-2 text-xs"><span class="card px-3 py-1 rounded-full">Tailwind CSS</span><span class="card px-3 py-1 rounded-full">Bootstrap</span><span class="card px-3 py-1 rounded-full">JS</span><span class="card px-3 py-1 rounded-full">PWA</span></div>
+
+<p class="text-[10px] text-slate-500 tracking-widest mt-10">CONECTE-SE</p>
+<div class="flex gap-4 mt-4 text-sm"><a href="#" class="underline">LinkedIn</a><a href="#" class="underline">GitHub</a><a href="#" class="underline">Email</a><a href="#" class="underline">WhatsApp</a></div>
 </div>
 </section>
 
-<section class="px-6 py-8">
-<div class="max-w-md mx-auto grid grid-cols-2 gap-4">
-<div class="card rounded-2xl p-5"><p class="text-[10px] text-slate-500 tracking-widest">EXPERIÊNCIA</p><p class="text-2xl font-black mt-1 text-cyan-400">2+ anos</p><p class="text-xs text-slate-400 mt-2">Entrega contínua, boas práticas e evolução real.</p></div>
-<div class="card rounded-2xl p-5"><p class="text-[10px] text-slate-500 tracking-widest">PROJETOS</p><p class="text-2xl font-black mt-1 text-purple-400">20+ entregues</p><p class="text-xs text-slate-400 mt-2">Landing pages, PWAs, APIs e integrações.</p></div>
-<div class="card rounded-2xl p-5"><p class="text-[10px] text-slate-500 tracking-widest">FOCO</p><p class="font-bold mt-1">Performance • PWA • A11y</p><p class="text-xs text-slate-400 mt-2">Web Vitals, acessibilidade real e PWA instalável.</p></div>
-<div class="card rounded-2xl p-5"><p class="text-[10px] text-slate-500 tracking-widest">STACK ATUAL</p><p class="font-bold mt-2 text-cyan-400">React / Next.js / Node</p><p class="text-xs text-slate-400 mt-2">TypeScript • Tailwind • Node • PWA</p></div>
-</div>
-</section>
-
-<section class="px-6 py-12 text-center">
+<section class="text-center px-6 py-16 border-t border-white/5">
 <h2 class="text-3xl font-black">Pronto para Criar Algo Impactante?</h2>
-<p class="text-slate-400 text-sm mt-3 max-w-md mx-auto">Se tens uma ideia, eu transformo em produto rápido, seguro e pronto para escalar.</p>
 <div class="flex flex-col gap-3 max-w-sm mx-auto mt-6">
 <a href="mailto:frederico@example.com" class="py-4 rounded-full bg-white text-black font-bold">Agendar Conversa</a>
 <a href="#sobre" class="py-4 rounded-full border border-white/10 font-bold">Ver Projetos</a>
 </div>
 </section>
 
+<footer class="text-center py-8 text-xs text-slate-500 border-t border-white/5">© 2026 Frederico Ricardo Nguingui Konde Kola — Luanda, AO</footer>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Frederico Ricardo Nguingui Konde Kola</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+body{background:#070a14;color:white;font-family:Inter,sans-serif}
+.ring{width:290px;height:290px;border-radius:50%;background:conic-gradient(from 0deg,#f97316,#ec4899,#8b5cf6,#22d3ee,#f97316);padding:3px;margin:0 auto;position:relative}
+.ring-inner{width:100%;height:100%;border-radius:50%;background:#070a14;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.ring-inner img{width:100%;height:100%;object-fit:cover}
+.badge{position:absolute;background:#121a2e;border:1px solid #1e293b;padding:6px 14px;border-radius:999px;font-size:12px;font-weight:700;white-space:nowrap}
+.grad{background:linear-gradient(90deg,#22d3ee,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.card{background:#111c32;border:1px solid #1e293b}
+</style>
+</head>
+<body>
+
+<header class="flex justify-between p-4"><b>FREDERICO K.</b><span class="text-xs bg-white/10 px-3 py-1 rounded-full">Luanda AO</span></header>
+
+<!-- HERO COM CIRCULO -->
+<section class="text-center px-4 pt-6">
+<div style="position:relative;width:340px;height:340px;margin:0 auto">
+<div class="ring"><div class="ring-inner"><img src="profile.jpg" onerror="this.src='https://via.placeholder.com/300'"></div></div>
+<span class="badge" style="top:0;left:50%;transform:translateX(-50%);color:#fde68a">Design Motion</span>
+<span class="badge" style="top:15%;right:-10%;color:#22d3ee">React / Next</span>
+<span class="badge" style="top:42%;right:-18%;color:#67e8f9">Cybersecurity</span>
+<span class="badge" style="bottom:25%;right:-10%;color:#fb923c">Web Designer</span>
+<span class="badge" style="bottom:5%;right:5%;color:#fff">Website+</span>
+<span class="badge" style="bottom:5%;left:5%;color:#7dd3fc">Marketing</span>
+<span class="badge" style="bottom:28%;left:-12%;color:#f9a8d4">Foto Edit</span>
+<span class="badge" style="top:42%;left:-15%;color:#f472b6">Fullstack</span>
+<span class="badge" style="top:15%;left:-10%;color:#6ee7b7">Vídeo Maker</span>
+</div>
+
+<h1 class="text-[32px] font-black leading-tight mt-10 grad">Transformo Ideias em Solução Digitais<br>Modernas, Seguras e Inteligentes</h1>
+<p class="text-zinc-400 mt-4 text-sm">Fullstack • Design Motion • Video Maker • PWA • IA • Cybersecurity</p>
+</section>
+
+<!-- SOBRE MIM -->
+<section id="sobre" class="px-6 py-16">
+<h2 class="text-center text-3xl font-black grad">Sobre Mim</h2>
+<p class="text-center text-zinc-300 mt-6 max-w-md mx-auto text-sm">Sou <b class="text-white">Frederico Ricardo Nguingui Konde Kola</b>, nascido em <b class="text-white">10 de Setembro de 2000</b>, dev Fullstack focado em performance, PWA, acessibilidade e segurança.</p>
+
+<div class="max-w-md mx-auto mt-8 grid grid-cols-2 gap-4">
+<div class="card rounded-2xl p-5"><p class="text-[10px] text-slate-500 tracking-widest">EXPERIÊNCIA</p><p class="text-2xl font-black mt-1 text-cyan-400">2+ anos</p><p class="text-xs text-slate-400 mt-2">Entrega contínua e boas práticas.</p></div>
+<div class="card rounded-2xl p-5"><p class="text-[10px] text-slate-500 tracking-widest">PROJETOS</p><p class="text-2xl font-black mt-1 text-purple-400">20+ entregues</p><p class="text-xs text-slate-400 mt-2">Landing pages, PWAs, APIs.</p></div>
+<div class="card rounded-2xl p-5"><p class="text-[10px] text-slate-500 tracking-widest">FOCO</p><p class="font-bold mt-1">Performance • PWA • A11y</p><p class="text-xs text-slate-400 mt-2">Web Vitals e acessibilidade real.</p></div>
+<div class="card rounded-2xl p-5"><p class="text-[10px] text-slate-500 tracking-widest">STACK ATUAL</p><p class="font-bold mt-2 text-cyan-400">React / Next.js / Node</p><p class="text-xs text-slate-400 mt-2">TypeScript • Tailwind • Node</p></div>
+</div>
+
+<div class="max-w-md mx-auto mt-8 space-y-4">
+<div class="card rounded-2xl p-6"><h3 class="font-bold">🚀 Trajetória</h3><p class="text-slate-400 text-sm mt-2">3 anos evoluindo com código limpo e entrega consistente.</p></div>
+<div class="card rounded-2xl p-6"><h3 class="font-bold">🤖 IA & Automação</h3><p class="text-slate-400 text-sm mt-2">Uso estratégico de LLMs e automação para acelerar.</p></div>
+<div class="card rounded-2xl p-6"><h3 class="font-bold">🛡️ Segurança</h3><p class="text-slate-400 text-sm mt-2">OWASP, validações robustas e controle de acesso.</p></div>
+</div>
+</section>
+
+<!-- STACK + CONECTE-SE + FINAL -->
 <section class="px-6 py-10 border-t border-white/5">
 <div class="max-w-md mx-auto">
 <p class="text-[10px] text-slate-500 tracking-widest">STACK DO SITE</p>
 <p class="text-sm text-slate-400 mt-3">Utility-first + tokens custom, componentes sem framework pesado, PWA base, Acessibilidade & Dark Mode.</p>
-<div class="mt-4"><span class="pill">Tailwind CSS</span><span class="pill">Bootstrap</span><span class="pill">JS</span><span class="pill">PWA</span><span class="pill">Vercel</span></div>
+<div class="mt-4 flex flex-wrap gap-2 text-xs"><span class="card px-3 py-1 rounded-full">Tailwind CSS</span><span class="card px-3 py-1 rounded-full">Bootstrap</span><span class="card px-3 py-1 rounded-full">JS</span><span class="card px-3 py-1 rounded-full">PWA</span></div>
 
 <p class="text-[10px] text-slate-500 tracking-widest mt-10">CONECTE-SE</p>
-<div class="flex gap-4 mt-4 text-sm"><a href="#" class="underline">LinkedIn</a><a href="#" class="underline">GitHub</a><a href="mailto:frederico@example.com" class="underline">Email</a><a href="#" class="underline">WhatsApp</a></div>
-
-<p class="text-[10px] text-slate-500 tracking-widest mt-10">RECEBER NOVIDADES</p>
-<div class="flex mt-3 gap-2"><input placeholder="seu@email.com" class="flex-1 bg-[#0f172a] border border-white/10 rounded-full px-4 py-3 text-sm"><button class="bg-white text-black px-6 rounded-full font-bold">OK</button></div>
+<div class="flex gap-4 mt-4 text-sm"><a href="#" class="underline">LinkedIn</a><a href="#" class="underline">GitHub</a><a href="#" class="underline">Email</a><a href="#" class="underline">WhatsApp</a></div>
 </div>
 </section>
 
-<footer class="px-6 py-10 text-center border-t border-white/5">
-<div class="flex justify-center items-center gap-2"><div class="w-8 h-8 rounded-full bg-gradient-to-r from-cyan-400 to-purple-600 flex items-center justify-center font-black">F</div><b>Frederico Kola</b></div>
-<p class="text-xs text-slate-500 mt-3">Fullstack • PWA • UI • Luanda, Angola</p>
-<p class="text-xs text-slate-500 mt-2">© 2026 Frederico Ricardo Nguingui Konde Kola. Todos direitos reservados.</p>
-<p class="text-xs text-slate-600 mt-4">Construo soluções rápidas, seguras e com foco em resultado.</p>
+<section class="text-center px-6 py-16 border-t border-white/5">
+<h2 class="text-3xl font-black">Pronto para Criar Algo Impactante?</h2>
+<div class="flex flex-col gap-3 max-w-sm mx-auto mt-6">
+<a href="mailto:frederico@example.com" class="py-4 rounded-full bg-white text-black font-bold">Agendar Conversa</a>
+<a href="#sobre" class="py-4 rounded-full border border-white/10 font-bold">Ver Projetos</a>
 </div>
-</footer>
-</body></html>
+</section>
+
+<footer class="text-center py-8 text-xs text-slate-500 border-t border-white/5">© 2026 Frederico Ricardo Nguingui Konde Kola — Luanda, AO</footer>
+
+</body>
+</html>

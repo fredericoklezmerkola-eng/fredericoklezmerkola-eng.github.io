@@ -1,10 +1,77 @@
 <!DOCTYPE html>
 <html lang="pt">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Frederico Kola</title><script src="https://cdn.tailwindcss.com"></script></head>
-<body class="bg-[#f8f9fb]">
-<header class="max-w-7xl mx-auto p-6 flex justify-between"><b>Frederico Kola</b><span class="text-xs text-zinc-500">Portfolio 2026</span></header>
-<section class="max-w-7xl mx-auto px-6 py-8 grid md:grid-cols-2 gap-10 items-center">
-<div><span class="bg-white border rounded-full px-3 py-1 text-xs shadow-sm">🟢 Disponível</span><h1 class="text-6xl font-extrabold leading-none mt-4">Frederico<br><span class="text-zinc-400">Kola</span><br>Developer<br>Criativo.</h1><p class="mt-5 text-zinc-600">Desenvolvedor Fullstack focado em criar sites modernos, rápidos e com design limpo. Transformo ideias em produtos digitais.</p><div class="mt-6 flex gap-3"><a class="bg-black text-white px-6 py-3 rounded-full text-sm">Contato →</a><a class="bg-white border px-6 py-3 rounded-full text-sm">Projetos</a></div></div>
-<div class="flex justify-center"><div class="relative"><img src="profile.jpg" class="w-[340px] h-[340px] md:w-[440px] md:h-[440px] rounded-full object-cover border-[12px] border-white shadow-2xl"/><div class="absolute -left-4 top-12 bg-white border rounded-full px-3 py-1.5 text-xs shadow">💻 Developer</div><div class="absolute -right-2 top-20 bg-black text-white rounded-full px-3 py-1.5 text-xs">React</div><div class="absolute -left-6 bottom-20 bg-white border rounded-full px-3 py-1.5 text-xs shadow">Next.js</div><div class="absolute -right-4 bottom-10 bg-white border rounded-full px-3 py-1.5 text-xs shadow">Frederico</div></div></div>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Frederico Kola | Developer</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+.grad-text{background:linear-gradient(90deg,#00d9ff,#a855f7,#ff006a);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.grad-btn{background:linear-gradient(90deg,#00d9ff,#7c3aed)}
+.glass{background:rgba(255,255,255,0.06);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.1)}
+</style>
+</head>
+<body class="bg-[#0a0a14] text-white">
+
+<!-- HERO -->
+<section class="max-w-6xl mx-auto px-6 pt-16 pb-10 text-center">
+<div class="w-28 h-28 mx-auto rounded-full overflow-hidden border-2 border-white/20">
+<img src="profile.jpg" class="w-full h-full object-cover">
+</div>
+<h1 class="text-4xl font-black mt-6">Frederico Kola</h1>
+<p class="grad-text font-bold mt-2">Developer Criativo • Fullstack</p>
+<p class="text-zinc-400 text-sm mt-4 max-w-md mx-auto">Crio sites modernos, rápidos e com foco em performance. React, Next.js, PWA.</p>
+
+<div class="mt-8 flex flex-col gap-3">
+<a class="grad-btn py-4 rounded-full font-bold">Ver Projetos →</a>
+<a class="glass py-4 rounded-full font-bold text-pink-500">💬 Falar Comigo</a>
+</div>
+
+<div class="mt-6 flex flex-wrap justify-center gap-2">
+<span class="glass px-4 py-2 rounded-full text-xs">PERFORMANCE</span>
+<span class="glass px-4 py-2 rounded-full text-xs">A11Y</span>
+<span class="glass px-4 py-2 rounded-full text-xs">DARK/LIGHT</span>
+<span class="glass px-4 py-2 rounded-full text-xs w-full">PWA READY</span>
+</div>
 </section>
-</div></section></body></html>
+
+<!-- PROJETOS EM DESTAQUE -->
+<section class="max-w-6xl mx-auto px-6 py-12">
+<h2 class="text-4xl font-black text-center grad-text">Projetos em Destaque</h2>
+<p class="text-zinc-400 text-center text-sm mt-4 max-w-md mx-auto">"Apresentação cuidadosamente selecionada dos meus projetos mais impactantes, destacando soluções inovadoras"</p>
+
+<div class="mt-10 glass rounded-[24px] overflow-hidden">
+<img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800" class="w-full h-48 object-cover">
+<div class="p-6">
+<div class="flex gap-2"><span class="bg-cyan-500/20 text-cyan-400 text-xs px-3 py-1 rounded-full">PWA</span><span class="bg-purple-500/20 text-purple-400 text-xs px-3 py-1 rounded-full">JavaScript</span></div>
+<h3 class="font-bold text-xl mt-4">PWA Task Manager</h3>
+<p class="text-zinc-400 text-sm mt-2">Offline-first, cache inteligente, sincronização automática e performance PWA otimizada.</p>
+<div class="mt-5 flex gap-3">
+<a class="border border-cyan-500/50 text-cyan-400 px-6 py-2 rounded-full text-sm font-bold">Demo</a>
+<a class="glass px-6 py-2 rounded-full text-sm">Código</a>
+</div>
+</div>
+</div>
+
+<div class="mt-6 text-center">
+<a class="grad-btn inline-block px-10 py-4 rounded-full font-bold">Ver Todos os Projetos →</a>
+</div>
+</section>
+
+<!-- SOBRE MIM -->
+<section class="max-w-6xl mx-auto px-6 py-12 text-center">
+<h2 class="text-4xl font-black grad-text">Sobre Mim</h2>
+<p class="text-zinc-400 text-sm mt-6 leading-relaxed max-w-lg mx-auto">
+Sou Frederico Kola, desenvolvedor de Luanda. Apaixonado por criar experiências rápidas, acessíveis e bonitas na web. Trabalho com foco em performance e PWA.
+</p>
+<div class="mt-8 grid grid-cols-3 gap-3">
+<div class="glass rounded-2xl p-4"><b class="text-xl">10+</b><br><span class="text-xs text-zinc-400">Projetos</span></div>
+<div class="glass rounded-2xl p-4"><b class="text-xl">2+</b><br><span class="text-xs text-zinc-400">Anos</span></div>
+<div class="glass rounded-2xl p-4"><b class="text-xl">100%</b><br><span class="text-xs text-zinc-400">Remoto</span></div>
+</div>
+</section>
+
+<footer class="text-center text-zinc-600 text-xs py-10">© 2026 Frederico Kola</footer>
+
+</body>
+</html>

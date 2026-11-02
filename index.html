@@ -1,81 +1,81 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt" class="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Frederico Kola | Criativo Digital</title>
+<title>Frederico Kola</title>
 <script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={darkMode:'class'}</script>
 <style>
-.grad-text{background:linear-gradient(90deg,#00d9ff 0%,#a855f7 50%,#ff006a 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero-bg{background:radial-gradient(circle at 50% 30%,#0f2a3a 0%,#0a1220 40%,#0a0a14 100%)}
-.badge{backdrop-filter:blur(10px);background:rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.15);padding:6px 14px;border-radius:999px;font-size:11px;font-weight:700}
+.grad-text{background:linear-gradient(90deg,#00d9ff,#a855f7,#ff006a);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.badge{position:absolute;background:rgba(0,0,0,0.7);border:1px solid rgba(255,255,255,0.15);backdrop-filter:blur(8px);padding:6px 12px;border-radius:999px;font-size:10px;font-weight:700;cursor:pointer;white-space:nowrap;transition:0.2s}
+.badge:active{scale:0.95}
+.light body{background:#f5f5f7!important;color:#111!important}
+.light .hero-bg{background:#f5f5f7!important}
 </style>
 </head>
-<body class="bg-[#070a14] text-white hero-bg min-h-screen">
+<body class="bg-[#070a14] text-white hero-bg transition-colors duration-300">
 
-<header class="flex justify-between items-center px-6 py-4 border-b border-white/5">
-<b class="tracking-widest">FREDERICO K.</b>
-<div class="flex gap-2"><button class="w-10 h-10 bg-white/5 rounded-xl">☰</button></div>
+<header class="flex justify-between items-center px-6 py-4 border-b border-white/5 sticky top-0 bg-[#070a14]/80 backdrop-blur z-50">
+<b>FREDERICO K.</b>
+<div class="flex gap-2">
+<button onclick="toggleTheme()" id="themeBtn" class="w-10 h-10 bg-white/10 rounded-xl">🌙</button>
+<button class="w-10 h-10 bg-white/10 rounded-xl">☰</button>
+</div>
 </header>
 
-<!-- HERO COM ORBITA -->
-<section class="relative px-6 pt-8 pb-12 overflow-hidden text-center">
-<!-- Circulos orbitais -->
-<div class="absolute left-1/2 top-[200px] -translate-x-1/2 w-[500px] h-[500px] border border-cyan-500/10 rounded-full"></div>
-<div class="absolute left-1/2 top-[200px] -translate-x-1/2 w-[380px] h-[380px] border border-purple-500/10 rounded-full"></div>
-
-<!-- FOTO CENTRAL -->
-<div class="relative mx-auto w-[300px] h-[300px] mt-6">
-<div class="absolute inset-0 rounded-full bg-gradient-to-br from-[#ff6a3d] via-[#ff006a] to-[#00d9ff]"></div>
-<img src="profile.jpg" class="absolute inset-[4px] w-[292px] h-[292px] rounded-full object-cover bg-black">
-
-<!-- BADGES AO REDOR - ORIGINAIS + SEUS NOVOS -->
-<span class="badge absolute -top-2 -right-8 text-cyan-400">React / Next</span>
-<span class="badge absolute top-[80px] -right-14 text-cyan-300">Cybersecurity</span>
-<span class="badge absolute bottom-[40px] -right-10 text-orange-400">Web Designer</span>
-<span class="badge absolute top-[130px] -left-16 text-pink-500">Fullstack</span>
-<span class="badge absolute bottom-[80px] -left-12 text-purple-400">IA & Automation</span>
-
-<!-- SEUS NOVOS PEDIDOS -->
-<span class="badge absolute -top-6 left-10 text-yellow-300">Design Motion</span>
-<span class="badge absolute top-0 -left-10 text-green-300">Vídeo Maker</span>
-<span class="badge absolute bottom-0 -left-16 text-cyan-200">Marketing Digital</span>
-<span class="badge absolute -bottom-4 right-10 text-white">Website+</span>
-<span class="badge absolute top-[200px] -left-20 text-pink-300">Foto Edit</span>
+<section class="px-4 pt-6 pb-12 text-center overflow-visible">
+<!-- CONTAINER QUE NÃO CORTA -->
+<div class="relative mx-auto w-[280px] h-[280px] mt-4">
+<div class="absolute inset-0 rounded-full bg-gradient-to-br from-orange-400 via-pink-600 to-cyan-400 p-[3px]">
+<div class="w-full h-full rounded-full bg-black overflow-hidden">
+<img src="profile.jpg" class="w-full h-full object-cover" onerror="this.style.display='none'">
+</div>
 </div>
 
-<!-- TEXTO DEGRADÊ IGUAL DA PRINT -->
-<h1 class="relative mt-16 text-[34px] font-black leading-[1.1] grad-text">
-Transformo Ideias em<br>
-Soluções Digitais<br>
-Modernas, Seguras e<br>
-Inteligentes
-</h1>
+<!-- BADGES REPOSICIONADOS PRA NÃO CORTAR -->
+<span onclick="openInfo('Design Motion','Crio animações e motion graphics para redes sociais e marcas.')" class="badge top-[-10px] left-1/2 -translate-x-1/2 text-yellow-300">Design Motion</span>
+<span onclick="openInfo('Vídeo Maker','Edição profissional de vídeos para Reels, TikTok e YouTube.')" class="badge top-[20px] left-[-20px] text-green-300">Vídeo Maker</span>
+<span onclick="openInfo('React / Next','Sites modernos e rápidos com React e Next.js.')" class="badge top-[20px] right-[-15px] text-cyan-400">React / Next</span>
+<span onclick="openInfo('Cybersecurity','Sites seguros e protegidos.')" class="badge top-[110px] right-[-35px] text-cyan-300">Cybersecurity</span>
+<span onclick="openInfo('Web Designer','Design bonito que vende.')" class="badge bottom-[50px] right-[-25px] text-orange-400">Web Designer</span>
+<span onclick="openInfo('Website+','Criação de sites completos.')" class="badge bottom-[-5px] right-[10px] text-white">Website+</span>
+<span onclick="openInfo('Marketing Digital','Tráfego e vendas online.')" class="badge bottom-[-5px] left-[-10px] text-cyan-200">Marketing Digital</span>
+<span onclick="openInfo('Foto Edit','Edição de fotos profissional.')" class="badge bottom-[55px] left-[-25px] text-pink-300">Foto Edit</span>
+<span onclick="openInfo('Fullstack','Frontend e Backend completo.')" class="badge top-[110px] left-[-35px] text-pink-500">Fullstack</span>
+<span onclick="openInfo('IA & Automation','Automação com Inteligência Artificial.')" class="badge top-[170px] left-[-30px] text-purple-400">IA & Automation</span>
+</div>
 
-<p class="relative mt-6 text-[16px] leading-relaxed text-zinc-400 max-w-md mx-auto">
-Foco em <span class="text-cyan-400 font-bold">desenvolvimento fullstack</span>, <span class="text-purple-400 font-bold">design motion</span> e <span class="text-pink-500 font-bold">marketing digital</span> para criar produtos escaláveis, acessíveis e performáticos. Vídeo Maker, Website+ e Foto Edit.
+<h1 class="mt-14 text-[32px] font-black leading-[1.15] grad-text px-2">
+Transformo Ideias em<br> Soluções Digitais<br> Modernas, Seguras e<br> Inteligentes
+</h1>
+<p class="mt-4 text-[15px] text-zinc-400 px-4">
+Foco em <b class="text-cyan-400">desenvolvimento fullstack</b>, <b class="text-purple-400">design motion</b> e <b class="text-pink-500">marketing digital</b> para criar produtos escaláveis.
 </p>
 
-<div class="relative mt-8 flex flex-col gap-3 max-w-sm mx-auto">
+<div class="mt-6 flex flex-col gap-3 max-w-sm mx-auto px-4">
 <a href="#projetos" class="py-4 rounded-full font-bold bg-gradient-to-r from-cyan-400 to-purple-600">Ver Projetos →</a>
-<a href="https://wa.me/244000000000" class="py-4 rounded-full font-bold border border-white/10 text-pink-400">💬 Falar Comigo</a>
-</div>
-
-<div class="relative mt-8 flex flex-wrap justify-center gap-2 text-[11px]">
-<span class="px-4 py-2 rounded-full bg-white/5 border border-white/10">PERFORMANCE</span>
-<span class="px-4 py-2 rounded-full bg-white/5 border border-white/10">A11Y</span>
-<span class="px-4 py-2 rounded-full bg-white/5 border border-white/10">DARK/LIGHT</span>
-<span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 w-full max-w-[200px]">PWA READY</span>
+<a class="py-4 rounded-full font-bold border border-white/10 text-pink-400">💬 Falar Comigo</a>
 </div>
 </section>
 
-<section id="projetos" class="px-6 py-10 text-center">
-<h2 class="text-3xl font-black grad-text">Projetos em Destaque</h2>
-<div class="mt-6 bg-white/[0.04] border border-white/10 rounded-[24px] p-6 text-left">
-<h3 class="font-bold">Website+ & Marketing</h3>
-<p class="text-sm text-zinc-400 mt-2">Sites rápidos + vídeos e foto edit para empresas de Luanda.</p>
+<!-- MODAL QUE ABRE AO CLICAR -->
+<div id="modal" class="fixed inset-0 bg-black/80 backdrop-blur hidden z-[100] flex items-center justify-center p-6" onclick="closeInfo()">
+<div class="bg-[#111827] border border-white/10 rounded-[24px] p-8 max-w-sm w-full" onclick="event.stopPropagation()">
+<h3 id="modalTitle" class="text-xl font-black grad-text">Título</h3>
+<p id="modalDesc" class="text-zinc-400 mt-3 text-sm">Descrição</p>
+<button onclick="closeInfo()" class="mt-6 w-full py-3 rounded-full bg-white text-black font-bold">Fechar</button>
 </div>
-</section>
+</div>
 
+<script>
+function openInfo(t,d){document.getElementById('modalTitle').innerText=t;document.getElementById('modalDesc').innerText=d;document.getElementById('modal').classList.remove('hidden')}
+function closeInfo(){document.getElementById('modal').classList.add('hidden')}
+function toggleTheme(){
+ const html=document.documentElement;
+ if(html.classList.contains('dark')){html.classList.remove('dark');html.classList.add('light');document.body.classList.remove('bg-[#070a14]');document.body.classList.add('bg-[#f5f5f7]');document.getElementById('themeBtn').innerText='☀️';}
+ else{html.classList.add('dark');html.classList.remove('light');document.body.classList.add('bg-[#070a14]');document.getElementById('themeBtn').innerText='🌙';}
+}
+</script>
 </body>
 </html>

@@ -3,75 +3,79 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Frederico Kola | Developer</title>
+<title>Frederico Kola | Criativo Digital</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
-.grad-text{background:linear-gradient(90deg,#00d9ff,#a855f7,#ff006a);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.grad-btn{background:linear-gradient(90deg,#00d9ff,#7c3aed)}
-.glass{background:rgba(255,255,255,0.06);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.1)}
+.grad-text{background:linear-gradient(90deg,#00d9ff 0%,#a855f7 50%,#ff006a 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-bg{background:radial-gradient(circle at 50% 30%,#0f2a3a 0%,#0a1220 40%,#0a0a14 100%)}
+.badge{backdrop-filter:blur(10px);background:rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.15);padding:6px 14px;border-radius:999px;font-size:11px;font-weight:700}
 </style>
 </head>
-<body class="bg-[#0a0a14] text-white">
+<body class="bg-[#070a14] text-white hero-bg min-h-screen">
 
-<!-- HERO -->
-<section class="max-w-6xl mx-auto px-6 pt-16 pb-10 text-center">
-<div class="w-28 h-28 mx-auto rounded-full overflow-hidden border-2 border-white/20">
-<img src="profile.jpg" class="w-full h-full object-cover">
-</div>
-<h1 class="text-4xl font-black mt-6">Frederico Kola</h1>
-<p class="grad-text font-bold mt-2">Developer Criativo • Fullstack</p>
-<p class="text-zinc-400 text-sm mt-4 max-w-md mx-auto">Crio sites modernos, rápidos e com foco em performance. React, Next.js, PWA.</p>
+<header class="flex justify-between items-center px-6 py-4 border-b border-white/5">
+<b class="tracking-widest">FREDERICO K.</b>
+<div class="flex gap-2"><button class="w-10 h-10 bg-white/5 rounded-xl">☰</button></div>
+</header>
 
-<div class="mt-8 flex flex-col gap-3">
-<a class="grad-btn py-4 rounded-full font-bold">Ver Projetos →</a>
-<a class="glass py-4 rounded-full font-bold text-pink-500">💬 Falar Comigo</a>
-</div>
+<!-- HERO COM ORBITA -->
+<section class="relative px-6 pt-8 pb-12 overflow-hidden text-center">
+<!-- Circulos orbitais -->
+<div class="absolute left-1/2 top-[200px] -translate-x-1/2 w-[500px] h-[500px] border border-cyan-500/10 rounded-full"></div>
+<div class="absolute left-1/2 top-[200px] -translate-x-1/2 w-[380px] h-[380px] border border-purple-500/10 rounded-full"></div>
 
-<div class="mt-6 flex flex-wrap justify-center gap-2">
-<span class="glass px-4 py-2 rounded-full text-xs">PERFORMANCE</span>
-<span class="glass px-4 py-2 rounded-full text-xs">A11Y</span>
-<span class="glass px-4 py-2 rounded-full text-xs">DARK/LIGHT</span>
-<span class="glass px-4 py-2 rounded-full text-xs w-full">PWA READY</span>
-</div>
-</section>
+<!-- FOTO CENTRAL -->
+<div class="relative mx-auto w-[300px] h-[300px] mt-6">
+<div class="absolute inset-0 rounded-full bg-gradient-to-br from-[#ff6a3d] via-[#ff006a] to-[#00d9ff]"></div>
+<img src="profile.jpg" class="absolute inset-[4px] w-[292px] h-[292px] rounded-full object-cover bg-black">
 
-<!-- PROJETOS EM DESTAQUE -->
-<section class="max-w-6xl mx-auto px-6 py-12">
-<h2 class="text-4xl font-black text-center grad-text">Projetos em Destaque</h2>
-<p class="text-zinc-400 text-center text-sm mt-4 max-w-md mx-auto">"Apresentação cuidadosamente selecionada dos meus projetos mais impactantes, destacando soluções inovadoras"</p>
+<!-- BADGES AO REDOR - ORIGINAIS + SEUS NOVOS -->
+<span class="badge absolute -top-2 -right-8 text-cyan-400">React / Next</span>
+<span class="badge absolute top-[80px] -right-14 text-cyan-300">Cybersecurity</span>
+<span class="badge absolute bottom-[40px] -right-10 text-orange-400">Web Designer</span>
+<span class="badge absolute top-[130px] -left-16 text-pink-500">Fullstack</span>
+<span class="badge absolute bottom-[80px] -left-12 text-purple-400">IA & Automation</span>
 
-<div class="mt-10 glass rounded-[24px] overflow-hidden">
-<img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800" class="w-full h-48 object-cover">
-<div class="p-6">
-<div class="flex gap-2"><span class="bg-cyan-500/20 text-cyan-400 text-xs px-3 py-1 rounded-full">PWA</span><span class="bg-purple-500/20 text-purple-400 text-xs px-3 py-1 rounded-full">JavaScript</span></div>
-<h3 class="font-bold text-xl mt-4">PWA Task Manager</h3>
-<p class="text-zinc-400 text-sm mt-2">Offline-first, cache inteligente, sincronização automática e performance PWA otimizada.</p>
-<div class="mt-5 flex gap-3">
-<a class="border border-cyan-500/50 text-cyan-400 px-6 py-2 rounded-full text-sm font-bold">Demo</a>
-<a class="glass px-6 py-2 rounded-full text-sm">Código</a>
-</div>
-</div>
+<!-- SEUS NOVOS PEDIDOS -->
+<span class="badge absolute -top-6 left-10 text-yellow-300">Design Motion</span>
+<span class="badge absolute top-0 -left-10 text-green-300">Vídeo Maker</span>
+<span class="badge absolute bottom-0 -left-16 text-cyan-200">Marketing Digital</span>
+<span class="badge absolute -bottom-4 right-10 text-white">Website+</span>
+<span class="badge absolute top-[200px] -left-20 text-pink-300">Foto Edit</span>
 </div>
 
-<div class="mt-6 text-center">
-<a class="grad-btn inline-block px-10 py-4 rounded-full font-bold">Ver Todos os Projetos →</a>
-</div>
-</section>
+<!-- TEXTO DEGRADÊ IGUAL DA PRINT -->
+<h1 class="relative mt-16 text-[34px] font-black leading-[1.1] grad-text">
+Transformo Ideias em<br>
+Soluções Digitais<br>
+Modernas, Seguras e<br>
+Inteligentes
+</h1>
 
-<!-- SOBRE MIM -->
-<section class="max-w-6xl mx-auto px-6 py-12 text-center">
-<h2 class="text-4xl font-black grad-text">Sobre Mim</h2>
-<p class="text-zinc-400 text-sm mt-6 leading-relaxed max-w-lg mx-auto">
-Sou Frederico Kola, desenvolvedor de Luanda. Apaixonado por criar experiências rápidas, acessíveis e bonitas na web. Trabalho com foco em performance e PWA.
+<p class="relative mt-6 text-[16px] leading-relaxed text-zinc-400 max-w-md mx-auto">
+Foco em <span class="text-cyan-400 font-bold">desenvolvimento fullstack</span>, <span class="text-purple-400 font-bold">design motion</span> e <span class="text-pink-500 font-bold">marketing digital</span> para criar produtos escaláveis, acessíveis e performáticos. Vídeo Maker, Website+ e Foto Edit.
 </p>
-<div class="mt-8 grid grid-cols-3 gap-3">
-<div class="glass rounded-2xl p-4"><b class="text-xl">10+</b><br><span class="text-xs text-zinc-400">Projetos</span></div>
-<div class="glass rounded-2xl p-4"><b class="text-xl">2+</b><br><span class="text-xs text-zinc-400">Anos</span></div>
-<div class="glass rounded-2xl p-4"><b class="text-xl">100%</b><br><span class="text-xs text-zinc-400">Remoto</span></div>
+
+<div class="relative mt-8 flex flex-col gap-3 max-w-sm mx-auto">
+<a href="#projetos" class="py-4 rounded-full font-bold bg-gradient-to-r from-cyan-400 to-purple-600">Ver Projetos →</a>
+<a href="https://wa.me/244000000000" class="py-4 rounded-full font-bold border border-white/10 text-pink-400">💬 Falar Comigo</a>
+</div>
+
+<div class="relative mt-8 flex flex-wrap justify-center gap-2 text-[11px]">
+<span class="px-4 py-2 rounded-full bg-white/5 border border-white/10">PERFORMANCE</span>
+<span class="px-4 py-2 rounded-full bg-white/5 border border-white/10">A11Y</span>
+<span class="px-4 py-2 rounded-full bg-white/5 border border-white/10">DARK/LIGHT</span>
+<span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 w-full max-w-[200px]">PWA READY</span>
 </div>
 </section>
 
-<footer class="text-center text-zinc-600 text-xs py-10">© 2026 Frederico Kola</footer>
+<section id="projetos" class="px-6 py-10 text-center">
+<h2 class="text-3xl font-black grad-text">Projetos em Destaque</h2>
+<div class="mt-6 bg-white/[0.04] border border-white/10 rounded-[24px] p-6 text-left">
+<h3 class="font-bold">Website+ & Marketing</h3>
+<p class="text-sm text-zinc-400 mt-2">Sites rápidos + vídeos e foto edit para empresas de Luanda.</p>
+</div>
+</section>
 
 </body>
 </html>

@@ -9,7 +9,7 @@
 body{background:#0a0f1e;color:#fff;font-family:Inter,system-ui,sans-serif;overflow-x:hidden}
 .top{font-weight:800;letter-spacing:2px;padding:15px 20px}
 .hero{padding:20px 25px 10px; overflow:visible; max-width:500px; margin:0 auto}
-.hero-circle-area{position:relative; width:100%; aspect-ratio:1/1; display:flex; align-items:center; justify-content:center; padding:55px 15px; overflow:visible; margin:20px 0}
+.hero-circle-area{position:relative; width:100%; aspect-ratio:1/1; display:flex; align-items:center; justify-content:center; padding:55px 15px; overflow:visible; margin:10px 0}
 .main-circle{width:68vw; max-width:240px; aspect-ratio:1/1; border-radius:50%; border:3px solid transparent; background:linear-gradient(#0a0f1e,#0a0f1e) padding-box, linear-gradient(135deg,#00f5ff,#a855f7,#ff00aa,#ffaa00) border-box; display:flex; align-items:center; justify-content:center; font-size:20px; z-index:1}
 .badge{position:absolute; background:#111c33; border:1px solid #1e2e50; padding:7px 12px; border-radius:20px; font-size:12px; font-weight:700; white-space:nowrap; z-index:5; box-shadow:0 4px 12px rgba(0,0,0,.5)}
 .b-design{top:2%; left:50%; transform:translateX(-50%); color:#fde68a}
@@ -26,11 +26,29 @@ h1.title{text-align:center; font-size:2rem; line-height:1.15; background:linear-
 .btns{display:flex; gap:10px; justify-content:center; flex-wrap:wrap; padding:10px}
 .btn1{background:linear-gradient(90deg,#00f5ff,#a855f7); padding:14px 22px; border-radius:30px; text-decoration:none; color:#fff; font-weight:700}
 .btn2{border:1px solid #333; padding:14px 22px; border-radius:30px; text-decoration:none; color:#fff}
-section{padding:40px 20px}
+
+/* NOVA PARTE DE BAIXO - COM SEUS DADOS */
+.sobre{text-align:center; padding:60px 20px 20px; max-width:600px; margin:0 auto}
+.sobre p.big{font-size:18px; line-height:1.6; color:#cbd5e1}
+.sobre p.big b{color:#fff}
+.sobre p.big b.blue{color:#22d3ee}
+.prioridades{margin-top:30px; color:#94a3b8; font-size:16px; line-height:1.6}
+.tech-pills{display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin:30px 0 40px}
+.tech-pills span{background:#111c33; border:1px solid #1e2e50; padding:8px 16px; border-radius:20px; font-size:13px; font-weight:600}
+.card-dark{background:linear-gradient(180deg,#122040,#0e1a33); border:1px solid #1e335a; border-radius:28px; padding:35px 25px; margin:15px 0; text-align:center}
+.card-dark .icon{width:60px; height:60px; background:#0a0f1e; border-radius:18px; display:flex; align-items:center; justify-content:center; margin:0 auto 20px; font-size:28px; box-shadow:0 4px 15px rgba(0,0,0,.3)}
+.card-dark h3{font-size:20px; margin-bottom:12px}
+.card-dark p{color:#94a3b8; font-size:15px; line-height:1.5}
+.skills-section{background:linear-gradient(180deg,#0a2a3a,#0a3a4a); margin-top:40px; padding:50px 20px 20px}
+.grid-info{display:grid; grid-template-columns:1fr; gap:15px; margin-top:20px}
+.mini-card{background:linear-gradient(180deg,#122040,#0e1a33); border:1px solid rgba(255,255,255,.15); border-radius:22px; padding:22px}
+.mini-card small{letter-spacing:2px; font-size:11px; opacity:.5; text-transform:uppercase}
+.mini-card .num{font-size:32px; font-weight:900; margin-top:8px}
 </style>
 </head>
 <body>
 <div class="top">FREDERICO K.</div>
+
 <div class="hero">
 <div class="hero-circle-area">
 <div class="main-circle">Frederico</div>
@@ -47,13 +65,57 @@ section{padding:40px 20px}
 <h1 class="title">Transformo Ideias em Soluções Digitais Modernas, Seguras e Inteligentes</h1>
 <p class="sub">Foco em <b style="color:#22d3ee">desenvolvimento fullstack</b>, design</p>
 <div class="btns">
-<a class="btn1" href="#projetos">Ver Projetos →</a>
+<a class="btn1" href="#sobre">Ver Projetos →</a>
 <a class="btn2" href="#contato">💬 Falar Comigo</a>
 </div>
 </div>
-<section>
-<h2 style="text-align:center; font-size:2rem; background:linear-gradient(90deg,#00f5ff,#ff00aa); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">Sobre Mim</h2>
-<p style="text-align:center; opacity:.8; margin-top:15px;">Sou <b>Frederico Ricardo Nguingui Konde Kola</b>, nascido em <b>10 de Setembro de 2000</b>, dev Fullstack focado em performance, PWA e segurança.</p>
-</section>
-</body>
-</html>
+
+<!-- SUA PARTE NOVA COM SEUS DADOS -->
+<div class="sobre" id="sobre">
+<h2 style="font-size:2.2rem; background:linear-gradient(90deg,#00f5ff,#ff00aa); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-bottom:20px;">Sobre Mim</h2>
+
+<p class="big">
+Sou <b>Frederico Ricardo Nguingui Konde Kola</b>, desenvolvedor <b class="blue">Fullstack</b> focado em criar experiências rápidas, acessíveis e seguras. Uno <b>UI/Front-end</b>, arquitetura backend enxuta e automação com <b>IA</b> para entregar valor consistente.
+</p>
+
+<p class="prioridades">
+Prioridades: performance (Web Vitals), acessibilidade real, escalabilidade progressiva (PWA), segurança desde o início e código sustentável.
+</p>
+
+<div class="tech-pills">
+<span>React/Next</span>
+<span>TypeScript</span>
+<span>Tailwind</span>
+<span>Node</span>
+<span>PWA</span>
+<span>OWASP</span>
+</div>
+
+<div class="card-dark">
+<div class="icon">🚀</div>
+<h3>Trajetória</h3>
+<p>2 anos de evolução contínua com foco em código limpo, boas práticas e entrega consistente.</p>
+</div>
+
+<div class="card-dark">
+<div class="icon">🤖</div>
+<h3>IA & Automação</h3>
+<p>Uso estratégico de LLMs e automação para acelerar desenvolvimento e documentação.</p>
+</div>
+
+<div class="card-dark">
+<div class="icon">🛡️</div>
+<h3>Segurança</h3>
+<p>Princípios OWASP, validações robustas, controle de acesso e redução de superfícies.</p>
+</div>
+</div>
+
+<div class="skills-section">
+<h2 style="text-align:center; font-size:2.2rem; background:linear-gradient(90deg,#00f5ff,#ff00aa); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">Skills & Stack</h2>
+<p style="text-align:center; color:#94a3b8; margin-top:10px;">Base técnica sólida, foco em performance,</p>
+
+<div class="grid-info" style="max-width:500px; margin:30px auto;">
+<div class="mini-card"><small>EXPERIÊNCIA</small><div class="num" style="background:linear-gradient(90deg,#00f5ff,#a855f7); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">2+ <span style="font-size:16px; -webkit-text-fill-color:#94a3b8; font-weight:400">anos</span></div></div>
+<div class="mini-card"><small>PROJETOS</small><div class="num" style="background:linear-gradient(90deg,#a855f7,#ff00aa); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">20+ <span style="font-size:16px; -webkit-text-fill-color:#94a3b8; font-weight:400">entregues</span></div></div>
+<div class="mini-card"><small>FOCO</small><div style="margin-top:10px; font-weight:600;">Performance • PWA • A11y</div></div>
+<div class="mini-card"><small>STACK ATUAL</small><div style="margin-top:10px; display:flex; gap:8px; flex-wrap:wrap;">

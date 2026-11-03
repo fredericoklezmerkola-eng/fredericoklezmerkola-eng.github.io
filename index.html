@@ -1,11 +1,88 @@
-<!-- CIBERSEGURANCA ATUALIZADA -->
-<div class="scard c-red">
-<div class="shead"><div class="sicon">🛡️</div><div><div class="stitle">Cibersegurança<br>(Formação)</div><div class="ssub">FUNDAMENTOS • ÉTICA</div></div><div class="sbtag">Estudo</div></div>
-<div class="srow"><div class="srow-top"><b>OWASP Basics</b><span>68%</span></div><div class="sbar"><div class="sfill" style="width:68%"></div></div></div>
-<div class="srow"><div class="srow-top"><b>Threat Modeling*</b><span>55%</span></div><div class="sbar"><div class="sfill" style="width:55%"></div></div></div>
-<div class="srow"><div class="srow-top"><b>OSINT / Recon</b><span>65%</span></div><div class="sbar"><div class="sfill" style="width:65%"></div></div></div>
-<div class="srow"><div class="srow-top"><b>Network Hardening</b><span>60%</span></div><div class="sbar"><div class="sfill" style="width:60%"></div></div></div>
-<div class="srow"><div class="srow-top"><b>Wi-Fi Security</b><span>58%</span></div><div class="sbar"><div class="sfill" style="width:58%"></div></div></div>
-<div class="srow"><div class="srow-top"><b>Lab Pentest*</b><span>50%</span></div><div class="sbar"><div class="sfill" style="width:50%"></div></div></div>
-<div class="sfoot"><span>OWASP</span><span>Recon</span><span>Hardening</span><span>Wi-Fi</span><span>Threat Modeling*</span></div>
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Frederico K. - Portfolio</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0f1e;color:#fff;font-family:system-ui,sans-serif;overflow-x:hidden}
+.top{padding:16px 20px;font-weight:900;letter-spacing:2px}
+.hero{max-width:480px;margin:0 auto;padding:10px 22px}
+.circle-area{position:relative;width:100%;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;padding:65px 15px;margin:10px 0}
+.circle{width:66vw;max-width:230px;aspect-ratio:1/1;border-radius:50%;border:3px solid transparent;background:linear-gradient(#0a0f1e,#0a0f1e) padding-box,linear-gradient(135deg,#00f5ff,#a855f7,#ff00aa) border-box;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:22px}
+.badge{position:absolute;background:#111c33;border:1px solid #1e2e50;padding:7px 12px;border-radius:20px;font-size:11px;font-weight:700}
+.b1{top:1%;left:50%;transform:translateX(-50%)} .b2{top:11%;right:0%} .b3{top:30%;right:-2%} .b4{top:54%;right:-2%} .b5{bottom:18%;right:2%} .b6{bottom:8%;left:8%} .b7{left:-2%;top:58%} .b8{left:-2%;top:30%} .b9{left:-1%;top:10%}
+.title{text-align:center;font-size:28px;line-height:1.15;background:linear-gradient(90deg,#00f5ff,#a855f7,#ff6ab3);-webkit-background-clip:text;-webkit-text-fill-color:transparent;padding:10px}
+.sub{text-align:center;opacity:.7;font-size:14px;margin:12px 0}
+.btns{display:flex;gap:10px;justify-content:center;margin:20px 0;flex-wrap:wrap}
+.btnA{background:linear-gradient(90deg,#00f5ff,#a855f7);padding:14px 22px;border-radius:30px;text-decoration:none;color:#fff;font-weight:700}
+.btnB{border:1px solid #334;padding:14px 22px;border-radius:30px;text-decoration:none;color:#fff}
+.skills-wrap{max-width:650px;margin:0 auto;padding:20px 16px;display:grid;gap:22px}
+.scard{background:linear-gradient(180deg,#131f3a,#0f1a30);border:1px solid #1e335a;border-radius:28px;padding:22px}
+.shead{display:flex;align-items:center;gap:14px}
+.sicon{width:52px;height:52px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:900}
+.stitle{font-size:22px;font-weight:900;line-height:1.1}
+.ssub{font-size:11px;opacity:.6;letter-spacing:1px;margin-top:2px}
+.sbtag{margin-left:auto;border:1px solid #2a3a5a;padding:5px 12px;border-radius:20px;font-size:11px;opacity:.8}
+.srow{margin-top:18px}
+.srow-top{display:flex;justify-content:space-between;font-size:14px;margin-bottom:6px}
+.sbar{height:8px;background:#1e2e4a;border-radius:10px;overflow:hidden}
+.sfill{height:100%;border-radius:10px}
+.sfoot{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;opacity:.7;font-size:14px}
+.c-blue .sicon{background:linear-gradient(135deg,#00d4ff,#5a5cff)} .c-blue .sfill{background:linear-gradient(90deg,#00d4ff,#7a5cff)} .c-blue .stitle{color:#3ec8ff}
+.c-purple .sicon{background:linear-gradient(135deg,#a855f7,#ff2a8a)} .c-purple .sfill{background:linear-gradient(90deg,#8b5cf6,#ff2a8a)} .c-purple .stitle{color:#c084fc}
+.c-orange .sicon{background:linear-gradient(135deg,#ff7a18,#00d4ff)} .c-orange .sfill{background:linear-gradient(90deg,#ff7a18,#00d4ff)} .c-orange .stitle{background:linear-gradient(90deg,#ff7a18,#00d4ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.c-green .sicon{background:linear-gradient(135deg,#00c853,#2af598)} .c-green .sfill{background:linear-gradient(90deg,#00c853,#2af598)} .c-green .stitle{color:#2af598}
+.c-red .sicon{background:#c92a2a} .c-red .sfill{background:#ff4d4d} .c-red .stitle{color:#ff4d4d}
+.c-pink .sicon{background:linear-gradient(135deg,#ff006a,#ff7a00)} .c-pink .sfill{background:linear-gradient(90deg,#ff006a,#ff7a00)}
+.cta{max-width:600px;margin:40px auto;background:linear-gradient(180deg,#1a1030,#120a26);border:1px solid #2a1a50;border-radius:30px;padding:35px 22px;text-align:center}
+.footer{background:#060a16;padding:50px 20px 20px;margin-top:30px}
+.f-card{background:#0e162c;border:1px solid #1e2e50;border-radius:18px;padding:18px;margin-top:12px}
+</style>
+</head>
+<body>
+<div class="top">FREDERICO K.</div>
+<div class="hero">
+<div class="circle-area">
+<div class="circle">Frederico</div>
+<span class="badge b1">Design Motion</span><span class="badge b2">React / Next</span><span class="badge b3">Cybersecu</span><span class="badge b4">Web Designer</span><span class="badge b5">Website+</span><span class="badge b6">Marketing</span><span class="badge b7">Foto Edit</span><span class="badge b8">Fullstack</span><span class="badge b9">Video Maker</span>
 </div>
+<h1 class="title">Transformo Ideias em Solucoes Digitais Modernas, Seguras e Inteligentes</h1>
+<p class="sub">Foco em <b style="color:#22d3ee">desenvolvimento fullstack</b>, design e seguranca</p>
+<div class="btns"><a class="btnA" href="#skills">Ver Habilidades →</a><a class="btnB" href="#contato">Falar Comigo</a></div>
+</div>
+<div class="skills-wrap" id="skills">
+<div class="scard c-blue">
+<div class="shead"><div class="sicon">🎨</div><div><div class="stitle">Front-end<br>Engineering</div><div class="ssub">UI • ACESSIBILIDADE • PERFORMANCE</div></div><div class="sbtag">Core</div></div>
+<div class="srow"><div class="srow-top"><b>HTML5 / Semântica</b><span>95%</span></div><div class="sbar"><div class="sfill" style="width:95%"></div></div></div>
+<div class="srow"><div class="srow-top"><b>CSS3 • Tailwind • BEM</b><span>92%</span></div><div class="sbar"><div class="sfill" style="width:92%"></div></div></div>
+<div class="srow"><div class="srow-top"><b>Design System / Tokens</b><span>88%</span></div><div class="sbar"><div class="sfill" style="width:88%"></div></div></div>
+<div class="srow"><div class="srow-top"><b>React / Hooks</b><span>85%</span></div><div class="sbar"><div class="sfill" style="width:85%"></div></div></div>
+<div class="srow"><div class="srow-top"><b>Next.js (App Router)</b><span>80%</span></div><div class="sbar"><div class="sfill" style="width:80%"></div></div></div>
+<div class="srow"><div class="srow-top"><b>Performance / Web Vitals</b><span>83%</span></div><div class="sbar"><div class="sfill" style="width:83%"></div></div></div>
+<div class="sfoot"><span>A11y</span><span>SPA/SSR</span><span>Dark Mode</span><span>Animações</span><span>Responsividade</span></div>
+</div>
+<div class="scard c-purple">
+<div class="shead"><div class="sicon">🗄️</div><div><div class="stitle">Back-end &<br>Dados</div><div class="ssub">APIS • BANCOS • AUTH</div></div><div class="sbtag">Prático</div></div>
+<div class="srow"><div class="srow-top"><b>Node.js / Express</b><span>78%</span></div><div class="sbar"><div class="sfill" style="width:78%"></div></div></div>
+<div class="srow"><div class="srow-top"><b>REST APIs / Auth JWT</b><span>74%</span></div><div class="sbar"><div class="sfill" style="width:74%"></div></div></div>
+<div class="srow"><div class="srow-top"><b>Modelagem / Migrations</b><span>70%</span></div><div class="sbar"><div class="sfill" style="width:70%"></div></div></div>
+<div class="srow"><div class="srow-top"><b>SQL (PostgreSQL)</b><span>72%</span></div><div class="sbar"><div class="sfill" style="width:72%"></div></div></div>
+<div class="srow"><div class="srow-top"><b>NoSQL (MongoDB)</b><span>65%</span></div><div class="sbar"><div class="sfill" style="width:65%"></div></div></div>
+<div class="sfoot"><span>REST</span><span>Auth</span><span>SQL</span><span>NoSQL</span><span>Migrations</span></div>
+</div>
+<div class="scard c-pink">
+<div class="shead"><div class="sicon">🤖</div><div><div class="stitle">IA &<br>Produtividade</div><div class="ssub">AUTOMAÇÃO • PROMPT • DOCS</div></div><div class="sbtag">Alavanca</div></div>
+<div style="margin-top:18px;display:grid;gap:12px;color:#cbd5e1;font-size:14px;line-height:1.5">
+<div>✅ Uso estratégico de LLMs (Copilot / GPT) para acelerar ciclo e revisão.</div>
+<div>✅ Engenharia de prompt focada em consistência e redução de retrabalho.</div>
+<div>✅ Automação de documentação e geração de boilerplates inteligentes.</div>
+</div>
+<div class="sfoot"><span>LLMs</span><span>Automação</span><span>Prompt Eng</span><span>Docs</span></div>
+</div>
+<div class="scard c-orange">
+<div class="shead"><div class="sicon">⚙️</div><div><div class="stitle">DevOps &<br>Ferramentas</div><div class="ssub">FLUXOS • BUILD • DEPLOY</div></div><div class="sbtag">Evolução</div></div>
+<div class="srow"><div class="srow-top"><b>Git / Flow</b><span>82%</span></div><div class="sbar"><div class="sfill" style="width:82%"></div></div></div>
+<div class="srow"><div class="srow-top"><b>Automação CI</b><span>60%</span></div><div class="sbar"><div class="sfill" style="width:60%"></div></div></div>
+<div class="srow"><div class="srow-top"><b>Release Preview</b><span>55%</span></div><div class="sbar"><div class="sfill" style="width:55%"></div></div></div

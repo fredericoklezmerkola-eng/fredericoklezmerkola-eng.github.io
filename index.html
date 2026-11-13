@@ -16,10 +16,11 @@ body{background:#070b16;color:white;font-family:sans-serif;overflow-x:hidden}
 @keyframes spin{to{transform:rotate(360deg)}}
 .bar{width:220px;height:6px;background:#1e293b;border-radius:9999px;overflow:hidden;margin-top:14px}
 .bar-fill{height:100%;width:0%;background:linear-gradient(90deg,#22d3ee,#a855f7);border-radius:9999px;transition:width .3s}
-/* CARROSSEL LATERAL */
+/* CARROSSEL */
+.carrossel-wrap{position:relative}
 .carrossel{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 16px 10px 16px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .carrossel::-webkit-scrollbar{display:none}
-.card{flex:0 0 85%;max-width:340px;scroll-snap-align:center;background:#111a2e;border:1px solid rgba(255,255,255,.1);border-radius:20px;overflow:hidden;text-align:left}
+.card{flex:0 0 85%;max-width:340px;scroll-snap-align:center;background:#111a2e;border:1px solid rgba(255,255,255,.1);border-radius:20px;overflow:hidden;text-align:left;position:relative}
 .card-img{height:170px;background-size:cover;background-position:center;position:relative}
 .tag{position:absolute;top:12px;left:12px;background:rgba(236,72,153,.95);color:white;font-size:12px;font-weight:bold;padding:5px 12px;border-radius:9999px}
 .btn{flex:1;text-align:center;padding:10px 0;border-radius:12px;font-size:14px;font-weight:bold}
@@ -27,7 +28,13 @@ body{background:#070b16;color:white;font-family:sans-serif;overflow-x:hidden}
 .btn-off{background:#1e293b;color:#94a3b8}
 .btn-orange{background:rgba(251,146,60,.15);color:#fb923c;border:1px solid rgba(251,146,60,.4)}
 .dot{width:10px;height:10px;border-radius:9999px;border:1px solid #94a3b8;background:transparent;display:inline-block;transition:all .3s}
-.dot.active{background:#94a3b8;transform:scale(1.2)}
+.dot.active{background:#22d3ee;border-color:#22d3ee;transform:scale(1.3)}
+/* SETAS */
+.seta{position:absolute;top:50%;transform:translateY(-50%);z-index:20;width:42px;height:42px;border-radius:9999px;background:#2563eb;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:bold;color:white;border:2px solid rgba(255,255,255,.3);box-shadow:0 4px 15px rgba(0,0,0,.5);cursor:pointer}
+.seta:active{transform:translateY(-50%) scale(.9)}
+.seta-left{left:6px}
+.seta-right{right:6px;background:#1e293b}
+.btn-todos{display:inline-block;margin-top:18px;padding:14px 28px;border-radius:9999px;font-weight:bold;color:white;background:linear-gradient(90deg,#22d3ee,#a855f7)}
 </style>
 </head>
 <body>
@@ -83,13 +90,16 @@ body{background:#070b16;color:white;font-family:sans-serif;overflow-x:hidden}
 </div>
 </section>
 
-<!-- PROJETOS EM DESTAQUE - CARROSSEL LATERAL -->
+<!-- PROJETOS COM SETAS -->
 <section id="projetos" class="pb-10 pt-6 text-center">
 <h2 class="text-[32px] font-black grad-text px-4">Projetos em Destaque</h2>
 <p class="text-slate-400 text-[14px] leading-relaxed mt-3 px-6">"Apresentação cuidadosamente selecionada dos meus projetos mais impactantes, destacando soluções inovadoras"</p>
-<p class="text-slate-500 text-xs mt-2">👈 Arrasta para o lado para ver mais 👉</p>
 
-<div class="carrossel mt-6" id="carrossel">
+<div class="carrossel-wrap mt-6">
+<button class="seta seta-left" id="prevBtn">‹</button>
+<button class="seta seta-right" id="nextBtn">›</button>
+
+<div class="carrossel" id="carrossel">
 
 <div class="card">
 <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=800&q=80')"></div>
@@ -127,11 +137,13 @@ body{background:#070b16;color:white;font-family:sans-serif;overflow-x:hidden}
 </div>
 
 </div>
+</div>
 
-<!-- BOLINHAS -->
 <div class="flex justify-center gap-3 mt-3" id="dots">
 <span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
 </div>
+
+<a href="#" class="btn-todos">Ver Todos os Projetos →</a>
 </section>
 
 <script>
@@ -151,20 +163,29 @@ let timer = setInterval(function(){
   }
 }, 220);
 
-// BOLINHAS DO CARROSSEL
 let car = document.getElementById('carrossel');
 let dots = document.querySelectorAll('#dots .dot');
+let current = 0;
+function goTo(i){
+  if(i < 0) i = 6;
+  if(i > 6) i = 0;
+  current = i;
+  let card = car.querySelector('.card');
+  let w = card.offsetWidth + 16;
+  car.scrollTo({left: i * w, behavior:'smooth'});
+  dots.forEach(function(d,idx){ d.classList.toggle('active', idx===i); });
+}
+document.getElementById('nextBtn').addEventListener('click', function(){ goTo(current+1); });
+document.getElementById('prevBtn').addEventListener('click', function(){ goTo(current-1); });
 car.addEventListener('scroll', function(){
-  let index = Math.round(car.scrollLeft / (car.scrollWidth / 7));
-  if(index > 6) index = 6;
-  if(index < 0) index = 0;
-  dots.forEach(function(d,i){ d.classList.toggle('active', i===index); });
+  let card = car.querySelector('.card');
+  let w = card.offsetWidth + 16;
+  let index = Math.round(car.scrollLeft / w);
+  if(index>6) index=6; if(index<0) index=0;
+  current = index;
+  dots.forEach(function(d,idx){ d.classList.toggle('active', idx===index); });
 });
-dots.forEach(function(d,i){
-  d.addEventListener('click', function(){
-    car.scrollTo({left: i * (car.scrollWidth / 7), behavior:'smooth'});
-  });
-});
+dots.forEach(function(d,i){ d.addEventListener('click', function(){ goTo(i); }); });
 </script>
 
 </body>

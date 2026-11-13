@@ -16,7 +16,6 @@ body{background:#070b16;color:white;font-family:sans-serif;overflow-x:hidden}
 @keyframes spin{to{transform:rotate(360deg)}}
 .bar{width:220px;height:6px;background:#1e293b;border-radius:9999px;overflow:hidden;margin-top:14px}
 .bar-fill{height:100%;width:0%;background:linear-gradient(90deg,#22d3ee,#a855f7);border-radius:9999px;transition:width .3s}
-/* CARROSSEL */
 .carrossel-wrap{position:relative}
 .carrossel{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 16px 10px 16px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .carrossel::-webkit-scrollbar{display:none}
@@ -29,12 +28,14 @@ body{background:#070b16;color:white;font-family:sans-serif;overflow-x:hidden}
 .btn-orange{background:rgba(251,146,60,.15);color:#fb923c;border:1px solid rgba(251,146,60,.4)}
 .dot{width:10px;height:10px;border-radius:9999px;border:1px solid #94a3b8;background:transparent;display:inline-block;transition:all .3s}
 .dot.active{background:#22d3ee;border-color:#22d3ee;transform:scale(1.3)}
-/* SETAS */
-.seta{position:absolute;top:50%;transform:translateY(-50%);z-index:20;width:42px;height:42px;border-radius:9999px;background:#2563eb;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:bold;color:white;border:2px solid rgba(255,255,255,.3);box-shadow:0 4px 15px rgba(0,0,0,.5);cursor:pointer}
-.seta:active{transform:translateY(-50%) scale(.9)}
+.seta{position:absolute;top:85px;z-index:20;width:42px;height:42px;border-radius:9999px;background:#2563eb;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:bold;color:white;border:2px solid rgba(255,255,255,.3);box-shadow:0 4px 15px rgba(0,0,0,.5);cursor:pointer}
+.seta:active{transform:scale(.9)}
 .seta-left{left:6px}
 .seta-right{right:6px;background:#1e293b}
 .btn-todos{display:inline-block;margin-top:18px;padding:14px 28px;border-radius:9999px;font-weight:bold;color:white;background:linear-gradient(90deg,#22d3ee,#a855f7)}
+/* NOVOS CARTÕES - DESTAQUES */
+.destaque{background:linear-gradient(180deg,#16233f,#0f1a33);border:1px solid rgba(255,255,255,.08);border-radius:24px;padding:28px 20px;text-align:center}
+.icon-box{width:64px;height:64px;margin:0 auto;background:#1a2a4a;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 8px 20px rgba(0,0,0,.3)}
 </style>
 </head>
 <body>
@@ -91,7 +92,7 @@ body{background:#070b16;color:white;font-family:sans-serif;overflow-x:hidden}
 </section>
 
 <!-- PROJETOS COM SETAS -->
-<section id="projetos" class="pb-10 pt-6 text-center">
+<section id="projetos" class="pb-6 pt-6 text-center">
 <h2 class="text-[32px] font-black grad-text px-4">Projetos em Destaque</h2>
 <p class="text-slate-400 text-[14px] leading-relaxed mt-3 px-6">"Apresentação cuidadosamente selecionada dos meus projetos mais impactantes, destacando soluções inovadoras"</p>
 
@@ -100,50 +101,78 @@ body{background:#070b16;color:white;font-family:sans-serif;overflow-x:hidden}
 <button class="seta seta-right" id="nextBtn">›</button>
 
 <div class="carrossel" id="carrossel">
-
 <div class="card">
 <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=800&q=80')"></div>
 <div class="p-4"><h3 class="font-black text-[20px]">PWA Task Manager</h3><p class="text-slate-400 text-[14px] leading-relaxed mt-1">Offline-first, cache inteligente, sincronização automática e performance PWA otimizada.</p><div class="flex gap-2 mt-4"><a href="#" class="btn btn-on">Demo</a><a href="#" class="btn btn-off">Código</a></div></div>
 </div>
-
 <div class="card">
 <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80')"><span class="tag">Data • UI</span></div>
 <div class="p-4"><h3 class="font-black text-[20px]">Dashboard Analytics</h3><p class="text-slate-400 text-[14px] leading-relaxed mt-1">Interface modular com gráficos, métricas em tempo real e design escalável.</p><div class="flex gap-2 mt-4"><span class="btn btn-off">Em Breve</span><span class="btn btn-off">Privado</span></div></div>
 </div>
-
 <div class="card">
 <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80')"><span class="tag">Design System</span></div>
 <div class="p-4"><h3 class="font-black text-[20px]">UI Component Library</h3><p class="text-slate-400 text-[14px] leading-relaxed mt-1">Coleção reutilizável com tokens, dark mode e acessibilidade pronta.</p><div class="flex gap-2 mt-4"><span class="btn btn-off">Em Breve</span><span class="btn btn-off">Privado</span></div></div>
 </div>
-
 <div class="card">
 <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80')"></div>
 <div class="p-4"><h3 class="font-black text-[20px]">Landing SaaS</h3><p class="text-slate-400 text-[14px] leading-relaxed mt-1">Landing page otimizada com métricas, CTA dinâmico e SEO técnico.</p><div class="flex gap-2 mt-4"><a href="#" class="btn btn-orange">Preview</a><span class="btn btn-off">Privado</span></div></div>
 </div>
-
 <div class="card">
 <div class="p-6 text-center" style="background:linear-gradient(180deg,#1a2438,#0f172a);height:170px;display:flex;flex-direction:column;justify-content:center"><div class="w-[56px] h-[56px] mx-auto rounded-full flex items-center justify-center text-2xl" style="background:#7c3aed">🔒</div><h3 class="font-bold mt-3">Repositório Privado</h3><p class="text-slate-400 text-[13px]">Acesso restrito • NDA</p></div>
 <div class="p-4"><p class="text-slate-400 text-[14px] leading-relaxed">Projeto corporativo com integrações internas e camadas de segurança avançadas.</p><div class="flex gap-2 mt-4"><span class="btn btn-off">Privado</span><span class="btn btn-off">NDA</span></div></div>
 </div>
-
 <div class="card">
 <div class="p-6 text-center" style="background:linear-gradient(180deg,#1a2438,#0f172a);height:170px;display:flex;flex-direction:column;justify-content:center"><div class="w-[56px] h-[56px] mx-auto rounded-full flex items-center justify-center text-2xl" style="background:#0891b2">🛡️</div><h3 class="font-bold mt-3">Internal Security Tool</h3><p class="text-slate-400 text-[13px]">Monitoramento & auditoria</p></div>
 <div class="p-4"><p class="text-slate-400 text-[14px] leading-relaxed">Ferramenta interna para análise de eventos e respostas rápidas a incidentes.</p><div class="flex gap-2 mt-4"><span class="btn btn-off">Privado</span><span class="btn btn-off">Restrito</span></div></div>
 </div>
-
 <div class="card">
 <div class="p-6 text-center" style="background:linear-gradient(180deg,#1a2438,#0f172a);height:170px;display:flex;flex-direction:column;justify-content:center"><div class="w-[56px] h-[56px] mx-auto rounded-full flex items-center justify-center text-2xl font-black" style="background:#b45309">+</div><h3 class="font-bold mt-3">Próximo Projeto</h3><p class="text-slate-400 text-[13px]">Em desenvolvimento...</p></div>
 <div class="p-4"><div class="h-3 bg-slate-700 rounded-full"></div><div class="h-3 bg-slate-700 rounded-full mt-3 w-3/4"></div><div class="flex gap-2 mt-4"><span class="btn btn-off">...</span><span class="btn btn-off">...</span></div></div>
 </div>
-
 </div>
 </div>
 
 <div class="flex justify-center gap-3 mt-3" id="dots">
 <span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
 </div>
-
 <a href="#" class="btn-todos">Ver Todos os Projetos →</a>
+</section>
+
+<!-- NOVA SECÇÃO - ABAIXO DO VER TODOS -->
+<section class="px-4 pb-10 pt-4 flex flex-col gap-5">
+
+<div class="destaque">
+<div class="icon-box">🚀</div>
+<div class="mt-10">
+<h3 class="font-black text-[22px]">Trajetória</h3>
+<p class="text-slate-400 text-[15px] leading-relaxed mt-2">2 anos de evolução contínua com foco em código limpo, boas práticas e entrega consistente.</p>
+</div>
+</div>
+
+<div class="destaque">
+<div class="icon-box">⚡</div>
+<div class="mt-10">
+<h3 class="font-black text-[22px]">PWA & Performance</h3>
+<p class="text-slate-400 text-[15px] leading-relaxed mt-2">Apps rápidos, offline-first, métricas Web Vitals otimizadas e caching inteligente.</p>
+</div>
+</div>
+
+<div class="destaque">
+<div class="icon-box">🤖</div>
+<div class="mt-10">
+<h3 class="font-black text-[22px]">IA & Automação</h3>
+<p class="text-slate-400 text-[15px] leading-relaxed mt-2">Uso estratégico de LLMs e automação para acelerar desenvolvimento e documentação.</p>
+</div>
+</div>
+
+<div class="destaque">
+<div class="icon-box">🛡️</div>
+<div class="mt-10">
+<h3 class="font-black text-[22px]">Segurança</h3>
+<p class="text-slate-400 text-[15px] leading-relaxed mt-2">Princípios OWASP, validações robustas, controle de acesso e redução de superfícies.</p>
+</div>
+</div>
+
 </section>
 
 <script>
@@ -162,7 +191,6 @@ let timer = setInterval(function(){
     }, 300);
   }
 }, 220);
-
 let car = document.getElementById('carrossel');
 let dots = document.querySelectorAll('#dots .dot');
 let current = 0;

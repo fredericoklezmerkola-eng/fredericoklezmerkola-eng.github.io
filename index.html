@@ -35,14 +35,27 @@ body{background:#070b16;color:white;font-family:sans-serif;overflow-x:hidden}
 .btn-todos{display:inline-block;margin-top:18px;padding:14px 28px;border-radius:9999px;font-weight:bold;color:white;background:linear-gradient(90deg,#22d3ee,#a855f7)}
 .destaque{background:linear-gradient(180deg,#16233f,#0f1a33);border:1px solid rgba(255,255,255,.08);border-radius:24px;padding:28px 20px;text-align:center}
 .icon-box{width:64px;height:64px;margin:0 auto;background:#1a2a4a;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 8px 20px rgba(0,0,0,.3)}
-/* SKILLS & STACK - FUNDO IGUAL DA FOTO */
-.skills-bg{background:linear-gradient(180deg,#123a46,#0e2f3a 45%,#0a2a33);padding:40px 16px 40px 16px}
+.skills-bg{background:linear-gradient(180deg,#123a46,#0e2f3a 20%,#1a1a3a 50%,#2a1a4a 80%,#1a1230);padding:40px 16px 20px 16px}
 .skills-title{background:linear-gradient(90deg,#3b82f6,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .skill-card{background:linear-gradient(180deg,#1a3a44,#13303a);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:20px}
 .pill{display:inline-block;padding:5px 12px;border-radius:9999px;font-size:13px;font-weight:bold;margin-right:6px}
 .pill-blue{background:rgba(34,211,238,.15);color:#22d3ee}
 .pill-purple{background:rgba(168,85,247,.18);color:#c084fc}
 .pill-pink{background:rgba(236,72,153,.18);color:#f472b6}
+/* CARTÕES DETALHADOS */
+.detail-card{background:linear-gradient(180deg,#1e3442,#182a3a);border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:22px;margin-bottom:20px}
+.detail-card.purple{background:linear-gradient(180deg,#23204a,#1a1a35)}
+.detail-card.purple2{background:linear-gradient(180deg,#2a1a4a,#1a1230)}
+.detail-icon{width:64px;height:64px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0}
+.bar-track{height:10px;background:#2a3d4a;border-radius:9999px;overflow:hidden;margin-top:6px}
+.bar-fill2{height:100%;border-radius:9999px}
+.skill-row{margin-top:18px}
+.skill-top{display:flex;justify-content:space-between;align-items:center}
+.skill-top span:first-child{font-size:16px}
+.skill-top span:last-child{font-size:15px;font-weight:bold;color:#22d3ee}
+.badge-top{font-size:13px;font-weight:bold;padding:6px 14px;border-radius:9999px;border:1px solid rgba(255,255,255,.2);white-space:nowrap}
+.tags-bottom{margin-top:22px;font-size:17px;line-height:1.8;color:#e2e8f0}
+.check-item{display:flex;gap:10px;margin-top:18px;font-size:16px;line-height:1.5}
 </style>
 </head>
 <body>
@@ -105,105 +118,133 @@ body{background:#070b16;color:white;font-family:sans-serif;overflow-x:hidden}
 <button class="seta seta-left" id="prevBtn">‹</button>
 <button class="seta seta-right" id="nextBtn">›</button>
 <div class="carrossel" id="carrossel">
-<div class="card">
-<div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=800&q=80')"></div>
-<div class="p-4"><h3 class="font-black text-[20px]">PWA Task Manager</h3><p class="text-slate-400 text-[14px] leading-relaxed mt-1">Offline-first, cache inteligente, sincronização automática e performance PWA otimizada.</p><div class="flex gap-2 mt-4"><a href="#" class="btn btn-on">Demo</a><a href="#" class="btn btn-off">Código</a></div></div>
-</div>
-<div class="card">
-<div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80')"><span class="tag">Data • UI</span></div>
-<div class="p-4"><h3 class="font-black text-[20px]">Dashboard Analytics</h3><p class="text-slate-400 text-[14px] leading-relaxed mt-1">Interface modular com gráficos, métricas em tempo real e design escalável.</p><div class="flex gap-2 mt-4"><span class="btn btn-off">Em Breve</span><span class="btn btn-off">Privado</span></div></div>
-</div>
-<div class="card">
-<div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80')"><span class="tag">Design System</span></div>
-<div class="p-4"><h3 class="font-black text-[20px]">UI Component Library</h3><p class="text-slate-400 text-[14px] leading-relaxed mt-1">Coleção reutilizável com tokens, dark mode e acessibilidade pronta.</p><div class="flex gap-2 mt-4"><span class="btn btn-off">Em Breve</span><span class="btn btn-off">Privado</span></div></div>
-</div>
-<div class="card">
-<div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80')"></div>
-<div class="p-4"><h3 class="font-black text-[20px]">Landing SaaS</h3><p class="text-slate-400 text-[14px] leading-relaxed mt-1">Landing page otimizada com métricas, CTA dinâmico e SEO técnico.</p><div class="flex gap-2 mt-4"><a href="#" class="btn btn-orange">Preview</a><span class="btn btn-off">Privado</span></div></div>
-</div>
-<div class="card">
-<div class="p-6 text-center" style="background:linear-gradient(180deg,#1a2438,#0f172a);height:170px;display:flex;flex-direction:column;justify-content:center"><div class="w-[56px] h-[56px] mx-auto rounded-full flex items-center justify-center text-2xl" style="background:#7c3aed">🔒</div><h3 class="font-bold mt-3">Repositório Privado</h3><p class="text-slate-400 text-[13px]">Acesso restrito • NDA</p></div>
-<div class="p-4"><p class="text-slate-400 text-[14px] leading-relaxed">Projeto corporativo com integrações internas e camadas de segurança avançadas.</p><div class="flex gap-2 mt-4"><span class="btn btn-off">Privado</span><span class="btn btn-off">NDA</span></div></div>
-</div>
-<div class="card">
-<div class="p-6 text-center" style="background:linear-gradient(180deg,#1a2438,#0f172a);height:170px;display:flex;flex-direction:column;justify-content:center"><div class="w-[56px] h-[56px] mx-auto rounded-full flex items-center justify-center text-2xl" style="background:#0891b2">🛡️</div><h3 class="font-bold mt-3">Internal Security Tool</h3><p class="text-slate-400 text-[13px]">Monitoramento & auditoria</p></div>
-<div class="p-4"><p class="text-slate-400 text-[14px] leading-relaxed">Ferramenta interna para análise de eventos e respostas rápidas a incidentes.</p><div class="flex gap-2 mt-4"><span class="btn btn-off">Privado</span><span class="btn btn-off">Restrito</span></div></div>
-</div>
-<div class="card">
-<div class="p-6 text-center" style="background:linear-gradient(180deg,#1a2438,#0f172a);height:170px;display:flex;flex-direction:column;justify-content:center"><div class="w-[56px] h-[56px] mx-auto rounded-full flex items-center justify-center text-2xl font-black" style="background:#b45309">+</div><h3 class="font-bold mt-3">Próximo Projeto</h3><p class="text-slate-400 text-[13px]">Em desenvolvimento...</p></div>
-<div class="p-4"><div class="h-3 bg-slate-700 rounded-full"></div><div class="h-3 bg-slate-700 rounded-full mt-3 w-3/4"></div><div class="flex gap-2 mt-4"><span class="btn btn-off">...</span><span class="btn btn-off">...</span></div></div>
+<div class="card"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=800&q=80')"></div><div class="p-4"><h3 class="font-black text-[20px]">PWA Task Manager</h3><p class="text-slate-400 text-[14px] leading-relaxed mt-1">Offline-first, cache inteligente, sincronização automática e performance PWA otimizada.</p><div class="flex gap-2 mt-4"><a href="#" class="btn btn-on">Demo</a><a href="#" class="btn btn-off">Código</a></div></div></div>
+<div class="card"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80')"><span class="tag">Data • UI</span></div><div class="p-4"><h3 class="font-black text-[20px]">Dashboard Analytics</h3><p class="text-slate-400 text-[14px] leading-relaxed mt-1">Interface modular com gráficos, métricas em tempo real e design escalável.</p><div class="flex gap-2 mt-4"><span class="btn btn-off">Em Breve</span><span class="btn btn-off">Privado</span></div></div></div>
+<div class="card"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80')"><span class="tag">Design System</span></div><div class="p-4"><h3 class="font-black text-[20px]">UI Component Library</h3><p class="text-slate-400 text-[14px] leading-relaxed mt-1">Coleção reutilizável com tokens, dark mode e acessibilidade pronta.</p><div class="flex gap-2 mt-4"><span class="btn btn-off">Em Breve</span><span class="btn btn-off">Privado</span></div></div></div>
+<div class="card"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80')"></div><div class="p-4"><h3 class="font-black text-[20px]">Landing SaaS</h3><p class="text-slate-400 text-[14px] leading-relaxed mt-1">Landing page otimizada com métricas, CTA dinâmico e SEO técnico.</p><div class="flex gap-2 mt-4"><a href="#" class="btn btn-orange">Preview</a><span class="btn btn-off">Privado</span></div></div></div>
+<div class="card"><div class="p-6 text-center" style="background:linear-gradient(180deg,#1a2438,#0f172a);height:170px;display:flex;flex-direction:column;justify-content:center"><div class="w-[56px] h-[56px] mx-auto rounded-full flex items-center justify-center text-2xl" style="background:#7c3aed">🔒</div><h3 class="font-bold mt-3">Repositório Privado</h3><p class="text-slate-400 text-[13px]">Acesso restrito • NDA</p></div><div class="p-4"><p class="text-slate-400 text-[14px] leading-relaxed">Projeto corporativo com integrações internas e camadas de segurança avançadas.</p><div class="flex gap-2 mt-4"><span class="btn btn-off">Privado</span><span class="btn btn-off">NDA</span></div></div></div>
+<div class="card"><div class="p-6 text-center" style="background:linear-gradient(180deg,#1a2438,#0f172a);height:170px;display:flex;flex-direction:column;justify-content:center"><div class="w-[56px] h-[56px] mx-auto rounded-full flex items-center justify-center text-2xl" style="background:#0891b2">🛡️</div><h3 class="font-bold mt-3">Internal Security Tool</h3><p class="text-slate-400 text-[13px]">Monitoramento & auditoria</p></div><div class="p-4"><p class="text-slate-400 text-[14px] leading-relaxed">Ferramenta interna para análise de eventos e respostas rápidas a incidentes.</p><div class="flex gap-2 mt-4"><span class="btn btn-off">Privado</span><span class="btn btn-off">Restrito</span></div></div></div>
+<div class="card"><div class="p-6 text-center" style="background:linear-gradient(180deg,#1a2438,#0f172a);height:170px;display:flex;flex-direction:column;justify-content:center"><div class="w-[56px] h-[56px] mx-auto rounded-full flex items-center justify-center text-2xl font-black" style="background:#b45309">+</div><h3 class="font-bold mt-3">Próximo Projeto</h3><p class="text-slate-400 text-[13px]">Em desenvolvimento...</p></div><div class="p-4"><div class="h-3 bg-slate-700 rounded-full"></div><div class="h-3 bg-slate-700 rounded-full mt-3 w-3/4"></div><div class="flex gap-2 mt-4"><span class="btn btn-off">...</span><span class="btn btn-off">...</span></div></div></div>
 </div>
 </div>
-</div>
-<div class="flex justify-center gap-3 mt-3" id="dots">
-<span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
-</div>
+<div class="flex justify-center gap-3 mt-3" id="dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
 <a href="#" class="btn-todos">Ver Todos os Projetos →</a>
 </section>
 
 <section class="px-4 pb-10 pt-4 flex flex-col gap-5">
-<div class="destaque">
-<div class="icon-box">🚀</div>
-<div class="mt-10">
-<h3 class="font-black text-[22px]">Trajetória</h3>
-<p class="text-slate-400 text-[15px] leading-relaxed mt-2">2 anos de evolução contínua com foco em código limpo, boas práticas e entrega consistente.</p>
-</div>
-</div>
-<div class="destaque">
-<div class="icon-box">⚡</div>
-<div class="mt-10">
-<h3 class="font-black text-[22px]">PWA & Performance</h3>
-<p class="text-slate-400 text-[15px] leading-relaxed mt-2">Apps rápidos, offline-first, métricas Web Vitals otimizadas e caching inteligente.</p>
-</div>
-</div>
-<div class="destaque">
-<div class="icon-box">🤖</div>
-<div class="mt-10">
-<h3 class="font-black text-[22px]">IA & Automação</h3>
-<p class="text-slate-400 text-[15px] leading-relaxed mt-2">Uso estratégico de LLMs e automação para acelerar desenvolvimento e documentação.</p>
-</div>
-</div>
-<div class="destaque">
-<div class="icon-box">🛡️</div>
-<div class="mt-10">
-<h3 class="font-black text-[22px]">Segurança</h3>
-<p class="text-slate-400 text-[15px] leading-relaxed mt-2">Princípios OWASP, validações robustas, controle de acesso e redução de superfícies.</p>
-</div>
-</div>
+<div class="destaque"><div class="icon-box">🚀</div><div class="mt-10"><h3 class="font-black text-[22px]">Trajetória</h3><p class="text-slate-400 text-[15px] leading-relaxed mt-2">2 anos de evolução contínua com foco em código limpo, boas práticas e entrega consistente.</p></div></div>
+<div class="destaque"><div class="icon-box">⚡</div><div class="mt-10"><h3 class="font-black text-[22px]">PWA & Performance</h3><p class="text-slate-400 text-[15px] leading-relaxed mt-2">Apps rápidos, offline-first, métricas Web Vitals otimizadas e caching inteligente.</p></div></div>
+<div class="destaque"><div class="icon-box">🤖</div><div class="mt-10"><h3 class="font-black text-[22px]">IA & Automação</h3><p class="text-slate-400 text-[15px] leading-relaxed mt-2">Uso estratégico de LLMs e automação para acelerar desenvolvimento e documentação.</p></div></div>
+<div class="destaque"><div class="icon-box">🛡️</div><div class="mt-10"><h3 class="font-black text-[22px]">Segurança</h3><p class="text-slate-400 text-[15px] leading-relaxed mt-2">Princípios OWASP, validações robustas, controle de acesso e redução de superfícies.</p></div></div>
 </section>
 
-<!-- NOVA SECÇÃO SKILLS & STACK -->
+<!-- SKILLS & STACK + DETALHES -->
 <section class="skills-bg">
 <div class="text-center">
 <h2 class="text-[38px] font-black skills-title">Skills & Stack</h2>
 <p class="text-slate-300 text-[18px] leading-relaxed mt-4 px-1">Base técnica sólida, foco em performance, acessibilidade, automação com IA e segurança aplicadas na prática.</p>
 </div>
-
 <div class="flex flex-col gap-4 mt-10">
-<div class="skill-card">
-<p class="text-slate-400 text-[13px] font-bold tracking-widest">EXPERIÊNCIA</p>
-<p class="mt-3"><span class="text-[42px] font-black" style="background:linear-gradient(90deg,#22d3ee,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent">2+</span> <span class="text-slate-400 text-[15px]">anos</span></p>
+<div class="skill-card"><p class="text-slate-400 text-[13px] font-bold tracking-widest">EXPERIÊNCIA</p><p class="mt-3"><span class="text-[42px] font-black" style="background:linear-gradient(90deg,#22d3ee,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent">2+</span> <span class="text-slate-400 text-[15px]">anos</span></p></div>
+<div class="skill-card"><p class="text-slate-400 text-[13px] font-bold tracking-widest">PROJETOS</p><p class="mt-3"><span class="text-[42px] font-black" style="background:linear-gradient(90deg,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent">20+</span> <span class="text-slate-400 text-[15px]">entregues</span></p></div>
+<div class="skill-card"><p class="text-slate-400 text-[13px] font-bold tracking-widest">FOCO</p><p class="text-white text-[19px] font-medium mt-4">Performance • PWA • A11y</p></div>
+<div class="skill-card"><p class="text-slate-400 text-[13px] font-bold tracking-widest">STACK ATUAL</p><div class="mt-4"><span class="pill pill-blue">React</span><span class="pill pill-purple">Next.js</span><span class="pill pill-pink">Node</span></div></div>
 </div>
 
-<div class="skill-card">
-<p class="text-slate-400 text-[13px] font-bold tracking-widest">PROJETOS</p>
-<p class="mt-3"><span class="text-[42px] font-black" style="background:linear-gradient(90deg,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent">20+</span> <span class="text-slate-400 text-[15px]">entregues</span></p>
+<!-- 1 FRONT-END -->
+<div class="detail-card mt-8">
+<div class="flex gap-4 items-start">
+<div class="detail-icon" style="background:linear-gradient(135deg,#38bdf8,#a855f7)">🎨</div>
+<div class="flex-1"><h3 class="text-[28px] leading-[1.1] font-black" style="background:linear-gradient(90deg,#22d3ee,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Front-end<br>Engineering</h3><p class="text-slate-400 text-[14px] tracking-wider mt-1">UI • ACESSIBILIDADE • PERFORMANCE</p></div>
+<span class="badge-top" style="color:#22d3ee">Core</span>
+</div>
+<div class="skill-row"><div class="skill-top"><span>HTML5 / Semântica</span><span>95%</span></div><div class="bar-track"><div class="bar-fill2" style="width:95%;background:linear-gradient(90deg,#22d3ee,#a855f7)"></div></div></div>
+<div class="skill-row"><div class="skill-top"><span>CSS3 • Tailwind • BEM</span><span>92%</span></div><div class="bar-track"><div class="bar-fill2" style="width:92%;background:linear-gradient(90deg,#22d3ee,#a855f7)"></div></div></div>
+<div class="skill-row"><div class="skill-top"><span>Design System / Tokens</span><span>88%</span></div><div class="bar-track"><div class="bar-fill2" style="width:88%;background:linear-gradient(90deg,#22d3ee,#a855f7)"></div></div></div>
+<div class="skill-row"><div class="skill-top"><span>React / Hooks</span><span style="color:#22d3ee">85%</span></div><div class="bar-track"><div class="bar-fill2" style="width:85%;background:linear-gradient(90deg,#a855f7,#ec4899)"></div></div></div>
+<div class="skill-row"><div class="skill-top"><span>Next.js (App Router)</span><span>80%</span></div><div class="bar-track"><div class="bar-fill2" style="width:80%;background:linear-gradient(90deg,#a855f7,#ec4899)"></div></div></div>
+<div class="skill-row"><div class="skill-top"><span>Performance / Web Vitals</span><span>83%</span></div><div class="bar-track"><div class="bar-fill2" style="width:83%;background:linear-gradient(90deg,#a855f7,#ec4899)"></div></div></div>
+<p class="tags-bottom">A11y &nbsp; SPA/SSR &nbsp; Dark Mode &nbsp; Animações &nbsp; Responsividade</p>
 </div>
 
-<div class="skill-card">
-<p class="text-slate-400 text-[13px] font-bold tracking-widest">FOCO</p>
-<p class="text-white text-[19px] font-medium mt-4">Performance • PWA • A11y</p>
+<!-- 2 IA -->
+<div class="detail-card">
+<div class="flex gap-4 items-start">
+<div class="detail-icon" style="background:linear-gradient(135deg,#f43f5e,#f97316)">🤖</div>
+<div class="flex-1"><h3 class="text-[28px] leading-[1.1] font-black" style="background:linear-gradient(90deg,#f43f5e,#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent">IA &<br>Produtividade</h3><p class="text-slate-400 text-[14px] tracking-wider mt-1">AUTOMAÇÃO • PROMPT • DOCS</p></div>
+<span class="badge-top" style="color:#fb7185">Alavanca</span>
+</div>
+<div class="check-item"><span style="color:#f43f5e">✔</span><span>Uso estratégico de LLMs (Copilot / GPT) para acelerar ciclo e revisão.</span></div>
+<div class="check-item"><span style="color:#f97316">✔</span><span>Engenharia de prompt focada em consistência e redução de retrabalho.</span></div>
+<div class="check-item"><span style="color:#22d3ee">✔</span><span>Automação de documentação e geração de boilerplates inteligentes.</span></div>
+<p class="tags-bottom">LLMs &nbsp; Automação &nbsp; Prompt Eng &nbsp; Docs</p>
 </div>
 
-<div class="skill-card">
-<p class="text-slate-400 text-[13px] font-bold tracking-widest">STACK ATUAL</p>
-<div class="mt-4">
-<span class="pill pill-blue">React</span>
-<span class="pill pill-purple">Next.js</span>
-<span class="pill pill-pink">Node</span>
+<!-- 3 BACK-END -->
+<div class="detail-card purple">
+<div class="flex gap-4 items-start">
+<div class="detail-icon" style="background:linear-gradient(135deg,#a855f7,#ec4899)">🗄️</div>
+<div class="flex-1"><h3 class="text-[28px] leading-[1.1] font-black" style="background:linear-gradient(90deg,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Back-end &<br>Dados</h3><p class="text-slate-400 text-[14px] tracking-wider mt-1">APIS • BANCOS • AUTH</p></div>
+<span class="badge-top" style="color:#c084fc">Prático</span>
 </div>
+<div class="skill-row"><div class="skill-top"><span>Node.js / Express</span><span style="color:#c084fc">78%</span></div><div class="bar-track"><div class="bar-fill2" style="width:78%;background:linear-gradient(90deg,#a855f7,#ec4899)"></div></div></div>
+<div class="skill-row"><div class="skill-top"><span>REST APIs / Auth JWT</span><span style="color:#c084fc">74%</span></div><div class="bar-track"><div class="bar-fill2" style="width:74%;background:linear-gradient(90deg,#a855f7,#ec4899)"></div></div></div>
+<div class="skill-row"><div class="skill-top"><span>Modelagem / Migrations</span><span style="color:#c084fc">70%</span></div><div class="bar-track"><div class="bar-fill2" style="width:70%;background:linear-gradient(90deg,#a855f7,#ec4899)"></div></div></div>
+<div class="skill-row"><div class="skill-top"><span>SQL (PostgreSQL)</span><span style="color:#c084fc">72%</span></div><div class="bar-track"><div class="bar-fill2" style="width:72%;background:linear-gradient(90deg,#22d3ee,#a855f7)"></div></div></div>
+<div class="skill-row"><div class="skill-top"><span>NoSQL (MongoDB)</span><span style="color:#c084fc">68%</span></div><div class="bar-track"><div class="bar-fill2" style="width:68%;background:linear-gradient(90deg,#22d3ee,#a855f7)"></div></div></div>
+<div class="skill-row"><div class="skill-top"><span>Observabilidade básica</span><span style="color:#c084fc">60%</span></div><div class="bar-track"><div class="bar-fill2" style="width:60%;background:linear-gradient(90deg,#22d3ee,#a855f7)"></div></div></div>
+<p class="tags-bottom">REST &nbsp; Auth &nbsp; SQL &nbsp; NoSQL &nbsp; Migrations</p>
 </div>
+
+<!-- 4 DEVOPS -->
+<div class="detail-card purple">
+<div class="flex gap-4 items-start">
+<div class="detail-icon" style="background:linear-gradient(135deg,#f97316,#22d3ee)">⚙️</div>
+<div class="flex-1"><h3 class="text-[28px] leading-[1.1] font-black" style="background:linear-gradient(90deg,#f97316,#22d3ee);-webkit-background-clip:text;-webkit-text-fill-color:transparent">DevOps &<br>Ferramentas</h3><p class="text-slate-400 text-[14px] tracking-wider mt-1">FLUXOS • BUILD • DEPLOY</p></div>
+<span class="badge-top" style="color:#fb923c">Evolução</span>
 </div>
+<div class="skill-row"><div class="skill-top"><span>Git / Flow</span><span style="color:#fb923c">82%</span></div><div class="bar-track"><div class="bar-fill2" style="width:82%;background:linear-gradient(90deg,#f97316,#22d3ee)"></div></div></div>
+<div class="skill-row"><div class="skill-top"><span>Automação CI</span><span style="color:#fb923c">60%</span></div><div class="bar-track"><div class="bar-fill2" style="width:60%;background:linear-gradient(90deg,#f97316,#22d3ee)"></div></div></div>
+<div class="skill-row"><div class="skill-top"><span>Release Preview</span><span style="color:#fb923c">55%</span></div><div class="bar-track"><div class="bar-fill2" style="width:55%;background:linear-gradient(90deg,#f97316,#22d3ee)"></div></div></div>
+<div class="skill-row"><div class="skill-top"><span>Docker Fundamentals</span><span style="color:#fb923c">40%</span></div><div class="bar-track"><div class="bar-fill2" style="width:40%;background:linear-gradient(90deg,#22d3ee,#f97316)"></div></div></div>
+<div class="skill-row"><div class="skill-top"><span>Monitoring Básico</span><span style="color:#fb923c">35%</span></div><div class="bar-track"><div class="bar-fill2" style="width:35%;background:linear-gradient(90deg,#22d3ee,#f97316)"></div></div></div>
+<div class="skill-row"><div class="skill-top"><span>Infra como Código*</span><span style="color:#fb923c">20%</span></div><div class="bar-track"><div class="bar-fill2" style="width:20%;background:linear-gradient(90deg,#22d3ee,#f97316)"></div></div></div>
+<p class="tags-bottom">Git &nbsp; CI/CD &nbsp; Docker* &nbsp; Monitoramento</p>
+</div>
+
+<!-- 5 QUALIDADE -->
+<div class="detail-card purple2">
+<div class="flex gap-4 items-start">
+<div class="detail-icon" style="background:linear-gradient(135deg,#22c55e,#10b981)">✓</div>
+<div class="flex-1"><h3 class="text-[28px] leading-[1.1] font-black" style="color:#22c55e">Qualidade</h3><p class="text-slate-400 text-[14px] tracking-wider mt-1">MANUTENIBILIDADE • CONSISTÊNCIA</p></div>
+<span class="badge-top" style="color:#4ade80">Refino</span>
+</div>
+<div class="skill-row"><div class="skill-top"><span>Clean Code</span><span style="color:#4ade80">84%</span></div><div class="bar-track"><div class="bar-fill2" style="width:84%;background:#22c55e"></div></div></div>
+<div class="skill-row"><div class="skill-top"><span>Design System Thinking</span><span style="color:#4ade80">78%</span></div><div class="bar-track"><div class="bar-fill2" style="width:78%;background:#22c55e"></div></div></div>
+<div class="skill-row"><div class="skill-top"><span>Refatoração Contínua</span><span style="color:#4ade80">75%</span></div><div class="bar-track"><div class="bar-fill2" style="width:75%;background:#22c55e"></div></div></div>
+<div class="skill-row"><div class="skill-top"><span>Testes (Unit/Integration)</span><span style="color:#4ade80">52%</span></div><div class="bar-track"><div class="bar-fill2" style="width:52%;background:#22c55e"></div></div></div>
+<div class="skill-row"><div class="skill-top"><span>Documentação Viva</span><span style="color:#4ade80">68%</span></div><div class="bar-track"><div class="bar-fill2" style="width:68%;background:#22c55e"></div></div></div>
+<div class="skill-row"><div class="skill-top"><span>Design Tokens</span><span style="color:#4ade80">70%</span></div><div class="bar-track"><div class="bar-fill2" style="width:70%;background:#22c55e"></div></div></div>
+<p class="tags-bottom">Clean Code &nbsp; Refatoração &nbsp; Testes<br>Design Tokens &nbsp; Docs</p>
+</div>
+
+<!-- 6 CIBERSEGURANÇA -->
+<div class="detail-card purple2">
+<div class="flex gap-4 items-start">
+<div class="detail-icon" style="background:linear-gradient(135deg,#ef4444,#b91c1c)">🛡️</div>
+<div class="flex-1"><h3 class="text-[28px] leading-[1.1] font-black" style="color:#ef4444">Cibersegurança<br>(Formação)</h3><p class="text-slate-400 text-[14px] tracking-wider mt-1">FUNDAMENTOS • ÉTICA</p></div>
+<span class="badge-top" style="color:#f87171">Estudo</span>
+</div>
+<div class="skill-row"><div class="skill-top"><span>OWASP Basics</span><span style="color:#f87171">48%</span></div><div class="bar-track"><div class="bar-fill2" style="width:48%;background:#ef4444"></div></div></div>
+<div class="skill-row"><div class="skill-top"><span>Threat Modeling*</span><span style="color:#f87171">30%</span></div><div class="bar-track"><div class="bar-fill2" style="width:30%;background:#ef4444"></div></div></div>
+<div class="skill-row"><div class="skill-top"><span>OSINT / Recon</span><span style="color:#f87171">40%</span></div><div class="bar-track"><div class="bar-fill2" style="width:40%;background:#ef4444"></div></div></div>
+<div class="skill-row"><div class="skill-top"><span>Network Hardening</span><span style="color:#f87171">35%</span></div><div class="bar-track"><div class="bar-fill2" style="width:35%;background:#ef4444"></div></div></div>
+<div class="skill-row"><div class="skill-top"><span>Wi-Fi Security</span><span style="color:#f87171">32%</span></div><div class="bar-track"><div class="bar-fill2" style="width:32%;background:#ef4444"></div></div></div>
+<div class="skill-row"><div class="skill-top"><span>Lab Pentest*</span><span style="color:#f87171">25%</span></div><div class="bar-track"><div class="bar-fill2" style="width:25%;background:#ef4444"></div></div></div>
+<p class="tags-bottom">OWASP &nbsp; Recon &nbsp; Hardening &nbsp; Wi-Fi<br>Threat Modeling*</p>
+</div>
+
+<p class="text-center text-slate-500 text-[13px] leading-relaxed mt-6 pb-6">* NÍVEIS RELATIVOS (BASEADOS EM PRÁTICA ATUAL / EVOLUÇÃO CONTÍNUA)</p>
 </section>
 
 <script>

@@ -35,14 +35,13 @@ body{background:#070b16;color:white;font-family:sans-serif;overflow-x:hidden}
 .btn-todos{display:inline-block;margin-top:18px;padding:14px 28px;border-radius:9999px;font-weight:bold;color:white;background:linear-gradient(90deg,#22d3ee,#a855f7)}
 .destaque{background:linear-gradient(180deg,#16233f,#0f1a33);border:1px solid rgba(255,255,255,.08);border-radius:24px;padding:28px 20px;text-align:center}
 .icon-box{width:64px;height:64px;margin:0 auto;background:#1a2a4a;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 8px 20px rgba(0,0,0,.3)}
-.skills-bg{background:linear-gradient(180deg,#123a46,#0e2f3a 20%,#1a1a3a 50%,#2a1a4a 80%,#1a1230);padding:40px 16px 20px 16px}
+.skills-bg{background:linear-gradient(180deg,#123a46,#0e2f3a 15%,#1a1a3a 35%,#2a1a4a 60%,#1a1230);padding:40px 16px 20px 16px}
 .skills-title{background:linear-gradient(90deg,#3b82f6,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .skill-card{background:linear-gradient(180deg,#1a3a44,#13303a);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:20px}
 .pill{display:inline-block;padding:5px 12px;border-radius:9999px;font-size:13px;font-weight:bold;margin-right:6px}
 .pill-blue{background:rgba(34,211,238,.15);color:#22d3ee}
 .pill-purple{background:rgba(168,85,247,.18);color:#c084fc}
 .pill-pink{background:rgba(236,72,153,.18);color:#f472b6}
-/* CARTÕES DETALHADOS */
 .detail-card{background:linear-gradient(180deg,#1e3442,#182a3a);border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:22px;margin-bottom:20px}
 .detail-card.purple{background:linear-gradient(180deg,#23204a,#1a1a35)}
 .detail-card.purple2{background:linear-gradient(180deg,#2a1a4a,#1a1230)}
@@ -56,6 +55,8 @@ body{background:#070b16;color:white;font-family:sans-serif;overflow-x:hidden}
 .badge-top{font-size:13px;font-weight:bold;padding:6px 14px;border-radius:9999px;border:1px solid rgba(255,255,255,.2);white-space:nowrap}
 .tags-bottom{margin-top:22px;font-size:17px;line-height:1.8;color:#e2e8f0}
 .check-item{display:flex;gap:10px;margin-top:18px;font-size:16px;line-height:1.5}
+/* NOVOS - CRIATIVO */
+.creative-title{background:linear-gradient(90deg,#f59e0b,#ec4899,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 </style>
 </head>
 <body>
@@ -138,7 +139,6 @@ body{background:#070b16;color:white;font-family:sans-serif;overflow-x:hidden}
 <div class="destaque"><div class="icon-box">🛡️</div><div class="mt-10"><h3 class="font-black text-[22px]">Segurança</h3><p class="text-slate-400 text-[15px] leading-relaxed mt-2">Princípios OWASP, validações robustas, controle de acesso e redução de superfícies.</p></div></div>
 </section>
 
-<!-- SKILLS & STACK + DETALHES -->
 <section class="skills-bg">
 <div class="text-center">
 <h2 class="text-[38px] font-black skills-title">Skills & Stack</h2>
@@ -151,42 +151,27 @@ body{background:#070b16;color:white;font-family:sans-serif;overflow-x:hidden}
 <div class="skill-card"><p class="text-slate-400 text-[13px] font-bold tracking-widest">STACK ATUAL</p><div class="mt-4"><span class="pill pill-blue">React</span><span class="pill pill-purple">Next.js</span><span class="pill pill-pink">Node</span></div></div>
 </div>
 
-<!-- 1 FRONT-END -->
 <div class="detail-card mt-8">
-<div class="flex gap-4 items-start">
-<div class="detail-icon" style="background:linear-gradient(135deg,#38bdf8,#a855f7)">🎨</div>
-<div class="flex-1"><h3 class="text-[28px] leading-[1.1] font-black" style="background:linear-gradient(90deg,#22d3ee,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Front-end<br>Engineering</h3><p class="text-slate-400 text-[14px] tracking-wider mt-1">UI • ACESSIBILIDADE • PERFORMANCE</p></div>
-<span class="badge-top" style="color:#22d3ee">Core</span>
-</div>
+<div class="flex gap-4 items-start"><div class="detail-icon" style="background:linear-gradient(135deg,#38bdf8,#a855f7)">🎨</div><div class="flex-1"><h3 class="text-[28px] leading-[1.1] font-black" style="background:linear-gradient(90deg,#22d3ee,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Front-end<br>Engineering</h3><p class="text-slate-400 text-[14px] tracking-wider mt-1">UI • ACESSIBILIDADE • PERFORMANCE</p></div><span class="badge-top" style="color:#22d3ee">Core</span></div>
 <div class="skill-row"><div class="skill-top"><span>HTML5 / Semântica</span><span>95%</span></div><div class="bar-track"><div class="bar-fill2" style="width:95%;background:linear-gradient(90deg,#22d3ee,#a855f7)"></div></div></div>
 <div class="skill-row"><div class="skill-top"><span>CSS3 • Tailwind • BEM</span><span>92%</span></div><div class="bar-track"><div class="bar-fill2" style="width:92%;background:linear-gradient(90deg,#22d3ee,#a855f7)"></div></div></div>
 <div class="skill-row"><div class="skill-top"><span>Design System / Tokens</span><span>88%</span></div><div class="bar-track"><div class="bar-fill2" style="width:88%;background:linear-gradient(90deg,#22d3ee,#a855f7)"></div></div></div>
-<div class="skill-row"><div class="skill-top"><span>React / Hooks</span><span style="color:#22d3ee">85%</span></div><div class="bar-track"><div class="bar-fill2" style="width:85%;background:linear-gradient(90deg,#a855f7,#ec4899)"></div></div></div>
+<div class="skill-row"><div class="skill-top"><span>React / Hooks</span><span>85%</span></div><div class="bar-track"><div class="bar-fill2" style="width:85%;background:linear-gradient(90deg,#a855f7,#ec4899)"></div></div></div>
 <div class="skill-row"><div class="skill-top"><span>Next.js (App Router)</span><span>80%</span></div><div class="bar-track"><div class="bar-fill2" style="width:80%;background:linear-gradient(90deg,#a855f7,#ec4899)"></div></div></div>
 <div class="skill-row"><div class="skill-top"><span>Performance / Web Vitals</span><span>83%</span></div><div class="bar-track"><div class="bar-fill2" style="width:83%;background:linear-gradient(90deg,#a855f7,#ec4899)"></div></div></div>
 <p class="tags-bottom">A11y &nbsp; SPA/SSR &nbsp; Dark Mode &nbsp; Animações &nbsp; Responsividade</p>
 </div>
 
-<!-- 2 IA -->
 <div class="detail-card">
-<div class="flex gap-4 items-start">
-<div class="detail-icon" style="background:linear-gradient(135deg,#f43f5e,#f97316)">🤖</div>
-<div class="flex-1"><h3 class="text-[28px] leading-[1.1] font-black" style="background:linear-gradient(90deg,#f43f5e,#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent">IA &<br>Produtividade</h3><p class="text-slate-400 text-[14px] tracking-wider mt-1">AUTOMAÇÃO • PROMPT • DOCS</p></div>
-<span class="badge-top" style="color:#fb7185">Alavanca</span>
-</div>
+<div class="flex gap-4 items-start"><div class="detail-icon" style="background:linear-gradient(135deg,#f43f5e,#f97316)">🤖</div><div class="flex-1"><h3 class="text-[28px] leading-[1.1] font-black" style="background:linear-gradient(90deg,#f43f5e,#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent">IA &<br>Produtividade</h3><p class="text-slate-400 text-[14px] tracking-wider mt-1">AUTOMAÇÃO • PROMPT • DOCS</p></div><span class="badge-top" style="color:#fb7185">Alavanca</span></div>
 <div class="check-item"><span style="color:#f43f5e">✔</span><span>Uso estratégico de LLMs (Copilot / GPT) para acelerar ciclo e revisão.</span></div>
 <div class="check-item"><span style="color:#f97316">✔</span><span>Engenharia de prompt focada em consistência e redução de retrabalho.</span></div>
 <div class="check-item"><span style="color:#22d3ee">✔</span><span>Automação de documentação e geração de boilerplates inteligentes.</span></div>
 <p class="tags-bottom">LLMs &nbsp; Automação &nbsp; Prompt Eng &nbsp; Docs</p>
 </div>
 
-<!-- 3 BACK-END -->
 <div class="detail-card purple">
-<div class="flex gap-4 items-start">
-<div class="detail-icon" style="background:linear-gradient(135deg,#a855f7,#ec4899)">🗄️</div>
-<div class="flex-1"><h3 class="text-[28px] leading-[1.1] font-black" style="background:linear-gradient(90deg,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Back-end &<br>Dados</h3><p class="text-slate-400 text-[14px] tracking-wider mt-1">APIS • BANCOS • AUTH</p></div>
-<span class="badge-top" style="color:#c084fc">Prático</span>
-</div>
+<div class="flex gap-4 items-start"><div class="detail-icon" style="background:linear-gradient(135deg,#a855f7,#ec4899)">🗄️</div><div class="flex-1"><h3 class="text-[28px] leading-[1.1] font-black" style="background:linear-gradient(90deg,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Back-end &<br>Dados</h3><p class="text-slate-400 text-[14px] tracking-wider mt-1">APIS • BANCOS • AUTH</p></div><span class="badge-top" style="color:#c084fc">Prático</span></div>
 <div class="skill-row"><div class="skill-top"><span>Node.js / Express</span><span style="color:#c084fc">78%</span></div><div class="bar-track"><div class="bar-fill2" style="width:78%;background:linear-gradient(90deg,#a855f7,#ec4899)"></div></div></div>
 <div class="skill-row"><div class="skill-top"><span>REST APIs / Auth JWT</span><span style="color:#c084fc">74%</span></div><div class="bar-track"><div class="bar-fill2" style="width:74%;background:linear-gradient(90deg,#a855f7,#ec4899)"></div></div></div>
 <div class="skill-row"><div class="skill-top"><span>Modelagem / Migrations</span><span style="color:#c084fc">70%</span></div><div class="bar-track"><div class="bar-fill2" style="width:70%;background:linear-gradient(90deg,#a855f7,#ec4899)"></div></div></div>
@@ -196,13 +181,8 @@ body{background:#070b16;color:white;font-family:sans-serif;overflow-x:hidden}
 <p class="tags-bottom">REST &nbsp; Auth &nbsp; SQL &nbsp; NoSQL &nbsp; Migrations</p>
 </div>
 
-<!-- 4 DEVOPS -->
 <div class="detail-card purple">
-<div class="flex gap-4 items-start">
-<div class="detail-icon" style="background:linear-gradient(135deg,#f97316,#22d3ee)">⚙️</div>
-<div class="flex-1"><h3 class="text-[28px] leading-[1.1] font-black" style="background:linear-gradient(90deg,#f97316,#22d3ee);-webkit-background-clip:text;-webkit-text-fill-color:transparent">DevOps &<br>Ferramentas</h3><p class="text-slate-400 text-[14px] tracking-wider mt-1">FLUXOS • BUILD • DEPLOY</p></div>
-<span class="badge-top" style="color:#fb923c">Evolução</span>
-</div>
+<div class="flex gap-4 items-start"><div class="detail-icon" style="background:linear-gradient(135deg,#f97316,#22d3ee)">⚙️</div><div class="flex-1"><h3 class="text-[28px] leading-[1.1] font-black" style="background:linear-gradient(90deg,#f97316,#22d3ee);-webkit-background-clip:text;-webkit-text-fill-color:transparent">DevOps &<br>Ferramentas</h3><p class="text-slate-400 text-[14px] tracking-wider mt-1">FLUXOS • BUILD • DEPLOY</p></div><span class="badge-top" style="color:#fb923c">Evolução</span></div>
 <div class="skill-row"><div class="skill-top"><span>Git / Flow</span><span style="color:#fb923c">82%</span></div><div class="bar-track"><div class="bar-fill2" style="width:82%;background:linear-gradient(90deg,#f97316,#22d3ee)"></div></div></div>
 <div class="skill-row"><div class="skill-top"><span>Automação CI</span><span style="color:#fb923c">60%</span></div><div class="bar-track"><div class="bar-fill2" style="width:60%;background:linear-gradient(90deg,#f97316,#22d3ee)"></div></div></div>
 <div class="skill-row"><div class="skill-top"><span>Release Preview</span><span style="color:#fb923c">55%</span></div><div class="bar-track"><div class="bar-fill2" style="width:55%;background:linear-gradient(90deg,#f97316,#22d3ee)"></div></div></div>
@@ -212,13 +192,8 @@ body{background:#070b16;color:white;font-family:sans-serif;overflow-x:hidden}
 <p class="tags-bottom">Git &nbsp; CI/CD &nbsp; Docker* &nbsp; Monitoramento</p>
 </div>
 
-<!-- 5 QUALIDADE -->
 <div class="detail-card purple2">
-<div class="flex gap-4 items-start">
-<div class="detail-icon" style="background:linear-gradient(135deg,#22c55e,#10b981)">✓</div>
-<div class="flex-1"><h3 class="text-[28px] leading-[1.1] font-black" style="color:#22c55e">Qualidade</h3><p class="text-slate-400 text-[14px] tracking-wider mt-1">MANUTENIBILIDADE • CONSISTÊNCIA</p></div>
-<span class="badge-top" style="color:#4ade80">Refino</span>
-</div>
+<div class="flex gap-4 items-start"><div class="detail-icon" style="background:linear-gradient(135deg,#22c55e,#10b981)">✓</div><div class="flex-1"><h3 class="text-[28px] leading-[1.1] font-black" style="color:#22c55e">Qualidade</h3><p class="text-slate-400 text-[14px] tracking-wider mt-1">MANUTENIBILIDADE • CONSISTÊNCIA</p></div><span class="badge-top" style="color:#4ade80">Refino</span></div>
 <div class="skill-row"><div class="skill-top"><span>Clean Code</span><span style="color:#4ade80">84%</span></div><div class="bar-track"><div class="bar-fill2" style="width:84%;background:#22c55e"></div></div></div>
 <div class="skill-row"><div class="skill-top"><span>Design System Thinking</span><span style="color:#4ade80">78%</span></div><div class="bar-track"><div class="bar-fill2" style="width:78%;background:#22c55e"></div></div></div>
 <div class="skill-row"><div class="skill-top"><span>Refatoração Contínua</span><span style="color:#4ade80">75%</span></div><div class="bar-track"><div class="bar-fill2" style="width:75%;background:#22c55e"></div></div></div>
@@ -228,13 +203,8 @@ body{background:#070b16;color:white;font-family:sans-serif;overflow-x:hidden}
 <p class="tags-bottom">Clean Code &nbsp; Refatoração &nbsp; Testes<br>Design Tokens &nbsp; Docs</p>
 </div>
 
-<!-- 6 CIBERSEGURANÇA -->
 <div class="detail-card purple2">
-<div class="flex gap-4 items-start">
-<div class="detail-icon" style="background:linear-gradient(135deg,#ef4444,#b91c1c)">🛡️</div>
-<div class="flex-1"><h3 class="text-[28px] leading-[1.1] font-black" style="color:#ef4444">Cibersegurança<br>(Formação)</h3><p class="text-slate-400 text-[14px] tracking-wider mt-1">FUNDAMENTOS • ÉTICA</p></div>
-<span class="badge-top" style="color:#f87171">Estudo</span>
-</div>
+<div class="flex gap-4 items-start"><div class="detail-icon" style="background:linear-gradient(135deg,#ef4444,#b91c1c)">🛡️</div><div class="flex-1"><h3 class="text-[28px] leading-[1.1] font-black" style="color:#ef4444">Cibersegurança<br>(Formação)</h3><p class="text-slate-400 text-[14px] tracking-wider mt-1">FUNDAMENTOS • ÉTICA</p></div><span class="badge-top" style="color:#f87171">Estudo</span></div>
 <div class="skill-row"><div class="skill-top"><span>OWASP Basics</span><span style="color:#f87171">48%</span></div><div class="bar-track"><div class="bar-fill2" style="width:48%;background:#ef4444"></div></div></div>
 <div class="skill-row"><div class="skill-top"><span>Threat Modeling*</span><span style="color:#f87171">30%</span></div><div class="bar-track"><div class="bar-fill2" style="width:30%;background:#ef4444"></div></div></div>
 <div class="skill-row"><div class="skill-top"><span>OSINT / Recon</span><span style="color:#f87171">40%</span></div><div class="bar-track"><div class="bar-fill2" style="width:40%;background:#ef4444"></div></div></div>
@@ -244,7 +214,66 @@ body{background:#070b16;color:white;font-family:sans-serif;overflow-x:hidden}
 <p class="tags-bottom">OWASP &nbsp; Recon &nbsp; Hardening &nbsp; Wi-Fi<br>Threat Modeling*</p>
 </div>
 
-<p class="text-center text-slate-500 text-[13px] leading-relaxed mt-6 pb-6">* NÍVEIS RELATIVOS (BASEADOS EM PRÁTICA ATUAL / EVOLUÇÃO CONTÍNUA)</p>
+<p class="text-center text-slate-500 text-[13px] leading-relaxed mt-2">* NÍVEIS RELATIVOS (BASEADOS EM PRÁTICA ATUAL / EVOLUÇÃO CONTÍNUA)</p>
+
+<!-- NOVOS 4 CARTÕES CRIATIVOS -->
+<div class="text-center mt-10 mb-6">
+<h2 class="text-[34px] font-black creative-title">Criativo & Multimídia</h2>
+<p class="text-slate-300 text-[16px] leading-relaxed mt-3 px-2">Vídeo, Design, IA e Foto — o lado criativo que completa o código.</p>
+</div>
+
+<!-- VÍDEO MAKER -->
+<div class="detail-card" style="background:linear-gradient(180deg,#3a1a1a,#1f1212);border-color:rgba(251,146,60,.25)">
+<div class="flex gap-4 items-start"><div class="detail-icon" style="background:linear-gradient(135deg,#ef4444,#f97316)">🎬</div><div class="flex-1"><h3 class="text-[28px] leading-[1.1] font-black" style="background:linear-gradient(90deg,#f97316,#ef4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Vídeo Maker<br>Profissional</h3><p class="text-slate-400 text-[14px] tracking-wider mt-1">EDIÇÃO • MOTION • STORYTELLING</p></div><span class="badge-top" style="color:#fb923c">Criativo</span></div>
+<div class="skill-row"><div class="skill-top"><span>Edição Profissional</span><span style="color:#fb923c">90%</span></div><div class="bar-track"><div class="bar-fill2" style="width:90%;background:linear-gradient(90deg,#f97316,#ef4444)"></div></div></div>
+<div class="skill-row"><div class="skill-top"><span>Motion Design / Reels</span><span style="color:#fb923c">88%</span></div><div class="bar-track"><div class="bar-fill2" style="width:88%;background:linear-gradient(90deg,#f97316,#ef4444)"></div></div></div>
+<div class="skill-row"><div class="skill-top"><span>Color Grading / Som</span><span style="color:#fb923c">82%</span></div><div class="bar-track"><div class="bar-fill2" style="width:82%;background:linear-gradient(90deg,#f97316,#ef4444)"></div></div></div>
+<div class="skill-row"><div class="skill-top"><span>CapCut / Premiere</span><span style="color:#fb923c">92%</span></div><div class="bar-track"><div class="bar-fill2" style="width:92%;background:linear-gradient(90deg,#f97316,#ef4444)"></div></div></div>
+<div class="skill-row"><div class="skill-top"><span>Thumbnails / Capas</span><span style="color:#fb923c">86%</span></div><div class="bar-track"><div class="bar-fill2" style="width:86%;background:linear-gradient(90deg,#f97316,#ef4444)"></div></div></div>
+<div class="check-item"><span style="color:#fb923c">✔</span><span>Vídeos para TikTok, Reels, YouTube e anúncios com ritmo, cortes limpos e legendas dinâmicas.</span></div>
+<div class="check-item"><span style="color:#fb923c">✔</span><span>Edição de podcasts, vlogs e conteúdo comercial com foco em retenção.</span></div>
+<p class="tags-bottom">CapCut &nbsp; Premiere &nbsp; Motion &nbsp; Reels &nbsp; YouTube</p>
+</div>
+
+<!-- DESIGN GRÁFICO -->
+<div class="detail-card" style="background:linear-gradient(180deg,#2a1a4a,#1a1230);border-color:rgba(168,85,247,.3)">
+<div class="flex gap-4 items-start"><div class="detail-icon" style="background:linear-gradient(135deg,#a855f7,#ec4899)">🎨</div><div class="flex-1"><h3 class="text-[28px] leading-[1.1] font-black" style="background:linear-gradient(90deg,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Design<br>Gráfico</h3><p class="text-slate-400 text-[14px] tracking-wider mt-1">BRANDING • SOCIAL • PRINT</p></div><span class="badge-top" style="color:#e879f9">Design</span></div>
+<div class="skill-row"><div class="skill-top"><span>Adobe Photoshop</span><span style="color:#e879f9">92%</span></div><div class="bar-track"><div class="bar-fill2" style="width:92%;background:linear-gradient(90deg,#a855f7,#ec4899)"></div></div></div>
+<div class="skill-row"><div class="skill-top"><span>Canva</span><span style="color:#e879f9">95%</span></div><div class="bar-track"><div class="bar-fill2" style="width:95%;background:linear-gradient(90deg,#a855f7,#ec4899)"></div></div></div>
+<div class="skill-row"><div class="skill-top"><span>Illustrator</span><span style="color:#e879f9">80%</span></div><div class="bar-track"><div class="bar-fill2" style="width:80%;background:linear-gradient(90deg,#a855f7,#ec4899)"></div></div></div>
+<div class="skill-row"><div class="skill-top"><span>PicsArt</span><span style="color:#e879f9">88%</span></div><div class="bar-track"><div class="bar-fill2" style="width:88%;background:linear-gradient(90deg,#a855f7,#ec4899)"></div></div></div>
+<div class="skill-row"><div class="skill-top"><span>Logotipos / Flyers / Cartazes</span><span style="color:#e879f9">90%</span></div><div class="bar-track"><div class="bar-fill2" style="width:90%;background:linear-gradient(90deg,#a855f7,#ec4899)"></div></div></div>
+<div class="check-item"><span style="color:#e879f9">✔</span><span>Criação de identidades visuais, posts para redes sociais, capas e material promocional.</span></div>
+<div class="check-item"><span style="color:#e879f9">✔</span><span>Domínio de tipografia, cores, composição e hierarquia visual.</span></div>
+<p class="tags-bottom">Photoshop &nbsp; Canva &nbsp; Illustrator &nbsp; PicsArt &nbsp; Branding</p>
+</div>
+
+<!-- IA DOMÍNIOS -->
+<div class="detail-card" style="background:linear-gradient(180deg,#0a2a3a,#0a1a2a);border-color:rgba(34,211,238,.3)">
+<div class="flex gap-4 items-start"><div class="detail-icon" style="background:linear-gradient(135deg,#22d3ee,#3b82f6)">✨</div><div class="flex-1"><h3 class="text-[28px] leading-[1.1] font-black" style="background:linear-gradient(90deg,#22d3ee,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent">IA &<br>Domínios</h3><p class="text-slate-400 text-[14px] tracking-wider mt-1">GERAÇÃO • PROMPT • AUTOMAÇÃO</p></div><span class="badge-top" style="color:#22d3ee">Expert</span></div>
+<div class="skill-row"><div class="skill-top"><span>ChatGPT / GPTs</span><span>94%</span></div><div class="bar-track"><div class="bar-fill2" style="width:94%;background:linear-gradient(90deg,#22d3ee,#3b82f6)"></div></div></div>
+<div class="skill-row"><div class="skill-top"><span>Google Gemini</span><span>92%</span></div><div class="bar-track"><div class="bar-fill2" style="width:92%;background:linear-gradient(90deg,#22d3ee,#3b82f6)"></div></div></div>
+<div class="skill-row"><div class="skill-top"><span>Meta AI / Llama</span><span>88%</span></div><div class="bar-track"><div class="bar-fill2" style="width:88%;background:linear-gradient(90deg,#22d3ee,#3b82f6)"></div></div></div>
+<div class="skill-row"><div class="skill-top"><span>Copilot / Muse</span><span>85%</span></div><div class="bar-track"><div class="bar-fill2" style="width:85%;background:linear-gradient(90deg,#22d3ee,#3b82f6)"></div></div></div>
+<div class="skill-row"><div class="skill-top"><span>Geração de Imagens / Vídeo IA</span><span>90%</span></div><div class="bar-track"><div class="bar-fill2" style="width:90%;background:linear-gradient(90deg,#22d3ee,#3b82f6)"></div></div></div>
+<div class="check-item"><span style="color:#22d3ee">✔</span><span>Uso avançado de IA para textos, código, ideias, roteiros, imagens e automação de tarefas.</span></div>
+<div class="check-item"><span style="color:#22d3ee">✔</span><span>Criação de prompts profissionais para resultados consistentes e de alta qualidade.</span></div>
+<p class="tags-bottom">Gemini &nbsp; ChatGPT &nbsp; Meta AI &nbsp; Copilot &nbsp; I.O &nbsp; Midjourney</p>
+</div>
+
+<!-- FOTO -->
+<div class="detail-card" style="background:linear-gradient(180deg,#1a2a1a,#122012);border-color:rgba(34,197,94,.3)">
+<div class="flex gap-4 items-start"><div class="detail-icon" style="background:linear-gradient(135deg,#22c55e,#eab308)">📸</div><div class="flex-1"><h3 class="text-[28px] leading-[1.1] font-black" style="background:linear-gradient(90deg,#22c55e,#eab308);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Foto &<br>Edição</h3><p class="text-slate-400 text-[14px] tracking-wider mt-1">RETOQUE • MANIPULAÇÃO • CRIAÇÃO</p></div><span class="badge-top" style="color:#4ade80">Foto</span></div>
+<div class="skill-row"><div class="skill-top"><span>Edição / Retoque</span><span style="color:#4ade80">93%</span></div><div class="bar-track"><div class="bar-fill2" style="width:93%;background:linear-gradient(90deg,#22c55e,#eab308)"></div></div></div>
+<div class="skill-row"><div class="skill-top"><span>Limpeza / Remoção</span><span style="color:#4ade80">95%</span></div><div class="bar-track"><div class="bar-fill2" style="width:95%;background:linear-gradient(90deg,#22c55e,#eab308)"></div></div></div>
+<div class="skill-row"><div class="skill-top"><span>Manipulação Criativa</span><span style="color:#4ade80">89%</span></div><div class="bar-track"><div class="bar-fill2" style="width:89%;background:linear-gradient(90deg,#22c55e,#eab308)"></div></div></div>
+<div class="skill-row"><div class="skill-top"><span>Criações / Composição</span><span style="color:#4ade80">91%</span></div><div class="bar-track"><div class="bar-fill2" style="width:91%;background:linear-gradient(90deg,#22c55e,#eab308)"></div></div></div>
+<div class="skill-row"><div class="skill-top"><span>Restauração / Melhoria</span><span style="color:#4ade80">87%</span></div><div class="bar-track"><div class="bar-fill2" style="width:87%;background:linear-gradient(90deg,#22c55e,#eab308)"></div></div></div>
+<div class="check-item"><span style="color:#4ade80">✔</span><span>Limpeza de fotos, remoção de fundo, correção de luz e cor, e restauração de fotos antigas.</span></div>
+<div class="check-item"><span style="color:#4ade80">✔</span><span>Manipulação artística, montagens realistas e criações profissionais para redes e marcas.</span></div>
+<p class="tags-bottom">Retoque &nbsp; Limpeza &nbsp; Manipulação &nbsp; Criações &nbsp; Restauração</p>
+</div>
+
 </section>
 
 <script>

@@ -35,7 +35,7 @@ body{background:#070b16;color:white;font-family:sans-serif;overflow-x:hidden}
 .btn-todos{display:inline-block;margin-top:18px;padding:14px 28px;border-radius:9999px;font-weight:bold;color:white;background:linear-gradient(90deg,#22d3ee,#a855f7)}
 .destaque{background:linear-gradient(180deg,#16233f,#0f1a33);border:1px solid rgba(255,255,255,.08);border-radius:24px;padding:28px 20px;text-align:center}
 .icon-box{width:64px;height:64px;margin:0 auto;background:#1a2a4a;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 8px 20px rgba(0,0,0,.3)}
-.skills-bg{background:linear-gradient(180deg,#123a46,#0e2f3a 15%,#1a1a3a 35%,#2a1a4a 60%,#1a1230);padding:40px 16px 20px 16px}
+.skills-bg{background:linear-gradient(180deg,#123a46,#0e2f3a 10%,#1a1a3a 30%,#0a0a1a 70%);padding:40px 16px 20px 16px}
 .skills-title{background:linear-gradient(90deg,#3b82f6,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .skill-card{background:linear-gradient(180deg,#1a3a44,#13303a);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:20px}
 .pill{display:inline-block;padding:5px 12px;border-radius:9999px;font-size:13px;font-weight:bold;margin-right:6px}
@@ -55,8 +55,26 @@ body{background:#070b16;color:white;font-family:sans-serif;overflow-x:hidden}
 .badge-top{font-size:13px;font-weight:bold;padding:6px 14px;border-radius:9999px;border:1px solid rgba(255,255,255,.2);white-space:nowrap}
 .tags-bottom{margin-top:22px;font-size:17px;line-height:1.8;color:#e2e8f0}
 .check-item{display:flex;gap:10px;margin-top:18px;font-size:16px;line-height:1.5}
-/* NOVOS - CRIATIVO */
 .creative-title{background:linear-gradient(90deg,#f59e0b,#ec4899,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+/* PORTFOLIO */
+.portfolio-bg{background:#0a0f1e;padding:30px 16px 50px 16px}
+.port-title{background:linear-gradient(90deg,#22d3ee,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.filter-box{background:#111a2e;border:1px solid rgba(34,211,238,.2);border-radius:20px;padding:18px 12px;display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.filter-btn{padding:10px 18px;border-radius:9999px;border:1px solid rgba(255,255,255,.15);background:#1a2338;color:#cbd5e1;font-weight:bold;font-size:14px;display:flex;gap:8px;align-items:center;cursor:pointer}
+.filter-btn.active{background:#22d3ee;color:#000;border-color:#22d3ee}
+.port-card{background:#111a2e;border:1px solid rgba(255,255,255,.1);border-radius:22px;overflow:hidden;flex:0 0 88%;max-width:360px;scroll-snap-align:center}
+.port-img{height:220px;background-size:cover;background-position:center;position:relative;background-color:#1e293b;display:flex;align-items:center;justify-content:center}
+.port-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.7))}
+.dest-tag{position:absolute;top:14px;left:14px;z-index:2;background:rgba(34,211,238,.15);border:1px solid rgba(34,211,238,.5);color:#22d3ee;padding:6px 14px;border-radius:9999px;font-size:12px;font-weight:bold;backdrop-filter:blur(5px)}
+.tech{font-size:13px;background:#1e293b;padding:6px 12px;border-radius:9999px;color:#cbd5e1}
+.btn-demo{background:rgba(34,211,238,.15);color:#22d3ee;padding:10px 18px;border-radius:12px;font-weight:bold;font-size:14px}
+.btn-code{background:#1e293b;color:white;padding:10px 18px;border-radius:12px;font-weight:bold;font-size:14px}
+.seta-port{width:48px;height:48px;border-radius:9999px;background:#1e293b;border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer;color:white}
+.seta-port:active{background:#22d3ee;color:#000}
+.dot2{width:12px;height:12px;border-radius:9999px;background:#334155;display:inline-block}
+.dot2.active{background:#22d3ee;box-shadow:0 0 0 4px rgba(34,211,238,.2)}
+.btn-prev{background:#1e293b;color:#64748b;padding:14px 24px;border-radius:9999px;font-weight:bold}
+.btn-next{background:linear-gradient(90deg,#22d3ee,#a855f7);color:white;padding:14px 28px;border-radius:9999px;font-weight:bold}
 </style>
 </head>
 <body>
@@ -87,9 +105,7 @@ body{background:#070b16;color:white;font-family:sans-serif;overflow-x:hidden}
 <span class="badge" style="top:215px;right:0;color:#fbbf24">Web Designer</span>
 <span class="badge" style="bottom:35px;left:15%;color:#67e8f9">Marketing</span>
 <span class="badge" style="bottom:35px;right:10%;color:white">Website+</span>
-<div style="position:absolute;top:35px;left:50%;transform:translateX(-50%)">
-<div class="ring-circle"><div class="inner">Frederico</div></div>
-</div>
+<div style="position:absolute;top:35px;left:50%;transform:translateX(-50%)"><div class="ring-circle"><div class="inner">Frederico</div></div></div>
 </div>
 <h2 class="text-[34px] leading-[1.1] font-black grad-text mt-2">Transformo Ideias em Soluções Digitais Modernas, Seguras e Inteligentes</h2>
 <p class="mt-4 text-sm text-slate-300">Foco em <b class="text-teal-400">desenvolvimento fullstack</b>, design</p>
@@ -99,8 +115,8 @@ body{background:#070b16;color:white;font-family:sans-serif;overflow-x:hidden}
 </div>
 <h2 class="text-[32px] font-black grad-text mt-10">Sobre Mim</h2>
 <div class="px-4 text-center mt-4">
-<p class="text-[17px] leading-[1.7] text-slate-300">Sou <b class="text-white">Frederico Ricardo Nguingui Konde Kola</b>,<br>desenvolvedor <b class="text-cyan-400">Fullstack</b> focado em criar<br>experiências rápidas, acessíveis e seguras.<br>Uno <b class="text-white">UI/Front-end</b>, arquitetura backend<br>enxuta e automação com <b class="text-white">IA</b> para entregar<br>valor consistente.</p>
-<p class="text-[16px] leading-[1.7] text-slate-400 mt-6">Prioridades: performance (Web Vitals),<br>acessibilidade real, escalabilidade progressiva<br>(PWA), segurança desde o início e código<br>sustentável.</p>
+<p class="text-[17px] leading-[1.7] text-slate-300">Sou <b class="text-white">Frederico Ricardo Nguingui Konde Kola</b>,<br>desenvolvedor <b class="text-cyan-400">Fullstack</b> focado em criar<br>experiências rápidas, acessíveis e seguras.</p>
+<p class="text-[16px] leading-[1.7] text-slate-400 mt-6">Prioridades: performance (Web Vitals), acessibilidade real, escalabilidade progressiva (PWA), segurança desde o início e código sustentável.</p>
 <div class="flex flex-wrap justify-center gap-2 mt-6">
 <span class="bg-slate-800 px-4 py-2 rounded-full text-sm font-bold">React/Next</span>
 <span class="bg-slate-800 px-4 py-2 rounded-full text-sm font-bold">TypeScript</span>
@@ -114,156 +130,92 @@ body{background:#070b16;color:white;font-family:sans-serif;overflow-x:hidden}
 
 <section id="projetos" class="pb-6 pt-6 text-center">
 <h2 class="text-[32px] font-black grad-text px-4">Projetos em Destaque</h2>
-<p class="text-slate-400 text-[14px] leading-relaxed mt-3 px-6">"Apresentação cuidadosamente selecionada dos meus projetos mais impactantes, destacando soluções inovadoras"</p>
+<p class="text-slate-400 text-[14px] leading-relaxed mt-3 px-6">"Apresentação cuidadosamente selecionada dos meus projetos mais impactantes"</p>
 <div class="carrossel-wrap mt-6">
 <button class="seta seta-left" id="prevBtn">‹</button>
 <button class="seta seta-right" id="nextBtn">›</button>
 <div class="carrossel" id="carrossel">
-<div class="card"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=800&q=80')"></div><div class="p-4"><h3 class="font-black text-[20px]">PWA Task Manager</h3><p class="text-slate-400 text-[14px] leading-relaxed mt-1">Offline-first, cache inteligente, sincronização automática e performance PWA otimizada.</p><div class="flex gap-2 mt-4"><a href="#" class="btn btn-on">Demo</a><a href="#" class="btn btn-off">Código</a></div></div></div>
-<div class="card"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80')"><span class="tag">Data • UI</span></div><div class="p-4"><h3 class="font-black text-[20px]">Dashboard Analytics</h3><p class="text-slate-400 text-[14px] leading-relaxed mt-1">Interface modular com gráficos, métricas em tempo real e design escalável.</p><div class="flex gap-2 mt-4"><span class="btn btn-off">Em Breve</span><span class="btn btn-off">Privado</span></div></div></div>
-<div class="card"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80')"><span class="tag">Design System</span></div><div class="p-4"><h3 class="font-black text-[20px]">UI Component Library</h3><p class="text-slate-400 text-[14px] leading-relaxed mt-1">Coleção reutilizável com tokens, dark mode e acessibilidade pronta.</p><div class="flex gap-2 mt-4"><span class="btn btn-off">Em Breve</span><span class="btn btn-off">Privado</span></div></div></div>
-<div class="card"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80')"></div><div class="p-4"><h3 class="font-black text-[20px]">Landing SaaS</h3><p class="text-slate-400 text-[14px] leading-relaxed mt-1">Landing page otimizada com métricas, CTA dinâmico e SEO técnico.</p><div class="flex gap-2 mt-4"><a href="#" class="btn btn-orange">Preview</a><span class="btn btn-off">Privado</span></div></div></div>
-<div class="card"><div class="p-6 text-center" style="background:linear-gradient(180deg,#1a2438,#0f172a);height:170px;display:flex;flex-direction:column;justify-content:center"><div class="w-[56px] h-[56px] mx-auto rounded-full flex items-center justify-center text-2xl" style="background:#7c3aed">🔒</div><h3 class="font-bold mt-3">Repositório Privado</h3><p class="text-slate-400 text-[13px]">Acesso restrito • NDA</p></div><div class="p-4"><p class="text-slate-400 text-[14px] leading-relaxed">Projeto corporativo com integrações internas e camadas de segurança avançadas.</p><div class="flex gap-2 mt-4"><span class="btn btn-off">Privado</span><span class="btn btn-off">NDA</span></div></div></div>
-<div class="card"><div class="p-6 text-center" style="background:linear-gradient(180deg,#1a2438,#0f172a);height:170px;display:flex;flex-direction:column;justify-content:center"><div class="w-[56px] h-[56px] mx-auto rounded-full flex items-center justify-center text-2xl" style="background:#0891b2">🛡️</div><h3 class="font-bold mt-3">Internal Security Tool</h3><p class="text-slate-400 text-[13px]">Monitoramento & auditoria</p></div><div class="p-4"><p class="text-slate-400 text-[14px] leading-relaxed">Ferramenta interna para análise de eventos e respostas rápidas a incidentes.</p><div class="flex gap-2 mt-4"><span class="btn btn-off">Privado</span><span class="btn btn-off">Restrito</span></div></div></div>
-<div class="card"><div class="p-6 text-center" style="background:linear-gradient(180deg,#1a2438,#0f172a);height:170px;display:flex;flex-direction:column;justify-content:center"><div class="w-[56px] h-[56px] mx-auto rounded-full flex items-center justify-center text-2xl font-black" style="background:#b45309">+</div><h3 class="font-bold mt-3">Próximo Projeto</h3><p class="text-slate-400 text-[13px]">Em desenvolvimento...</p></div><div class="p-4"><div class="h-3 bg-slate-700 rounded-full"></div><div class="h-3 bg-slate-700 rounded-full mt-3 w-3/4"></div><div class="flex gap-2 mt-4"><span class="btn btn-off">...</span><span class="btn btn-off">...</span></div></div></div>
+<div class="card"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=800&q=80')"></div><div class="p-4"><h3 class="font-black text-[20px]">PWA Task Manager</h3><p class="text-slate-400 text-[14px] mt-1">Offline-first, cache inteligente, sincronização automática.</p><div class="flex gap-2 mt-4"><a href="#" class="btn btn-on">Demo</a><a href="#" class="btn btn-off">Código</a></div></div></div>
+<div class="card"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80')"><span class="tag">Data • UI</span></div><div class="p-4"><h3 class="font-black text-[20px]">Dashboard Analytics</h3><p class="text-slate-400 text-[14px] mt-1">Interface modular com gráficos e métricas em tempo real.</p><div class="flex gap-2 mt-4"><span class="btn btn-off">Em Breve</span><span class="btn btn-off">Privado</span></div></div></div>
+<div class="card"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80')"><span class="tag">Design System</span></div><div class="p-4"><h3 class="font-black text-[20px]">UI Component Library</h3><p class="text-slate-400 text-[14px] mt-1">Coleção reutilizável com tokens, dark mode e acessibilidade.</p><div class="flex gap-2 mt-4"><span class="btn btn-off">Em Breve</span><span class="btn btn-off">Privado</span></div></div></div>
+<div class="card"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80')"></div><div class="p-4"><h3 class="font-black text-[20px]">Landing SaaS</h3><p class="text-slate-400 text-[14px] mt-1">Landing page otimizada com métricas e SEO técnico.</p><div class="flex gap-2 mt-4"><a href="#" class="btn btn-orange">Preview</a><span class="btn btn-off">Privado</span></div></div></div>
 </div>
 </div>
-<div class="flex justify-center gap-3 mt-3" id="dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+<div class="flex justify-center gap-3 mt-3" id="dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
 <a href="#" class="btn-todos">Ver Todos os Projetos →</a>
 </section>
 
 <section class="px-4 pb-10 pt-4 flex flex-col gap-5">
-<div class="destaque"><div class="icon-box">🚀</div><div class="mt-10"><h3 class="font-black text-[22px]">Trajetória</h3><p class="text-slate-400 text-[15px] leading-relaxed mt-2">2 anos de evolução contínua com foco em código limpo, boas práticas e entrega consistente.</p></div></div>
-<div class="destaque"><div class="icon-box">⚡</div><div class="mt-10"><h3 class="font-black text-[22px]">PWA & Performance</h3><p class="text-slate-400 text-[15px] leading-relaxed mt-2">Apps rápidos, offline-first, métricas Web Vitals otimizadas e caching inteligente.</p></div></div>
-<div class="destaque"><div class="icon-box">🤖</div><div class="mt-10"><h3 class="font-black text-[22px]">IA & Automação</h3><p class="text-slate-400 text-[15px] leading-relaxed mt-2">Uso estratégico de LLMs e automação para acelerar desenvolvimento e documentação.</p></div></div>
-<div class="destaque"><div class="icon-box">🛡️</div><div class="mt-10"><h3 class="font-black text-[22px]">Segurança</h3><p class="text-slate-400 text-[15px] leading-relaxed mt-2">Princípios OWASP, validações robustas, controle de acesso e redução de superfícies.</p></div></div>
+<div class="destaque"><div class="icon-box">🚀</div><div class="mt-10"><h3 class="font-black text-[22px]">Trajetória</h3><p class="text-slate-400 text-[15px] mt-2">2 anos de evolução contínua com foco em código limpo e entrega consistente.</p></div></div>
+<div class="destaque"><div class="icon-box">⚡</div><div class="mt-10"><h3 class="font-black text-[22px]">PWA & Performance</h3><p class="text-slate-400 text-[15px] mt-2">Apps rápidos, offline-first, Web Vitals otimizadas.</p></div></div>
+<div class="destaque"><div class="icon-box">🤖</div><div class="mt-10"><h3 class="font-black text-[22px]">IA & Automação</h3><p class="text-slate-400 text-[15px] mt-2">Uso estratégico de LLMs e automação.</p></div></div>
+<div class="destaque"><div class="icon-box">🛡️</div><div class="mt-10"><h3 class="font-black text-[22px]">Segurança</h3><p class="text-slate-400 text-[15px] mt-2">Princípios OWASP, validações robustas e controle de acesso.</p></div></div>
 </section>
 
 <section class="skills-bg">
-<div class="text-center">
-<h2 class="text-[38px] font-black skills-title">Skills & Stack</h2>
-<p class="text-slate-300 text-[18px] leading-relaxed mt-4 px-1">Base técnica sólida, foco em performance, acessibilidade, automação com IA e segurança aplicadas na prática.</p>
-</div>
+<div class="text-center"><h2 class="text-[38px] font-black skills-title">Skills & Stack</h2><p class="text-slate-300 text-[18px] mt-4 px-1">Base técnica sólida, foco em performance, acessibilidade, automação com IA e segurança.</p></div>
 <div class="flex flex-col gap-4 mt-10">
-<div class="skill-card"><p class="text-slate-400 text-[13px] font-bold tracking-widest">EXPERIÊNCIA</p><p class="mt-3"><span class="text-[42px] font-black" style="background:linear-gradient(90deg,#22d3ee,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent">2+</span> <span class="text-slate-400 text-[15px]">anos</span></p></div>
-<div class="skill-card"><p class="text-slate-400 text-[13px] font-bold tracking-widest">PROJETOS</p><p class="mt-3"><span class="text-[42px] font-black" style="background:linear-gradient(90deg,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent">20+</span> <span class="text-slate-400 text-[15px]">entregues</span></p></div>
-<div class="skill-card"><p class="text-slate-400 text-[13px] font-bold tracking-widest">FOCO</p><p class="text-white text-[19px] font-medium mt-4">Performance • PWA • A11y</p></div>
+<div class="skill-card"><p class="text-slate-400 text-[13px] font-bold tracking-widest">EXPERIÊNCIA</p><p class="mt-3"><span class="text-[42px] font-black" style="background:linear-gradient(90deg,#22d3ee,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent">2+</span> <span class="text-slate-400">anos</span></p></div>
+<div class="skill-card"><p class="text-slate-400 text-[13px] font-bold tracking-widest">PROJETOS</p><p class="mt-3"><span class="text-[42px] font-black" style="background:linear-gradient(90deg,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent">20+</span> <span class="text-slate-400">entregues</span></p></div>
+<div class="skill-card"><p class="text-slate-400 text-[13px] font-bold tracking-widest">FOCO</p><p class="text-white text-[19px] mt-4">Performance • PWA • A11y</p></div>
 <div class="skill-card"><p class="text-slate-400 text-[13px] font-bold tracking-widest">STACK ATUAL</p><div class="mt-4"><span class="pill pill-blue">React</span><span class="pill pill-purple">Next.js</span><span class="pill pill-pink">Node</span></div></div>
 </div>
 
-<div class="detail-card mt-8">
-<div class="flex gap-4 items-start"><div class="detail-icon" style="background:linear-gradient(135deg,#38bdf8,#a855f7)">🎨</div><div class="flex-1"><h3 class="text-[28px] leading-[1.1] font-black" style="background:linear-gradient(90deg,#22d3ee,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Front-end<br>Engineering</h3><p class="text-slate-400 text-[14px] tracking-wider mt-1">UI • ACESSIBILIDADE • PERFORMANCE</p></div><span class="badge-top" style="color:#22d3ee">Core</span></div>
+<div class="detail-card mt-8"><div class="flex gap-4 items-start"><div class="detail-icon" style="background:linear-gradient(135deg,#38bdf8,#a855f7)">🎨</div><div class="flex-1"><h3 class="text-[28px] leading-[1.1] font-black" style="background:linear-gradient(90deg,#22d3ee,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Front-end<br>Engineering</h3><p class="text-slate-400 text-[14px] mt-1">UI • ACESSIBILIDADE • PERFORMANCE</p></div><span class="badge-top" style="color:#22d3ee">Core</span></div>
 <div class="skill-row"><div class="skill-top"><span>HTML5 / Semântica</span><span>95%</span></div><div class="bar-track"><div class="bar-fill2" style="width:95%;background:linear-gradient(90deg,#22d3ee,#a855f7)"></div></div></div>
 <div class="skill-row"><div class="skill-top"><span>CSS3 • Tailwind • BEM</span><span>92%</span></div><div class="bar-track"><div class="bar-fill2" style="width:92%;background:linear-gradient(90deg,#22d3ee,#a855f7)"></div></div></div>
-<div class="skill-row"><div class="skill-top"><span>Design System / Tokens</span><span>88%</span></div><div class="bar-track"><div class="bar-fill2" style="width:88%;background:linear-gradient(90deg,#22d3ee,#a855f7)"></div></div></div>
 <div class="skill-row"><div class="skill-top"><span>React / Hooks</span><span>85%</span></div><div class="bar-track"><div class="bar-fill2" style="width:85%;background:linear-gradient(90deg,#a855f7,#ec4899)"></div></div></div>
 <div class="skill-row"><div class="skill-top"><span>Next.js (App Router)</span><span>80%</span></div><div class="bar-track"><div class="bar-fill2" style="width:80%;background:linear-gradient(90deg,#a855f7,#ec4899)"></div></div></div>
-<div class="skill-row"><div class="skill-top"><span>Performance / Web Vitals</span><span>83%</span></div><div class="bar-track"><div class="bar-fill2" style="width:83%;background:linear-gradient(90deg,#a855f7,#ec4899)"></div></div></div>
-<p class="tags-bottom">A11y &nbsp; SPA/SSR &nbsp; Dark Mode &nbsp; Animações &nbsp; Responsividade</p>
-</div>
+<p class="tags-bottom">A11y &nbsp; SPA/SSR &nbsp; Dark Mode &nbsp; Animações</p></div>
 
-<div class="detail-card">
-<div class="flex gap-4 items-start"><div class="detail-icon" style="background:linear-gradient(135deg,#f43f5e,#f97316)">🤖</div><div class="flex-1"><h3 class="text-[28px] leading-[1.1] font-black" style="background:linear-gradient(90deg,#f43f5e,#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent">IA &<br>Produtividade</h3><p class="text-slate-400 text-[14px] tracking-wider mt-1">AUTOMAÇÃO • PROMPT • DOCS</p></div><span class="badge-top" style="color:#fb7185">Alavanca</span></div>
-<div class="check-item"><span style="color:#f43f5e">✔</span><span>Uso estratégico de LLMs (Copilot / GPT) para acelerar ciclo e revisão.</span></div>
-<div class="check-item"><span style="color:#f97316">✔</span><span>Engenharia de prompt focada em consistência e redução de retrabalho.</span></div>
-<div class="check-item"><span style="color:#22d3ee">✔</span><span>Automação de documentação e geração de boilerplates inteligentes.</span></div>
-<p class="tags-bottom">LLMs &nbsp; Automação &nbsp; Prompt Eng &nbsp; Docs</p>
-</div>
+<div class="detail-card"><div class="flex gap-4 items-start"><div class="detail-icon" style="background:linear-gradient(135deg,#f43f5e,#f97316)">🤖</div><div class="flex-1"><h3 class="text-[28px] font-black" style="background:linear-gradient(90deg,#f43f5e,#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent">IA & Produtividade</h3></div><span class="badge-top" style="color:#fb7185">Alavanca</span></div>
+<div class="check-item"><span style="color:#f43f5e">✔</span><span>Uso estratégico de LLMs para acelerar ciclo e revisão.</span></div>
+<div class="check-item"><span style="color:#f97316">✔</span><span>Engenharia de prompt focada em consistência.</span></div>
+<p class="tags-bottom">LLMs &nbsp; Automação &nbsp; Prompt Eng &nbsp; Docs</p></div>
 
-<div class="detail-card purple">
-<div class="flex gap-4 items-start"><div class="detail-icon" style="background:linear-gradient(135deg,#a855f7,#ec4899)">🗄️</div><div class="flex-1"><h3 class="text-[28px] leading-[1.1] font-black" style="background:linear-gradient(90deg,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Back-end &<br>Dados</h3><p class="text-slate-400 text-[14px] tracking-wider mt-1">APIS • BANCOS • AUTH</p></div><span class="badge-top" style="color:#c084fc">Prático</span></div>
+<div class="detail-card purple"><div class="flex gap-4 items-start"><div class="detail-icon" style="background:linear-gradient(135deg,#a855f7,#ec4899)">🗄️</div><div class="flex-1"><h3 class="text-[28px] font-black" style="background:linear-gradient(90deg,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Back-end & Dados</h3></div><span class="badge-top" style="color:#c084fc">Prático</span></div>
 <div class="skill-row"><div class="skill-top"><span>Node.js / Express</span><span style="color:#c084fc">78%</span></div><div class="bar-track"><div class="bar-fill2" style="width:78%;background:linear-gradient(90deg,#a855f7,#ec4899)"></div></div></div>
 <div class="skill-row"><div class="skill-top"><span>REST APIs / Auth JWT</span><span style="color:#c084fc">74%</span></div><div class="bar-track"><div class="bar-fill2" style="width:74%;background:linear-gradient(90deg,#a855f7,#ec4899)"></div></div></div>
-<div class="skill-row"><div class="skill-top"><span>Modelagem / Migrations</span><span style="color:#c084fc">70%</span></div><div class="bar-track"><div class="bar-fill2" style="width:70%;background:linear-gradient(90deg,#a855f7,#ec4899)"></div></div></div>
 <div class="skill-row"><div class="skill-top"><span>SQL (PostgreSQL)</span><span style="color:#c084fc">72%</span></div><div class="bar-track"><div class="bar-fill2" style="width:72%;background:linear-gradient(90deg,#22d3ee,#a855f7)"></div></div></div>
-<div class="skill-row"><div class="skill-top"><span>NoSQL (MongoDB)</span><span style="color:#c084fc">68%</span></div><div class="bar-track"><div class="bar-fill2" style="width:68%;background:linear-gradient(90deg,#22d3ee,#a855f7)"></div></div></div>
-<div class="skill-row"><div class="skill-top"><span>Observabilidade básica</span><span style="color:#c084fc">60%</span></div><div class="bar-track"><div class="bar-fill2" style="width:60%;background:linear-gradient(90deg,#22d3ee,#a855f7)"></div></div></div>
-<p class="tags-bottom">REST &nbsp; Auth &nbsp; SQL &nbsp; NoSQL &nbsp; Migrations</p>
-</div>
+<p class="tags-bottom">REST &nbsp; Auth &nbsp; SQL &nbsp; NoSQL</p></div>
 
-<div class="detail-card purple">
-<div class="flex gap-4 items-start"><div class="detail-icon" style="background:linear-gradient(135deg,#f97316,#22d3ee)">⚙️</div><div class="flex-1"><h3 class="text-[28px] leading-[1.1] font-black" style="background:linear-gradient(90deg,#f97316,#22d3ee);-webkit-background-clip:text;-webkit-text-fill-color:transparent">DevOps &<br>Ferramentas</h3><p class="text-slate-400 text-[14px] tracking-wider mt-1">FLUXOS • BUILD • DEPLOY</p></div><span class="badge-top" style="color:#fb923c">Evolução</span></div>
+<div class="detail-card purple"><div class="flex gap-4 items-start"><div class="detail-icon" style="background:linear-gradient(135deg,#f97316,#22d3ee)">⚙️</div><div class="flex-1"><h3 class="text-[28px] font-black" style="background:linear-gradient(90deg,#f97316,#22d3ee);-webkit-background-clip:text;-webkit-text-fill-color:transparent">DevOps & Ferramentas</h3></div><span class="badge-top" style="color:#fb923c">Evolução</span></div>
 <div class="skill-row"><div class="skill-top"><span>Git / Flow</span><span style="color:#fb923c">82%</span></div><div class="bar-track"><div class="bar-fill2" style="width:82%;background:linear-gradient(90deg,#f97316,#22d3ee)"></div></div></div>
 <div class="skill-row"><div class="skill-top"><span>Automação CI</span><span style="color:#fb923c">60%</span></div><div class="bar-track"><div class="bar-fill2" style="width:60%;background:linear-gradient(90deg,#f97316,#22d3ee)"></div></div></div>
-<div class="skill-row"><div class="skill-top"><span>Release Preview</span><span style="color:#fb923c">55%</span></div><div class="bar-track"><div class="bar-fill2" style="width:55%;background:linear-gradient(90deg,#f97316,#22d3ee)"></div></div></div>
 <div class="skill-row"><div class="skill-top"><span>Docker Fundamentals</span><span style="color:#fb923c">40%</span></div><div class="bar-track"><div class="bar-fill2" style="width:40%;background:linear-gradient(90deg,#22d3ee,#f97316)"></div></div></div>
-<div class="skill-row"><div class="skill-top"><span>Monitoring Básico</span><span style="color:#fb923c">35%</span></div><div class="bar-track"><div class="bar-fill2" style="width:35%;background:linear-gradient(90deg,#22d3ee,#f97316)"></div></div></div>
-<div class="skill-row"><div class="skill-top"><span>Infra como Código*</span><span style="color:#fb923c">20%</span></div><div class="bar-track"><div class="bar-fill2" style="width:20%;background:linear-gradient(90deg,#22d3ee,#f97316)"></div></div></div>
-<p class="tags-bottom">Git &nbsp; CI/CD &nbsp; Docker* &nbsp; Monitoramento</p>
-</div>
+<p class="tags-bottom">Git &nbsp; CI/CD &nbsp; Docker* &nbsp; Monitoramento</p></div>
 
-<div class="detail-card purple2">
-<div class="flex gap-4 items-start"><div class="detail-icon" style="background:linear-gradient(135deg,#22c55e,#10b981)">✓</div><div class="flex-1"><h3 class="text-[28px] leading-[1.1] font-black" style="color:#22c55e">Qualidade</h3><p class="text-slate-400 text-[14px] tracking-wider mt-1">MANUTENIBILIDADE • CONSISTÊNCIA</p></div><span class="badge-top" style="color:#4ade80">Refino</span></div>
+<div class="detail-card purple2"><div class="flex gap-4 items-start"><div class="detail-icon" style="background:linear-gradient(135deg,#22c55e,#10b981)">✓</div><div class="flex-1"><h3 class="text-[28px] font-black" style="color:#22c55e">Qualidade</h3></div><span class="badge-top" style="color:#4ade80">Refino</span></div>
 <div class="skill-row"><div class="skill-top"><span>Clean Code</span><span style="color:#4ade80">84%</span></div><div class="bar-track"><div class="bar-fill2" style="width:84%;background:#22c55e"></div></div></div>
-<div class="skill-row"><div class="skill-top"><span>Design System Thinking</span><span style="color:#4ade80">78%</span></div><div class="bar-track"><div class="bar-fill2" style="width:78%;background:#22c55e"></div></div></div>
-<div class="skill-row"><div class="skill-top"><span>Refatoração Contínua</span><span style="color:#4ade80">75%</span></div><div class="bar-track"><div class="bar-fill2" style="width:75%;background:#22c55e"></div></div></div>
-<div class="skill-row"><div class="skill-top"><span>Testes (Unit/Integration)</span><span style="color:#4ade80">52%</span></div><div class="bar-track"><div class="bar-fill2" style="width:52%;background:#22c55e"></div></div></div>
-<div class="skill-row"><div class="skill-top"><span>Documentação Viva</span><span style="color:#4ade80">68%</span></div><div class="bar-track"><div class="bar-fill2" style="width:68%;background:#22c55e"></div></div></div>
-<div class="skill-row"><div class="skill-top"><span>Design Tokens</span><span style="color:#4ade80">70%</span></div><div class="bar-track"><div class="bar-fill2" style="width:70%;background:#22c55e"></div></div></div>
-<p class="tags-bottom">Clean Code &nbsp; Refatoração &nbsp; Testes<br>Design Tokens &nbsp; Docs</p>
-</div>
+<div class="skill-row"><div class="skill-top"><span>Testes</span><span style="color:#4ade80">52%</span></div><div class="bar-track"><div class="bar-fill2" style="width:52%;background:#22c55e"></div></div></div>
+<p class="tags-bottom">Clean Code &nbsp; Refatoração &nbsp; Testes &nbsp; Docs</p></div>
 
-<div class="detail-card purple2">
-<div class="flex gap-4 items-start"><div class="detail-icon" style="background:linear-gradient(135deg,#ef4444,#b91c1c)">🛡️</div><div class="flex-1"><h3 class="text-[28px] leading-[1.1] font-black" style="color:#ef4444">Cibersegurança<br>(Formação)</h3><p class="text-slate-400 text-[14px] tracking-wider mt-1">FUNDAMENTOS • ÉTICA</p></div><span class="badge-top" style="color:#f87171">Estudo</span></div>
+<div class="detail-card purple2"><div class="flex gap-4 items-start"><div class="detail-icon" style="background:linear-gradient(135deg,#ef4444,#b91c1c)">🛡️</div><div class="flex-1"><h3 class="text-[28px] font-black" style="color:#ef4444">Cibersegurança (Formação)</h3></div><span class="badge-top" style="color:#f87171">Estudo</span></div>
 <div class="skill-row"><div class="skill-top"><span>OWASP Basics</span><span style="color:#f87171">48%</span></div><div class="bar-track"><div class="bar-fill2" style="width:48%;background:#ef4444"></div></div></div>
-<div class="skill-row"><div class="skill-top"><span>Threat Modeling*</span><span style="color:#f87171">30%</span></div><div class="bar-track"><div class="bar-fill2" style="width:30%;background:#ef4444"></div></div></div>
 <div class="skill-row"><div class="skill-top"><span>OSINT / Recon</span><span style="color:#f87171">40%</span></div><div class="bar-track"><div class="bar-fill2" style="width:40%;background:#ef4444"></div></div></div>
-<div class="skill-row"><div class="skill-top"><span>Network Hardening</span><span style="color:#f87171">35%</span></div><div class="bar-track"><div class="bar-fill2" style="width:35%;background:#ef4444"></div></div></div>
-<div class="skill-row"><div class="skill-top"><span>Wi-Fi Security</span><span style="color:#f87171">32%</span></div><div class="bar-track"><div class="bar-fill2" style="width:32%;background:#ef4444"></div></div></div>
-<div class="skill-row"><div class="skill-top"><span>Lab Pentest*</span><span style="color:#f87171">25%</span></div><div class="bar-track"><div class="bar-fill2" style="width:25%;background:#ef4444"></div></div></div>
-<p class="tags-bottom">OWASP &nbsp; Recon &nbsp; Hardening &nbsp; Wi-Fi<br>Threat Modeling*</p>
-</div>
+<p class="tags-bottom">OWASP &nbsp; Recon &nbsp; Hardening &nbsp; Wi-Fi</p></div>
 
-<p class="text-center text-slate-500 text-[13px] leading-relaxed mt-2">* NÍVEIS RELATIVOS (BASEADOS EM PRÁTICA ATUAL / EVOLUÇÃO CONTÍNUA)</p>
+<div class="text-center mt-10 mb-6"><h2 class="text-[34px] font-black creative-title">Criativo & Multimídia</h2><p class="text-slate-300 text-[16px] mt-3 px-2">Vídeo, Design, IA e Foto — o lado criativo que completa o código.</p></div>
 
-<!-- NOVOS 4 CARTÕES CRIATIVOS -->
-<div class="text-center mt-10 mb-6">
-<h2 class="text-[34px] font-black creative-title">Criativo & Multimídia</h2>
-<p class="text-slate-300 text-[16px] leading-relaxed mt-3 px-2">Vídeo, Design, IA e Foto — o lado criativo que completa o código.</p>
-</div>
-
-<!-- VÍDEO MAKER -->
-<div class="detail-card" style="background:linear-gradient(180deg,#3a1a1a,#1f1212);border-color:rgba(251,146,60,.25)">
-<div class="flex gap-4 items-start"><div class="detail-icon" style="background:linear-gradient(135deg,#ef4444,#f97316)">🎬</div><div class="flex-1"><h3 class="text-[28px] leading-[1.1] font-black" style="background:linear-gradient(90deg,#f97316,#ef4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Vídeo Maker<br>Profissional</h3><p class="text-slate-400 text-[14px] tracking-wider mt-1">EDIÇÃO • MOTION • STORYTELLING</p></div><span class="badge-top" style="color:#fb923c">Criativo</span></div>
+<div class="detail-card" style="background:linear-gradient(180deg,#3a1a1a,#1f1212);border-color:rgba(251,146,60,.25)"><div class="flex gap-4 items-start"><div class="detail-icon" style="background:linear-gradient(135deg,#ef4444,#f97316)">🎬</div><div class="flex-1"><h3 class="text-[28px] font-black" style="background:linear-gradient(90deg,#f97316,#ef4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Vídeo Maker Profissional</h3></div><span class="badge-top" style="color:#fb923c">Criativo</span></div>
 <div class="skill-row"><div class="skill-top"><span>Edição Profissional</span><span style="color:#fb923c">90%</span></div><div class="bar-track"><div class="bar-fill2" style="width:90%;background:linear-gradient(90deg,#f97316,#ef4444)"></div></div></div>
-<div class="skill-row"><div class="skill-top"><span>Motion Design / Reels</span><span style="color:#fb923c">88%</span></div><div class="bar-track"><div class="bar-fill2" style="width:88%;background:linear-gradient(90deg,#f97316,#ef4444)"></div></div></div>
-<div class="skill-row"><div class="skill-top"><span>Color Grading / Som</span><span style="color:#fb923c">82%</span></div><div class="bar-track"><div class="bar-fill2" style="width:82%;background:linear-gradient(90deg,#f97316,#ef4444)"></div></div></div>
 <div class="skill-row"><div class="skill-top"><span>CapCut / Premiere</span><span style="color:#fb923c">92%</span></div><div class="bar-track"><div class="bar-fill2" style="width:92%;background:linear-gradient(90deg,#f97316,#ef4444)"></div></div></div>
-<div class="skill-row"><div class="skill-top"><span>Thumbnails / Capas</span><span style="color:#fb923c">86%</span></div><div class="bar-track"><div class="bar-fill2" style="width:86%;background:linear-gradient(90deg,#f97316,#ef4444)"></div></div></div>
-<div class="check-item"><span style="color:#fb923c">✔</span><span>Vídeos para TikTok, Reels, YouTube e anúncios com ritmo, cortes limpos e legendas dinâmicas.</span></div>
-<div class="check-item"><span style="color:#fb923c">✔</span><span>Edição de podcasts, vlogs e conteúdo comercial com foco em retenção.</span></div>
-<p class="tags-bottom">CapCut &nbsp; Premiere &nbsp; Motion &nbsp; Reels &nbsp; YouTube</p>
-</div>
+<p class="tags-bottom">CapCut &nbsp; Premiere &nbsp; Motion &nbsp; Reels &nbsp; YouTube</p></div>
 
-<!-- DESIGN GRÁFICO -->
-<div class="detail-card" style="background:linear-gradient(180deg,#2a1a4a,#1a1230);border-color:rgba(168,85,247,.3)">
-<div class="flex gap-4 items-start"><div class="detail-icon" style="background:linear-gradient(135deg,#a855f7,#ec4899)">🎨</div><div class="flex-1"><h3 class="text-[28px] leading-[1.1] font-black" style="background:linear-gradient(90deg,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Design<br>Gráfico</h3><p class="text-slate-400 text-[14px] tracking-wider mt-1">BRANDING • SOCIAL • PRINT</p></div><span class="badge-top" style="color:#e879f9">Design</span></div>
+<div class="detail-card" style="background:linear-gradient(180deg,#2a1a4a,#1a1230);border-color:rgba(168,85,247,.3)"><div class="flex gap-4 items-start"><div class="detail-icon" style="background:linear-gradient(135deg,#a855f7,#ec4899)">🎨</div><div class="flex-1"><h3 class="text-[28px] font-black" style="background:linear-gradient(90deg,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Design Gráfico</h3></div><span class="badge-top" style="color:#e879f9">Design</span></div>
 <div class="skill-row"><div class="skill-top"><span>Adobe Photoshop</span><span style="color:#e879f9">92%</span></div><div class="bar-track"><div class="bar-fill2" style="width:92%;background:linear-gradient(90deg,#a855f7,#ec4899)"></div></div></div>
 <div class="skill-row"><div class="skill-top"><span>Canva</span><span style="color:#e879f9">95%</span></div><div class="bar-track"><div class="bar-fill2" style="width:95%;background:linear-gradient(90deg,#a855f7,#ec4899)"></div></div></div>
 <div class="skill-row"><div class="skill-top"><span>Illustrator</span><span style="color:#e879f9">80%</span></div><div class="bar-track"><div class="bar-fill2" style="width:80%;background:linear-gradient(90deg,#a855f7,#ec4899)"></div></div></div>
 <div class="skill-row"><div class="skill-top"><span>PicsArt</span><span style="color:#e879f9">88%</span></div><div class="bar-track"><div class="bar-fill2" style="width:88%;background:linear-gradient(90deg,#a855f7,#ec4899)"></div></div></div>
-<div class="skill-row"><div class="skill-top"><span>Logotipos / Flyers / Cartazes</span><span style="color:#e879f9">90%</span></div><div class="bar-track"><div class="bar-fill2" style="width:90%;background:linear-gradient(90deg,#a855f7,#ec4899)"></div></div></div>
-<div class="check-item"><span style="color:#e879f9">✔</span><span>Criação de identidades visuais, posts para redes sociais, capas e material promocional.</span></div>
-<div class="check-item"><span style="color:#e879f9">✔</span><span>Domínio de tipografia, cores, composição e hierarquia visual.</span></div>
-<p class="tags-bottom">Photoshop &nbsp; Canva &nbsp; Illustrator &nbsp; PicsArt &nbsp; Branding</p>
-</div>
+<p class="tags-bottom">Photoshop &nbsp; Canva &nbsp; Illustrator &nbsp; PicsArt &nbsp; Branding</p></div>
 
-<!-- IA DOMÍNIOS -->
-<div class="detail-card" style="background:linear-gradient(180deg,#0a2a3a,#0a1a2a);border-color:rgba(34,211,238,.3)">
-<div class="flex gap-4 items-start"><div class="detail-icon" style="background:linear-gradient(135deg,#22d3ee,#3b82f6)">✨</div><div class="flex-1"><h3 class="text-[28px] leading-[1.1] font-black" style="background:linear-gradient(90deg,#22d3ee,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent">IA &<br>Domínios</h3><p class="text-slate-400 text-[14px] tracking-wider mt-1">GERAÇÃO • PROMPT • AUTOMAÇÃO</p></div><span class="badge-top" style="color:#22d3ee">Expert</span></div>
+<div class="detail-card" style="background:linear-gradient(180deg,#0a2a3a,#0a1a2a);border-color:rgba(34,211,238,.3)"><div class="flex gap-4 items-start"><div class="detail-icon" style="background:linear-gradient(135deg,#22d3ee,#3b82f6)">✨</div><div class="flex-1"><h3 class="text-[28px] font-black" style="background:linear-gradient(90deg,#22d3ee,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent">IA & Domínios</h3></div><span class="badge-top" style="color:#22d3ee">Expert</span></div>
 <div class="skill-row"><div class="skill-top"><span>ChatGPT / GPTs</span><span>94%</span></div><div class="bar-track"><div class="bar-fill2" style="width:94%;background:linear-gradient(90deg,#22d3ee,#3b82f6)"></div></div></div>
 <div class="skill-row"><div class="skill-top"><span>Google Gemini</span><span>92%</span></div><div class="bar-track"><div class="bar-fill2" style="width:92%;background:linear-gradient(90deg,#22d3ee,#3b82f6)"></div></div></div>
 <div class="skill-row"><div class="skill-top"><span>Meta AI / Llama</span><span>88%</span></div><div class="bar-track"><div class="bar-fill2" style="width:88%;background:linear-gradient(90deg,#22d3ee,#3b82f6)"></div></div></div>
-<div class="skill-row"><div class="skill-top"><span>Copilot / Muse</span><span>85%</span></div><div class="bar-track"><div class="bar-fill2" style="width:85%;background:linear-gradient(90deg,#22d3ee,#3b82f6)"></div></div></div>
-<div class="skill-row"><div class="skill-top"><span>Geração de Imagens / Vídeo IA</span><span>90%</span></div><div class="bar-track"><div class="bar-fill2" style="width:90%;background:linear-gradient(90deg,#22d3ee,#3b82f6)"></div></div></div>
-<div class="check-item"><span style="color:#22d3ee">✔</span><span>Uso avançado de IA para textos, código, ideias, roteiros, imagens e automação de tarefas.</span></div>
-<div class="check-item"><span style="color:#22d3ee">✔</span><span>Criação de prompts profissionais para resultados consistentes e de alta qualidade.</span></div>
-<p class="tags-bottom">Gemini &nbsp; ChatGPT &nbsp; Meta AI &nbsp; Copilot &nbsp; I.O &nbsp; Midjourney</p>
-</div>
+<p class="tags-bottom">Gemini &nbsp; ChatGPT &nbsp; Meta AI &nbsp; Copilot &nbsp; I.O</p></div>
 
-<!-- FOTO -->
-<div class="detail-card" style="background:linear-gradient(180deg,#1a2a1a,#122012);border-color:rgba(34,197,94,.3)">
-<div class="flex gap-4 items-start"><div class="detail-icon" style="background:linear-gradient(135deg,#22c55e,#eab308)">📸</div><div class="flex-1"><h3 class="text-[28px] leading-[1.1] font-black" style="background:linear-gradient(90deg,#22c55e,#eab308);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Foto &<br>Edição</h3><p class="text-slate-400 text-[14px] tracking-wider mt-1">RETOQUE • MANIPULAÇÃO • CRIAÇÃO</p></div><span class="badge-top" style="color:#4ade80">Foto</span></div>
+<div class="detail-card" style="background:linear-gradient(180deg,#1a2a1a,#122012);border-color:rgba(34,197,94,.3)"><div class="flex gap-4 items-start"><div class="detail-icon" style="background:linear-gradient(135deg,#22c55e,#eab308)">📸</div><div class="flex-1"><h3 class="text-[28px] font-black" style="background:linear-gradient(90deg,#22c55e,#eab308);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Foto & Edição</h3></div><span class="badge-top" style="color:#4ade80">Foto</span></div>
 <div class="skill-row"><div class="skill-top"><span>Edição / Retoque</span><span style="color:#4ade80">93%</span></div><div class="bar-track"><div class="bar-fill2" style="width:93%;background:linear-gradient(90deg,#22c55e,#eab308)"></div></div></div>
 <div class="skill-row"><div class="skill-top"><span>Limpeza / Remoção</span><span style="color:#4ade80">95%</span></div><div class="bar-track"><div class="bar-fill2" style="width:95%;background:linear-gradient(90deg,#22c55e,#eab308)"></div></div></div>
 <div class="skill-row"><div class="skill-top"><span>Manipulação Criativa</span><span style="color:#4ade80">89%</span></div><div class="bar-track"><div class="bar-fill2" style="width:89%;background:linear-gradient(90deg,#22c55e,#eab308)"></div></div></div>
@@ -271,9 +223,96 @@ body{background:#070b16;color:white;font-family:sans-serif;overflow-x:hidden}
 <div class="skill-row"><div class="skill-top"><span>Restauração / Melhoria</span><span style="color:#4ade80">87%</span></div><div class="bar-track"><div class="bar-fill2" style="width:87%;background:linear-gradient(90deg,#22c55e,#eab308)"></div></div></div>
 <div class="check-item"><span style="color:#4ade80">✔</span><span>Limpeza de fotos, remoção de fundo, correção de luz e cor, e restauração de fotos antigas.</span></div>
 <div class="check-item"><span style="color:#4ade80">✔</span><span>Manipulação artística, montagens realistas e criações profissionais para redes e marcas.</span></div>
-<p class="tags-bottom">Retoque &nbsp; Limpeza &nbsp; Manipulação &nbsp; Criações &nbsp; Restauração</p>
+<p class="tags-bottom">Retoque &nbsp; Limpeza &nbsp; Manipulação &nbsp; Criações &nbsp; Restauração</p></div>
+</section>
+
+<!-- NOVA SECÇÃO PORTFÓLIO DE PROJETOS -->
+<section class="portfolio-bg">
+<div class="text-center">
+<h2 class="text-[40px] leading-[1.1] font-black port-title">Portfólio de<br>Projetos</h2>
+<p class="text-slate-400 text-[20px] leading-relaxed mt-5 px-2">Seleção organizada, filtrável e paginada. Experiência consistente com Destaques.</p>
 </div>
 
+<div class="filter-box mt-8">
+<button class="filter-btn active" data-filter="all">⬢ TODOS</button>
+<button class="filter-btn" data-filter="dev">‹/› DEV</button>
+<button class="filter-btn" data-filter="pwa">☁ PWA</button>
+<button class="filter-btn" data-filter="design">🎨 DESIGN</button>
+<button class="filter-btn" data-filter="js">📄 JS</button>
+<button class="filter-btn" data-filter="react">⚡ REACT</button>
+</div>
+
+<div class="mt-6">
+<span class="inline-flex items-center gap-2 bg-[#111a2e] border border-white/10 px-4 py-2 rounded-full text-slate-300 font-bold">🗂️ <span id="countLabel">10</span></span>
+</div>
+
+<div class="relative mt-5">
+<button class="seta-port" id="portPrev" style="position:absolute;left:2px;top:38%;z-index:20">‹</button>
+<button class="seta-port" id="portNext" style="position:absolute;right:2px;top:38%;z-index:20">›</button>
+<div class="carrossel" id="portCarrossel" style="padding:0 10px">
+
+<!-- 1 -->
+<div class="port-card" data-cat="pwa js dev">
+<div class="port-img" style="background-image:url('https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=800&q=80')"><span class="dest-tag">DESTAQUE</span></div>
+<div class="p-5"><h3 class="text-[24px] font-bold">PWA Task Manager</h3><p class="text-slate-400 mt-2 leading-relaxed">Gestor offline-first com sync e notificações.</p><div class="flex flex-wrap gap-2 mt-4"><span class="tech">HTML</span><span class="tech">CSS</span><span class="tech">JavaScript</span></div><div class="flex gap-2 mt-5"><a href="#" class="btn-demo">↗ Demo</a><a href="#" class="btn-code">🐙 Código</a></div></div>
+</div>
+<!-- 2 -->
+<div class="port-card" data-cat="pwa dev">
+<div class="port-img"><span class="dest-tag">DESTAQUE</span><div class="text-center relative z-[1]"><div class="text-[44px]">🖼️</div><p class="text-[11px] text-slate-400 mt-2">Imagem em desenvolvimento<br>Em breve uma prévia estará disponível</p></div></div>
+<div class="p-5"><h3 class="text-[24px] font-bold">PWA Notes Offline</h3><p class="text-slate-400 mt-2 leading-relaxed">App de notas offline com sync incremental.</p><div class="flex flex-wrap gap-2 mt-4"><span class="tech">TypeScript</span><span class="tech">IndexedDB</span><span class="tech">Service Worker</span></div><div class="flex gap-2 mt-5"><a href="#" class="btn-demo">↗ Demo</a><a href="#" class="btn-code">🐙 Código</a></div></div>
+</div>
+<!-- 3 -->
+<div class="port-card" data-cat="react dev">
+<div class="port-img" style="background:linear-gradient(180deg,#2a3f5a,#1a2338)"><span class="dest-tag">DESTAQUE</span><div class="text-center relative z-[1]"><div class="text-[50px]">📊</div><p class="text-[13px] font-bold mt-1">React Finance Dashboard</p><p class="text-[11px] text-slate-400">Dashboard financeiro com métricas em tempo real</p></div></div>
+<div class="p-5"><h3 class="text-[24px] font-bold">React Finance Dashboard</h3><p class="text-slate-400 mt-2 leading-relaxed">Dashboard financeiro com métricas em tempo real e gráficos dinâmicos.</p><div class="flex flex-wrap gap-2 mt-4"><span class="tech">React</span><span class="tech">TypeScript</span><span class="tech">Chart.js</span></div><div class="flex gap-2 mt-5"><a href="#" class="btn-demo">↗ Demo</a><a href="#" class="btn-code">🐙 Código</a></div></div>
+</div>
+<!-- 4 -->
+<div class="port-card" data-cat="design">
+<div class="port-img" style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80')"><span class="dest-tag">DESTAQUE</span></div>
+<div class="p-5"><h3 class="text-[24px] font-bold">Design Dashboard Analytics</h3><p class="text-slate-400 mt-2 leading-relaxed">Dashboard modular com foco em visualização clara.</p><div class="flex flex-wrap gap-2 mt-4"><span class="tech">Figma</span></div><div class="flex gap-2 mt-5"><a href="#" class="btn-demo">↗ Demo</a><a href="#" class="btn-code">🐙 Código</a></div></div>
+</div>
+<!-- 5 -->
+<div class="port-card" data-cat="dev js">
+<div class="port-img" style="background-image:url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80')"><span class="dest-tag">DESTAQUE</span></div>
+<div class="p-5"><h3 class="text-[24px] font-bold">UI Component Library</h3><p class="text-slate-400 mt-2 leading-relaxed">Coleção reutilizável com tokens, dark mode e acessibilidade.</p><div class="flex flex-wrap gap-2 mt-4"><span class="tech">React</span><span class="tech">Tailwind</span><span class="tech">Storybook</span></div><div class="flex gap-2 mt-5"><a href="#" class="btn-demo">↗ Demo</a><a href="#" class="btn-code">🐙 Código</a></div></div>
+</div>
+<!-- 6 -->
+<div class="port-card" data-cat="dev">
+<div class="port-img" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80')"><span class="dest-tag">DESTAQUE</span></div>
+<div class="p-5"><h3 class="text-[24px] font-bold">Landing SaaS</h3><p class="text-slate-400 mt-2 leading-relaxed">Landing otimizada com CTA dinâmico e SEO técnico.</p><div class="flex flex-wrap gap-2 mt-4"><span class="tech">Next.js</span><span class="tech">Tailwind</span></div><div class="flex gap-2 mt-5"><a href="#" class="btn-demo">↗ Demo</a><a href="#" class="btn-code">🐙 Código</a></div></div>
+</div>
+<!-- 7 -->
+<div class="port-card" data-cat="design">
+<div class="port-img" style="background:linear-gradient(180deg,#3a2a5a,#1a1230);display:flex;align-items:center;justify-content:center"><div class="text-center relative z-[1]"><div class="text-[48px]">🎨</div><p class="font-bold">Branding Kit</p></div></div>
+<div class="p-5"><h3 class="text-[24px] font-bold">Branding Kit - Flyers</h3><p class="text-slate-400 mt-2 leading-relaxed">Identidade visual, flyers e posts para redes sociais.</p><div class="flex flex-wrap gap-2 mt-4"><span class="tech">Photoshop</span><span class="tech">Canva</span><span class="tech">Illustrator</span></div><div class="flex gap-2 mt-5"><a href="#" class="btn-demo">↗ Ver</a><a href="#" class="btn-code">📁 Portfólio</a></div></div>
+</div>
+<!-- 8 -->
+<div class="port-card" data-cat="design">
+<div class="port-img" style="background:linear-gradient(180deg,#5a2a2a,#1f1212)"><div class="text-center relative z-[1]"><div class="text-[48px]">🎬</div><p class="font-bold">Vídeo Reels Pack</p></div></div>
+<div class="p-5"><h3 class="text-[24px] font-bold">Vídeo Reels Pack</h3><p class="text-slate-400 mt-2 leading-relaxed">Edição de Reels com ritmo, legendas e motion.</p><div class="flex flex-wrap gap-2 mt-4"><span class="tech">CapCut</span><span class="tech">Premiere</span></div><div class="flex gap-2 mt-5"><a href="#" class="btn-demo">↗ Ver</a><a href="#" class="btn-code">📁 Portfólio</a></div></div>
+</div>
+<!-- 9 -->
+<div class="port-card" data-cat="design">
+<div class="port-img" style="background:linear-gradient(180deg,#1a3a2a,#122012)"><div class="text-center relative z-[1]"><div class="text-[48px]">📸</div><p class="font-bold">Foto Retoque Pro</p></div></div>
+<div class="p-5"><h3 class="text-[24px] font-bold">Foto Retoque Pro</h3><p class="text-slate-400 mt-2 leading-relaxed">Limpeza, restauração e manipulação criativa.</p><div class="flex flex-wrap gap-2 mt-4"><span class="tech">Photoshop</span><span class="tech">PicsArt</span></div><div class="flex gap-2 mt-5"><a href="#" class="btn-demo">↗ Ver</a><a href="#" class="btn-code">📁 Portfólio</a></div></div>
+</div>
+<!-- 10 -->
+<div class="port-card" data-cat="dev js react">
+<div class="port-img" style="background:linear-gradient(180deg,#0a2a3a,#0a1a2a)"><div class="text-center relative z-[1]"><div class="text-[48px]">🤖</div><p class="font-bold">IA Tools Dashboard</p></div></div>
+<div class="p-5"><h3 class="text-[24px] font-bold">IA Tools Dashboard</h3><p class="text-slate-400 mt-2 leading-relaxed">Painel com ferramentas de IA, prompts e automação.</p><div class="flex flex-wrap gap-2 mt-4"><span class="tech">React</span><span class="tech">Gemini</span><span class="tech">ChatGPT</span></div><div class="flex gap-2 mt-5"><a href="#" class="btn-demo">↗ Demo</a><a href="#" class="btn-code">🐙 Código</a></div></div>
+</div>
+
+</div>
+</div>
+
+<div class="flex justify-center gap-2 mt-6" id="portDots">
+<span class="dot2 active"></span><span class="dot2"></span><span class="dot2"></span><span class="dot2"></span><span class="dot2"></span>
+</div>
+
+<div class="flex justify-center gap-3 mt-6">
+<button class="btn-prev" id="portPrevBtn">Ver Anterior</button>
+<button class="btn-next" id="portNextBtn">Ver Mais</button>
+</div>
 </section>
 
 <script>
@@ -296,8 +335,8 @@ let car = document.getElementById('carrossel');
 let dots = document.querySelectorAll('#dots .dot');
 let current = 0;
 function goTo(i){
-  if(i < 0) i = 6;
-  if(i > 6) i = 0;
+  if(i < 0) i = 3;
+  if(i > 3) i = 0;
   current = i;
   let card = car.querySelector('.card');
   let w = card.offsetWidth + 16;
@@ -310,11 +349,56 @@ car.addEventListener('scroll', function(){
   let card = car.querySelector('.card');
   let w = card.offsetWidth + 16;
   let index = Math.round(car.scrollLeft / w);
-  if(index>6) index=6; if(index<0) index=0;
+  if(index>3) index=3; if(index<0) index=0;
   current = index;
   dots.forEach(function(d,idx){ d.classList.toggle('active', idx===index); });
 });
 dots.forEach(function(d,i){ d.addEventListener('click', function(){ goTo(i); }); });
+
+// PORTFOLIO
+let pcar = document.getElementById('portCarrossel');
+let pcards = pcar.querySelectorAll('.port-card');
+let pdots = document.querySelectorAll('#portDots .dot2');
+let pcur = 0;
+function pGo(i){
+  let visible = Array.from(pcards).filter(c=>c.style.display!=='none');
+  if(i<0) i=visible.length-1;
+  if(i>=visible.length) i=0;
+  pcur=i;
+  let w = visible[0].offsetWidth + 16;
+  let target = visible[i];
+  pcar.scrollTo({left: target.offsetLeft - 10, behavior:'smooth'});
+  pdots.forEach(function(d,idx){ d.classList.toggle('active', idx===i%5); });
+}
+document.getElementById('portNext').addEventListener('click', function(){ pGo(pcur+1); });
+document.getElementById('portPrev').addEventListener('click', function(){ pGo(pcur-1); });
+document.getElementById('portNextBtn').addEventListener('click', function(){ pGo(pcur+1); });
+document.getElementById('portPrevBtn').addEventListener('click', function(){ pGo(pcur-1); });
+pcar.addEventListener('scroll', function(){
+  let card = pcar.querySelector('.port-card');
+  let w = card.offsetWidth + 16;
+  let idx = Math.round(pcar.scrollLeft / w);
+  pcur = idx;
+  pdots.forEach(function(d,i){ d.classList.toggle('active', i===idx%5); });
+});
+pdots.forEach(function(d,i){ d.addEventListener('click', function(){ pGo(i); }); });
+let filters = document.querySelectorAll('.filter-btn');
+filters.forEach(function(btn){
+  btn.addEventListener('click', function(){
+    filters.forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    let f = btn.getAttribute('data-filter');
+    let count = 0;
+    pcards.forEach(function(c){
+      let cats = c.getAttribute('data-cat');
+      let show = (f==='all' || cats.includes(f));
+      c.style.display = show ? 'block' : 'none';
+      if(show) count++;
+    });
+    document.getElementById('countLabel').textContent = count;
+    pGo(0);
+  });
+});
 </script>
 
 </body>

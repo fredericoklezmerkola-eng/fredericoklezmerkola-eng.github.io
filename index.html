@@ -1,139 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Frederico K.</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+body{background:#070b16;color:white;font-family:sans-serif;overflow-x:hidden}
+.grad-text{background:linear-gradient(90deg,#22d3ee,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.ring-circle{width:260px;height:260px;border-radius:9999px;padding:4px;background:linear-gradient(135deg,#22d3ee,#a855f7,#ec4899);margin:0 auto}
+.inner{width:100%;height:100%;border-radius:9999px;background:#0b1226;display:flex;align-items:flex-start;justify-content:center;padding-top:15px;font-size:22px}
+.badge{position:absolute;background:#0f1a33;border:1px solid rgba(255,255,255,.15);padding:6px 12px;border-radius:9999px;font-size:12px;font-weight:bold;white-space:nowrap}
+#loader{position:fixed;inset:0;z-index:9999;background:#070b16;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;transition:opacity .6s}
+.spinner{width:48px;height:48px;border-radius:50%;border:4px solid rgba(255,255,255,.1);border-top-color:#22d3ee;border-right-color:#ec4899;animation:spin 1s linear infinite;margin:18px 0}
+@keyframes spin{to{transform:rotate(360deg)}}
+.bar{width:220px;height:6px;background:#1e293b;border-radius:9999px;overflow:hidden;margin-top:14px}
+.bar-fill{height:100%;width:0%;background:linear-gradient(90deg,#22d3ee,#a855f7);border-radius:9999px;transition:width .3s}
+.carrossel-wrap{position:relative}
+.carrossel{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 16px 10px 16px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.carrossel::-webkit-scrollbar{display:none}
+.card{flex:0 0 85%;max-width:340px;scroll-snap-align:center;background:#111a2e;border:1px solid rgba(255,255,255,.1);border-radius:20px;overflow:hidden;text-align:left;position:relative}
+.card-img{height:170px;background-size:cover;background-position:center;position:relative}
+.tag{position:absolute;top:12px;left:12px;background:rgba(236,72,153,.95);color:white;font-size:12px;font-weight:bold;padding:5px 12px;border-radius:9999px}
+.btn{flex:1;text-align:center;padding:10px 0;border-radius:12px;font-size:14px;font-weight:bold}
+.btn-on{background:rgba(34,211,238,.15);color:#22d3ee;border:1px solid rgba(34,211,238,.4)}
+.btn-off{background:#1e293b;color:#94a3b8}
+.btn-orange{background:rgba(251,146,60,.15);color:#fb923c;border:1px solid rgba(251,146,60,.4)}
+.dot{width:10px;height:10px;border-radius:9999px;border:1px solid #94a3b8;background:transparent;display:inline-block;transition:all .3s}
+.dot.active{background:#22d3ee;border-color:#22d3ee;transform:scale(1.3)}
+.seta{position:absolute;top:85px;z-index:20;width:42px;height:42px;border-radius:9999px;background:#2563eb;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:bold;color:white;border:2px solid rgba(255,255,255,.3);cursor:pointer}
+.seta:active{transform:scale(.9)}
+.seta-left{left:6px}
+.seta-right{right:6px;background:#1e293b}
+.btn-todos{display:inline-block;margin-top:18px;padding:14px 28px;border-radius:9999px;font-weight:bold;color:white;background:linear-gradient(90deg,#22d3ee,#a855f7)}
+.destaque{background:linear-gradient(180deg,#16233f,#0f1a33);border:1px solid rgba(255,255,255,.08);border-radius:24px;padding:28px 20px;text-align:center}
+.icon-box{width:64px;height:64px;margin:0 auto;background:#1a2a4a;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:28px}
+.skills-bg{background:linear-gradient(180deg,#123a46,#0e2f3a 10%,#1a1a3a 30%,#0a0a1a 70%);padding:40px 16px 20px 16px}
+.skills-title{background:linear-gradient(90deg,#3b82f6,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.skill-card{background:linear-gradient(180deg,#1a3a44,#13303a);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:20px}
+.pill{display:inline-block;padding:5px 12px;border-radius:9999px;font-size:13px;font-weight:bold;margin-right:6px}
+.pill-blue{background:rgba(34,211,238,.15);color:#22d3ee}
+.pill-purple{background:rgba(168,85,247,.18);color:#c084fc}
+.pill-pink{background:rgba(236,72,153,.18);color:#f472b6}
+.detail-card{background:linear-gradient(180deg,#1e3442,#182a3a);border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:22px;margin-bottom:20px}
+.detail-card.purple{background:linear-gradient(180deg,#23204a,#1a1a35)}
+.detail-card.purple2{background:linear-gradient(180deg,#2a1a4a,#1a1230)}
+.detail-icon{width:64px;height:64px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0}
+.bar-track{height:10px;background:#2a3d4a;border-radius:9999px;overflow:hidden;margin-top:6px}
+.bar-fill2{height:100%;border-radius:9999px}
+.skill-row{margin-top:18px}
+.skill-top{display:flex;justify-content:space-between;align-items:center}
+.skill-top span:first-child{font-size:16px}
+.skill-top span:last-child{font-size:15px;font-weight:bold;color:#22d3ee}
+.badge-top{font-size:13px;font-weight:bold;padding:6px 14px;border-radius:9999px;border:1px solid rgba(255,255,255,.2);white-space:nowrap}
+.tags-bottom{margin-top:22px;font-size:17px;line-height:1.8;color:#e2e8f0}
+.check-item{display:flex;gap:10px;margin-top:18px;font-size:16px;line-height:1.5}
+.creative-title{background:linear-gradient(90deg,#f59e0b,#ec4899,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.portfolio-bg{background:#0a0f1e;padding:30px 16px 50px 16px}
+.port-title{background:linear-gradient(90deg,#22d3ee,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.filter-box{background:#111a2e;border:1px solid rgba(34,211,238,.2);border-radius:20px;padding:18px 12px;display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.filter-btn{padding:10px 18px;border-radius:9999px;border:1px solid rgba(255,255,255,.15);background:#1a2338;color:#cbd5e1;font-weight:bold;font-size:14px;cursor:pointer}
+.filter-btn.active{background:#22d3ee;color:#000;border-color:#22d3ee}
+.port-card{background:#111a2e;border:1px solid rgba(255,255,255,.1);border-radius:22px;overflow:hidden;flex:0 0 88%;max-width:360px;scroll-snap-align:center}
+.port-img{height:220px;background-size:cover;background-position:center;position:relative;background-color:#1e293b;display:flex;align-items:center;justify-content:center}
+.port-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.7))}
+.dest-tag{position:absolute;top:14px;left:14px;z-index:2;background:rgba(34,211,238,.15);border:1px solid rgba(34,211,238,.5);color:#22d3ee;padding:6px 14px;border-radius:9999px;font-size:12px;font-weight:bold}
+.tech{font-size:13px;background:#1e293b;padding:6px 12px;border-radius:9999px;color:#cbd5e1}
+.btn-demo{background:rgba(34,211,238,.15);color:#22d3ee;padding:10px 18px;border-radius:12px;font-weight:bold;font-size:14px}
+.btn-code{background:#1e293b;color:white;padding:10px 18px;border-radius:12px;font-weight:bold;font-size:14px}
+.seta-port{width:48px;height:48px;border-radius:9999px;background:#1e293b;border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer;color:white}
+.dot2{width:12px;height:12px;border-radius:9999px;background:#334155;display:inline-block}
+.dot2.active{background:#22d3ee;box-shadow:0 0 0 4px rgba(34,211,238,.2)}
+.btn-prev{background:#1e293b;color:#64748b;padding:14px 24px;border-radius:9999px;font-weight:bold}
+.btn-next{background:linear-gradient(90deg,#22d3ee,#a855f7);color:white;padding:14px 28px;border-radius:9999px;font-weight:bold}
+.consult-bg{background:#0a0f1e;padding:30px 16px 50px 16px}
+.consult-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(251,146,60,.12);border:1px solid rgba(251,146,60,.35);color:#fb923c;padding:10px 22px;border-radius:9999px;font-weight:bold;font-size:18px}
+.consult-title{font-size:42px;line-height:1.1;font-weight:900;background:linear-gradient(90deg,#22d3ee,#a855f7,#ec4899,#22d3ee);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.consult-card{background:#111a2e;border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:22px;display:flex;gap:18px;align-items:flex-start;margin-bottom:16px}
+.consult-icon{width:56px;height:56px;min-width:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px}
+.form-box{background:#1a2438;border:1px solid rgba(255,255,255,.08);border-radius:28px;padding:28px 20px}
+.input{background:#2a364a;border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:16px;width:100%;color:white;font-size:17px;outline:none}
+.input:focus{border-color:#22d3ee}
+.input::placeholder{color:#94a3b8}
+.err{color:#ef4444;font-size:15px;margin-top:6px;display:none}
+.err.show{display:block}
+.step{display:none}
+.step.active{display:block}
+.btn-form-next{background:linear-gradient(90deg,#22d3ee,#a855f7);color:white;padding:14px 28px;border-radius:14px;font-weight:bold;font-size:18px}
+.btn-form-back{color:#64748b;font-size:18px;background:none;border:none}
+.opt-btn{width:100%;text-align:left;background:#2a364a;border:1px solid rgba(255,255,255,.1);padding:16px;border-radius:14px;margin-bottom:10px;font-size:16px;cursor:pointer}
+.opt-btn.selected{border-color:#22d3ee;background:rgba(34,211,238,.12)}
+.tech-bg{background:#0a0f1e;padding:20px 16px 50px 16px}
+.tech-badge{display:inline-flex;gap:8px;align-items:center;background:linear-gradient(90deg,rgba(34,211,238,.15),rgba(236,72,153,.15));border:1px solid rgba(255,255,255,.1);color:#22d3ee;padding:10px 22px;border-radius:9999px;font-weight:bold;font-size:18px}
+.tech-title{font-size:42px;line-height:1.1;font-weight:900;text-align:center;background:linear-gradient(90deg,#3b82f6,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sec-label{display:flex;gap:14px;align-items:center;font-size:26px;font-weight:900}
+.sec-bar{width:12px;height:44px;border-radius:9999px}
+.tech-card{background:#111a2e;border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:20px;margin-bottom:16px;position:relative}
+.tech-icon{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.pwa-focus{position:absolute;top:-14px;right:12px;background:linear-gradient(90deg,#22d3ee,#a855f7);color:white;font-size:13px;font-weight:bold;padding:6px 14px;border-radius:9999px}
+.final-card{background:linear-gradient(135deg,#0e2a3a,#2a1a4a,#3a0a2a);border-radius:24px;padding:28px 22px}
+.mini-box{background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:16px;text-align:center;flex:1}
+/* CONTATO FINAL */
+.contato-bg{background:#0a0f1e;padding:30px 16px 40px 16px}
+.vamos-btn{display:inline-flex;gap:10px;align-items:center;background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.4);color:#22d3ee;padding:12px 28px;border-radius:9999px;font-weight:bold;font-size:20px}
+.conecte-title{font-size:42px;line-height:1.1;font-weight:900;background:linear-gradient(90deg,#22d3ee,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.contact-card{background:#1e293b;border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:18px;display:flex;gap:16px;align-items:center;margin-bottom:16px;text-decoration:none;color:white;display:flex}
+.contact-card:active{transform:scale(.98)}
+.contact-icon{width:60px;height:60px;min-width:60px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px}
+.disponivel{background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.35);border-radius:18px;padding:22px;display:flex;gap:14px}
+.dot-green{width:26px;height:26px;min-width:26px;background:#22c55e;border-radius:9999px;display:flex;align-items:center;justify-content:center;margin-top:4px;box-shadow:0 0 0 6px rgba(34,197,94,.15)}
+.resposta-badge{display:inline-flex;gap:10px;align-items:center;background:#1e293b;border:1px solid rgba(255,255,255,.08);padding:14px 24px;border-radius:9999px;font-weight:bold;font-size:17px;color:#e2e8f0}
+.footer{border-top:1px solid rgba(255,255,255,.08);padding:30px 16px 40px 16px;text-align:center;background:#070b16}
+.btn-final-next{width:100%;background:linear-gradient(90deg,#a855f7,#ec4899);color:white;padding:18px;border-radius:16px;font-weight:bold;font-size:20px;border:none;cursor:pointer}
+</style>
+</head>
+<body>
 
-/* NOVA SECÇÃO - ESTILO PROFISSIONAL */
-.portfolio-extra {
-  padding: 45px 20px;
-  background: #070b16;
-  color: #fff;
-}
+<div id="loader"><p class="text-slate-500 text-sm">Web Developer & Pentester</p><h1 class="text-[32px] leading-[1.1] font-black grad-text mt-1">FREDERICO<br>KLEZMER KOLA</h1><div class="spinner"></div><p class="font-bold text-sm">Bem-vindo ao meu Portfólio</p><p class="text-slate-400 text-xs mt-1">Carregando experiência profissional...</p><div class="bar"><div class="bar-fill" id="barFill"></div></div><p class="text-slate-500 text-[11px] mt-2">Aplicando tema...</p></div>
 
-.portfolio-card {
-  max-width: 650px;
-  margin: 0 auto 65px;
-}
+<header class="p-5 flex justify-between items-center"><h1 class="font-black tracking-widest">FREDERICO K.</h1><span class="bg-white/10 px-3 py-1 rounded-full text-xl">☰</span></header>
 
-.portfolio-cta {
-  padding: 35px 28px;
-  border-radius: 30px;
-  background: linear-gradient(120deg, #062b36, #24102d);
-  border: 1px solid rgba(120,150,255,.2);
-  margin-bottom: 65px;
-}
+<section class="text-center px-4 pt-2 pb-6 relative">
+<div class="relative" style="height:340px">
+<span class="badge" style="top:0;left:50%;transform:translateX(-50%);color:#fde68a">Design Motion</span>
+<span class="badge" style="top:55px;left:0;color:#2dd4bf">Vídeo Maker</span>
+<span class="badge" style="top:55px;right:0;color:#22d3ee">React / Next</span>
+<span class="badge" style="top:140px;left:-5px;color:#f472b6">Fullstack</span>
+<span class="badge" style="top:140px;right:-5px;color:#22d3ee">Cybersec.</span>
+<span class="badge" style="top:215px;left:0;color:#f9a8d4">Foto Edit</span>
+<span class="badge" style="top:215px;right:0;color:#fbbf24">Web Designer</span>
+<span class="badge" style="bottom:35px;left:15%;color:#67e8f9">Marketing</span>
+<span class="badge" style="bottom:35px;right:10%;color:white">Website+</span>
+<div style="position:absolute;top:35px;left:50%;transform:translateX(-50%)"><div class="ring-circle"><div class="inner">Frederico</div></div></div>
+</div>
+<h2 class="text-[34px] leading-[1.1] font-black grad-text mt-2">Transformo Ideias em Soluções Digitais Modernas, Seguras e Inteligentes</h2>
+<p class="mt-4 text-sm text-slate-300">Foco em <b class="text-teal-400">desenvolvimento fullstack</b>, design</p>
+<div class="flex justify-center gap-3 mt-6"><a href="#projetos" class="px-5 py-3 rounded-full font-bold text-white" style="background:linear-gradient(90deg,#22d3ee,#a855f7)">Ver Projetos →</a><a href="https://wa.me/244932064915" class="px-5 py-3 rounded-full font-bold border border-white/20 text-pink-400">💬 Falar Comigo</a></div>
+<h2 class="text-[32px] font-black grad-text mt-10">Sobre Mim</h2>
+<div class="px-4 text-center mt-4"><p class="text-[17px] leading-[1.7] text-slate-300">Sou <b class="text-white">Frederico Ricardo Nguingui Konde Kola</b>, desenvolvedor <b class="text-cyan-400">Fullstack</b> focado em criar experiências rápidas, acessíveis e seguras.</p><p class="text-[16px] leading-[1.7] text-slate-400 mt-6">Prioridades: performance, acessibilidade real, PWA, segurança e código sustentável.</p>
+<div class="flex flex-wrap justify-center gap-2 mt-6"><span class="bg-slate-800 px-4 py-2 rounded-full text-sm font-bold">React/Next</span><span class="bg-slate-800 px-4 py-2 rounded-full text-sm font-bold">TypeScript</span><span class="bg-slate-800 px-4 py-2 rounded-full text-sm font-bold">Tailwind</span><span class="bg-slate-800 px-4 py-2 rounded-full text-sm font-bold">Node</span><span class="bg-slate-800 px-4 py-2 rounded-full text-sm font-bold">PWA</span><span class="bg-slate-800 px-4 py-2 rounded-full text-sm font-bold">OWASP</span></div></div>
+</section>
 
-.portfolio-cta h2 {
-  font-size: 27px;
-  line-height: 1.4;
-  font-weight: 800;
-  background: linear-gradient(90deg,#22d3ee,#a855f7,#ec4899);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+<section id="projetos" class="pb-6 pt-6 text-center"><h2 class="text-[32px] font-black grad-text px-4">Projetos em Destaque</h2><p class="text-slate-400 text-[14px] mt-3 px-6">Apresentação cuidadosamente selecionada dos meus projetos mais impactantes</p><div class="carrossel-wrap mt-6"><button class="seta seta-left" id="prevBtn">‹</button><button class="seta seta-right" id="nextBtn">›</button><div class="carrossel" id="carrossel"><div class="card"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=800&q=80')"></div><div class="p-4"><h3 class="font-black text-[20px]">PWA Task Manager</h3><p class="text-slate-400 text-[14px] mt-1">Offline-first, cache inteligente, sincronização automática.</p><div class="flex gap-2 mt-4"><a href="#" class="btn btn-on">Demo</a><a href="#" class="btn btn-off">Código</a></div></div></div><div class="card"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80')"><span class="tag">Data • UI</span></div><div class="p-4"><h3 class="font-black text-[20px]">Dashboard Analytics</h3><p class="text-slate-400 text-[14px] mt-1">Interface modular com gráficos e métricas em tempo real.</p><div class="flex gap-2 mt-4"><span class="btn btn-off">Em Breve</span><span class="btn btn-off">Privado</span></div></div></div><div class="card"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80')"><span class="tag">Design System</span></div><div class="p-4"><h3 class="font-black text-[20px]">UI Component Library</h3><p class="text-slate-400 text-[14px] mt-1">Coleção reutilizável com tokens, dark mode e acessibilidade.</p><div class="flex gap-2 mt-4"><span class="btn btn-off">Em Breve</span><span class="btn btn-off">Privado</span></div></div></div><div class="card"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80')"></div><div class="p-4"><h3 class="font-black text-[20px]">Landing SaaS</h3><p class="text-slate-400 text-[14px] mt-1">Landing page otimizada com métricas e SEO técnico.</p><div class="flex gap-2 mt-4"><a href="#" class="btn btn-orange">Preview</a><span class="btn btn-off">Privado</span></div></div></div></div></div><div class="flex justify-center gap-3 mt-3" id="dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><a href="#" class="btn-todos">Ver Todos os Projetos →</a></section>
 
-.portfolio-cta p,
-.portfolio-desc {
-  color: #94a3b8;
-  font-size: 17px;
-  line-height: 1.8;
-}
+<section class="px-4 pb-10 pt-4 flex flex-col gap-5"><div class="destaque"><div class="icon-box">🚀</div><div class="mt-10"><h3 class="font-black text-[22px]">Trajetória</h3><p class="text-slate-400 text-[15px] mt-2">2 anos de evolução contínua com foco em código limpo e entrega consistente.</p></div></div><div class="destaque"><div class="icon-box">⚡</div><div class="mt-10"><h3 class="font-black text-[22px]">PWA & Performance</h3><p class="text-slate-400 text-[15px] mt-2">Apps rápidos, offline-first, Web Vitals otimizadas.</p></div></div><div class="destaque"><div class="icon-box">🤖</div><div class="mt-10"><h3 class="font-black text-[22px]">IA & Automação</h3><p class="text-slate-400 text-[15px] mt-2">Uso estratégico de LLMs e automação.</p></div></div><div class="destaque"><div class="icon-box">🛡️</div><div class="mt-10"><h3 class="font-black text-[22px]">Segurança</h3><p class="text-slate-400 text-[15px] mt-2">Princípios OWASP, validações robustas e controle de acesso.</p></div></div></section>
 
-.portfolio-buttons {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-  margin-top: 25px;
-}
+<section class="skills-bg">
+<div class="text-center"><h2 class="text-[38px] font-black skills-title">Skills & Stack</h2><p class="text-slate-300 text-[18px] mt-4 px-1">Base técnica sólida, foco em performance, acessibilidade, automação com IA e segurança.</p></div>
+<div class="flex flex-col gap-4 mt-10"><div class="skill-card"><p class="text-slate-400 text-[13px] font-bold tracking-widest">EXPERIÊNCIA</p><p class="mt-3"><span class="text-[42px] font-black" style="background:linear-gradient(90deg,#22d3ee,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent">2+</span> <span class="text-slate-400">anos</span></p></div><div class="skill-card"><p class="text-slate-400 text-[13px] font-bold tracking-widest">PROJETOS</p><p class="mt-3"><span class="text-[42px] font-black" style="background:linear-gradient(90deg,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent">20+</span> <span class="text-slate-400">entregues</span></p></div><div class="skill-card"><p class="text-slate-400 text-[13px] font-bold tracking-widest">FOCO</p><p class="text-white text-[19px] mt-4">Performance • PWA • A11y</p></div><div class="skill-card"><p class="text-slate-400 text-[13px] font-bold tracking-widest">STACK ATUAL</p><div class="mt-4"><span class="pill pill-blue">React</span><span class="pill pill-purple">Next.js</span><span class="pill pill-pink">Node</span></div></div></div>
+<div class="detail-card mt-8"><div class="flex gap-4 items-start"><div class="detail-icon" style="background:linear-gradient(135deg,#38bdf8,#a855f7)">🎨</div><div class="flex-1"><h3 class="text-[28px] font-black" style="background:linear-gradient(90deg,#22d3ee,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Front-end Engineering</h3></div><span class="badge-top" style="color:#22d3ee">Core</span></div><div class="skill-row"><div class="skill-top"><span>HTML5 / Semântica</span><span>95%</span></div><div class="bar-track"><div class="bar-fill2" style="width:95%;background:linear-gradient(90deg,#22d3ee,#a855f7)"></div></div></div><div class="skill-row"><div class="skill-top"><span>React / Hooks</span><span>85%</span></div><div class="bar-track"><div class="bar-fill2" style="width:85%;background:linear-gradient(90deg,#a855f7,#ec4899)"></div></div></div><p class="tags-bottom">A11y &nbsp; SPA/SSR &nbsp; Dark Mode</p></div>
+<div class="detail-card"><div class="flex gap-4 items-start"><div class="detail-icon" style="background:linear-gradient(135deg,#f43f5e,#f97316)">🤖</div><div class="flex-1"><h3 class="text-[28px] font-black" style="background:linear-gradient(90deg,#f43f5e,#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent">IA & Produtividade</h3></div><span class="badge-top" style="color:#fb7185">Alavanca</span></div><div class="check-item"><span style="color:#f43f5e">✔</span><span>Uso estratégico de LLMs para acelerar ciclo e revisão.</span></div><p class="tags-bottom">LLMs &nbsp; Automação &nbsp; Prompt Eng</p></div>
+<div class="detail-card purple"><div class="flex gap-4 items-start"><div class="detail-icon" style="background:linear-gradient(135deg,#a855f7,#ec4899)">🗄️</div><div class="flex-1"><h3 class="text-[28px] font-black" style="background:linear-gradient(90deg,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Back-end & Dados</h3></div><span class="badge-top" style="color:#c084fc">Prático</span></div><div class="skill-row"><div class="skill-top"><span>Node.js / Express</span><span style="color:#c084fc">78%</span></div><div class="bar-track"><div class="bar-fill2" style="width:78%;background:linear-gradient(90deg,#a855f7,#ec4899)"></div></div></div><p class="tags-bottom">REST &nbsp; Auth &nbsp; SQL &nbsp; NoSQL</p></div>
+<div class="detail-card purple"><div class="flex gap-4 items-start"><div class="detail-icon" style="background:linear-gradient(135deg,#f97316,#22d3ee)">⚙️</div><div class="flex-1"><h3 class="text-[28px] font-black" style="background:linear-gradient(90deg,#f97316,#22d3ee);-webkit-background-clip:text;-webkit-text-fill-color:transparent">DevOps & Ferramentas</h3></div><span class="badge-top" style="color:#fb923c">Evolução</span></div><div class="skill-row"><div class="skill-top"><span>Git / Flow</span><span style="color:#fb923c">82%</span></div><div class="bar-track"><div class="bar-fill2" style="width:82%;background:linear-gradient(90deg,#f97316,#22d3ee)"></div></div></div><p class="tags-bottom">Git &nbsp; CI/CD &nbsp; Docker*</p></div>
+<div class="detail-card purple2"><div class="flex gap-4 items-start"><div class="detail-icon" style="background:linear-gradient(135deg,#22c55e,#10b981)">✓</div><div class="flex-1"><h3 class="text-[28px] font-black" style="color:#22c55e">Qualidade</h3></div><span class="badge-top" style="color:#4ade80">Refino</span></div><div class="skill-row"><div class="skill-top"><span>Clean Code</span><span style="color:#4ade80">84%</span></div><div class="bar-track"><div class="bar-fill2" style="width:84%;background:#22c55e"></div></div></div><p class="tags-bottom">Clean Code &nbsp; Testes &nbsp; Docs</p></div>
+<div class="detail-card purple2"><div class="flex gap-4 items-start"><div class="detail-icon" style="background:linear-gradient(135deg,#ef4444,#b91c1c)">🛡️</div><div class="flex-1"><h3 class="text-[28px] font-black" style="color:#ef4444">Cibersegurança (Formação)</h3></div><span class="badge-top" style="color:#f87171">Estudo</span></div><div class="skill-row"><div class="skill-top"><span>OWASP Basics</span><span style="color:#f87171">48%</span></div><div class="bar-track"><div class="bar-fill2" style="width:48%;background:#ef4444"></div></div></div><p class="tags-bottom">OWASP &nbsp; Recon &nbsp; Hardening</p></div>
+<div class="text-center mt-10 mb-6"><h2 class="text-[34px] font-black creative-title">Criativo & Multimídia</h2><p class="text-slate-300 text-[16px] mt-3 px-2">Vídeo, Design, IA e Foto — o lado criativo que completa o código.</p></div>
+<div class="detail-card" style="background:linear-gradient(180deg,#3a1a1a,#1f1212)"><div class="flex gap-4 items-start"><div class="detail-icon" style="background:linear-gradient(135deg,#ef4444,#f97316)">🎬</div><div class="flex-1"><h3 class="text-[28px] font-black" style="background:linear-gradient(90deg,#f97316,#ef4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Vídeo Maker Profissional</h3></div><span class="badge-top" style="color:#fb923c">Criativo</span></div><div class="skill-row"><div class="skill-top"><span>Edição Profissional</span><span style="color:#fb923c">90%</span></div><div class="bar-track"><div class="bar-fill2" style="width:90%;background:linear-gradient(90deg,#f97316,#ef4444)"></div></div></div><p class="tags-bottom">CapCut &nbsp; Premiere &nbsp; Motion &nbsp; Reels</p></div>
+<div class="detail-card" style="background:linear-gradient(180deg,#2a1a4a,#1a1230)"><div class="flex gap-4 items-start"><div class="detail-icon" style="background:linear-gradient(135deg,#a855f7,#ec4899)">🎨</div><div class="flex-1"><h3 class="text-[28px] font-black" style="background:linear-gradient(90deg,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Design Gráfico</h3></div><span class="badge-top" style="color:#e879f9">Design</span></div><div class="skill-row"><div class="skill-top"><span>Photoshop</span><span style="color:#e879f9">92%</span></div><div class="bar-track"><div class="bar-fill2" style="width:92%;background:linear-gradient(90deg,#a855f7,#ec4899)"></div></div></div><div class="skill-row"><div class="skill-top"><span>Canva</span><span style="color:#e879f9">95%</span></div><div class="bar-track"><div class="bar-fill2" style="width:95%;background:linear-gradient(90deg,#a855f7,#ec4899)"></div></div></div><div class="skill-row"><div class="skill-top"><span>Illustrator</span><span style="color:#e879f9">80%</span></div><div class="bar-track"><div class="bar-fill2" style="width:80%;background:linear-gradient(90deg,#a855f7,#ec4899)"></div></div></div><div class="skill-row"><div class="skill-top"><span>PicsArt</span><span style="color:#e879f9">88%</span></div><div class="bar-track"><div class="bar-fill2" style="width:88%;background:linear-gradient(90deg,#a855f7,#ec4899)"></div></div></div><p class="tags-bottom">Photoshop &nbsp; Canva &nbsp; Illustrator &nbsp; PicsArt</p></div>
+<div class="detail-card" style="background:linear-gradient(180deg,#0a2a3a,#0a1a2a)"><div class="flex gap-4 items-start"><div class="detail-icon" style="background:linear-gradient(135deg,#22d3ee,#3b82f6)">✨</div><div class="flex-1"><h3 class="text-[28px] font-black" style="background:linear-gradient(90deg,#22d3ee,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent">IA & Domínios</h3></div><span class="badge-top" style="color:#22d3ee">Expert</span></div><div class="skill-row"><div class="skill-top"><span>ChatGPT</span><span>94%</span></div><div class="bar-track"><div class="bar-fill2" style="width:94%;background:linear-gradient(90deg,#22d3ee,#3b82f6)"></div></div></div><div class="skill-row"><div class="skill-top"><span>Gemini</span><span>92%</span></div><div class="bar-track"><div class="bar-fill2" style="width:92%;background:linear-gradient(90deg,#22d3ee,#3b82f6)"></div></div></div><p class="tags-bottom">Gemini &nbsp; ChatGPT &nbsp; Meta AI &nbsp; Copilot</p></div>
+<div class="detail-card" style="background:linear-gradient(180deg,#1a2a1a,#122012)"><div class="flex gap-4 items-start"><div class="detail-icon" style="background:linear-gradient(135deg,#22c55e,#eab308)">📸</div><div class="flex-1"><h3 class="text-[28px] font-black" style="background:linear-gradient(90deg,#22c55e,#eab308);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Foto & Edição</h3></div><span class="badge-top" style="color:#4ade80">Foto</span></div><div class="skill-row"><div class="skill-top"><span>Edição / Retoque</span><span style="color:#4ade80">93%</span></div><div class="bar-track"><div class="bar-fill2" style="width:93%;background:linear-gradient(90deg,#22c55e,#eab308)"></div></div></div><div class="skill-row"><div class="skill-top"><span>Limpeza / Remoção</span><span style="color:#4ade80">95%</span></div><div class="bar-track"><div class="bar-fill2" style="width:95%;background:linear-gradient(90deg,#22c55e,#eab308)"></div></div></div><div class="skill-row"><div class="skill-top"><span>Manipulação</span><span style="color:#4ade80">89%</span></div><div class="bar-track"><div class="bar-fill2" style="width:89%;background:linear-gradient(90deg,#22c55e,#eab308)"></div></div></div><div class="skill-row"><div class="skill-top"><span>Criações</span><span style="color:#4ade80">91%</span></div><div class="bar-track"><div class="bar-fill2" style="width:91%;background:linear-gradient(90deg,#22c55e,#eab308)"></div></div></div><p class="tags-bottom">Retoque &nbsp; Limpeza &nbsp; Manipulação &nbsp; Criações</p></div>
+</section>
 
-.portfolio-btn {
-  flex: 1;
-  min-width: 130px;
-  padding: 17px;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 20px;
-  font-weight: bold;
-  color: white;
-  background: linear-gradient(110deg,#06b6d4,#7c3aed);
-}
+<section class="portfolio-bg"><div class="text-center"><h2 class="text-[40px] leading-[1.1] font-black port-title">Portfólio de<br>Projetos</h2><p class="text-slate-400 text-[20px] mt-5 px-2">Seleção organizada, filtrável e paginada.</p></div><div class="filter-box mt-8"><button class="filter-btn active" data-filter="all">⬢ TODOS</button><button class="filter-btn" data-filter="dev">‹/› DEV</button><button class="filter-btn" data-filter="pwa">☁ PWA</button><button class="filter-btn" data-filter="design">🎨 DESIGN</button><button class="filter-btn" data-filter="js">📄 JS</button><button class="filter-btn" data-filter="react">⚡ REACT</button></div><div class="mt-6"><span class="inline-flex items-center gap-2 bg-[#111a2e] border border-white/10 px-4 py-2 rounded-full text-slate-300 font-bold">🗂️ <span id="countLabel">10</span></span></div><div class="relative mt-5"><button class="seta-port" id="portPrev" style="position:absolute;left:2px;top:38%;z-index:20">‹</button><button class="seta-port" id="portNext" style="position:absolute;right:2px;top:38%;z-index:20">›</button><div class="carrossel" id="portCarrossel" style="padding:0 10px"><div class="port-card" data-cat="pwa js dev"><div class="port-img" style="background-image:url('https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=800&q=80')"><span class="dest-tag">DESTAQUE</span></div><div class="p-5"><h3 class="text-[24px] font-bold">PWA Task Manager</h3><p class="text-slate-400 mt-2">Gestor offline-first com sync e notificações.</p><div class="flex flex-wrap gap-2 mt-4"><span class="tech">HTML</span><span class="tech">CSS</span><span class="tech">JavaScript</span></div><div class="flex gap-2 mt-5"><a href="#" class="btn-demo">↗ Demo</a><a href="#" class="btn-code">🐙 Código</a></div></div></div><div class="port-card" data-cat="pwa dev"><div class="port-img"><span class="dest-tag">DESTAQUE</span><div class="text-center relative z-[1]"><div class="text-[44px]">🖼️</div><p class="text-[11px] text-slate-400 mt-2">Imagem em desenvolvimento</p></div></div><div class="p-5"><h3 class="text-[24px] font-bold">PWA Notes Offline</h3><p class="text-slate-400 mt-2">App de notas offline com sync incremental.</p><div class="flex flex-wrap gap-2 mt-4"><span class="tech">TypeScript</span><span class="tech">IndexedDB</span></div><div class="flex gap-2 mt-5"><a href="#" class="btn-demo">↗ Demo</a><a href="#" class="btn-code">🐙 Código</a></div></div></div><div class="port-card" data-cat="react dev"><div class="port-img" style="background:linear-gradient(180deg,#2a3f5a,#1a2338)"><span class="dest-tag">DESTAQUE</span><div class="text-center relative z-[1]"><div class="text-[50px]">📊</div><p class="text-[13px] font-bold mt-1">React Finance Dashboard</p></div></div><div class="p-5"><h3 class="text-[24px] font-bold">React Finance Dashboard</h3><p class="text-slate-400 mt-2">Dashboard financeiro com métricas em tempo real.</p><div class="flex flex-wrap gap-2 mt-4"><span class="tech">React</span><span class="tech">TypeScript</span><span class="tech">Chart.js</span></div><div class="flex gap-2 mt-5"><a href="#" class="btn-demo">↗ Demo</a><a href="#" class="btn-code">🐙 Código</a></div></div></div><div class="port-card" data-cat="design"><div class="port-img" style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80')"><span class="dest-tag">DESTAQUE</span></div><div class="p-5"><h3 class="text-[24px] font-bold">Design Dashboard Analytics</h3><p class="text-slate-400 mt-2">Dashboard modular com foco em visualização clara.</p><div class="flex flex-wrap gap-2 mt-4"><span class="tech">Figma</span></div><div class="flex gap-2 mt-5"><a href="#" class="btn-demo">↗ Demo</a><a href="#" class="btn-code">🐙 Código</a></div></div></div><div class="port-card" data-cat="dev js"><div class="port-img" style="background-image:url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80')"><span class="dest-tag">DESTAQUE</span></div><div class="p-5"><h3 class="text-[24px] font-bold">UI Component Library</h3><p class="text-slate-400 mt-2">Coleção reutilizável com tokens e dark mode.</p><div class="flex flex-wrap gap-2 mt-4"><span class="tech">React</span><span class="tech">Tailwind</span></div><div class="flex gap-2 mt-5"><a href="#" class="btn-demo">↗ Demo</a><a href="#" class="btn-code">🐙 Código</a></div></div></div><div class="port-card" data-cat="dev"><div class="port-img" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80')"><span class="dest-tag">DESTAQUE</span></div><div class="p-5"><h3 class="text-[24px] font-bold">Landing SaaS</h3><p class="text-slate-400 mt-2">Landing otimizada com CTA dinâmico e SEO.</p><div class="flex flex-wrap gap-2 mt-4"><span class="tech">Next.js</span><span class="tech">Tailwind</span></div><div class="flex gap-2 mt-5"><a href="#" class="btn-demo">↗ Demo</a><a href="#" class="btn-code">🐙 Código</a></div></div></div><div class="port-card" data-cat="design"><div class="port-img" style="background:linear-gradient(180deg,#3a2a5a,#1a1230)"><div class="text-center relative z-[1]"><div class="text-[48px]">🎨</div><p class="font-bold">Branding Kit</p></div></div><div class="p-5"><h3 class="text-[24px] font-bold">Branding Kit - Flyers</h3><p class="text-slate-400 mt-2">Identidade visual, flyers e posts.</p><div class="flex flex-wrap gap-2 mt-4"><span class="tech">Photoshop</span><span class="tech">Canva</span></div><div class="flex gap-2 mt-5"><a href="#" class="btn-demo">↗ Ver</a><a href="#" class="btn-code">📁 Portfólio</a></div></div></div><div class="port-card" data-cat="design"><div class="port-img" style="background:linear-gradient(180deg,#5a2a2a,#1f1212)"><div class="text-center relative z-[1]"><div class="text-[48px]">🎬</div><p class="font-bold">Vídeo Reels Pack</p></div></div><div class="p-5"><h3 class="text-[24px] font-bold">Vídeo Reels Pack</h3><p class="text-slate-400 mt-2">Edição de Reels com ritmo e motion.</p><div class="flex flex-wrap gap-2 mt-4"><span class="tech">CapCut</span><span class="tech">Premiere</span></div><div class="flex gap-2 mt-5"><a href="#" class="btn-demo">↗ Ver</a><a href="#" class="btn-code">📁 Portfólio</a></div></div></div><div class="port-card" data-cat="design"><div class="port-img" style="background:linear-gradient(180deg,#1a3a2a,#122012)"><div class="text-center relative z-[1]"><div class="text-[48px]">📸</div><p class="font-bold">Foto Retoque Pro</p></div></div><div class="p-5"><h3 class="text-[24px] font-bold">Foto Retoque Pro</h3><p class="text-slate-400 mt-2">Limpeza, restauração e manipulação.</p><div class="flex flex-wrap gap-2 mt-4"><span class="tech">Photoshop</span><span class="tech">PicsArt</span></div><div class="flex gap-2 mt-5"><a href="#" class="btn-demo">↗ Ver</a><a href="#" class="btn-code">📁 Portfólio</a></div></div></div><div class="port-card" data-cat="dev js react"><div class="port-img" style="background:linear-gradient(180deg,#0a2a3a,#0a1a2a)"><div class="text-center relative z-[1]"><div class="text-[48px]">🤖</div><p class="font-bold">IA Tools Dashboard</p></div></div><div class="p-5"><h3 class="text-[24px] font-bold">IA Tools Dashboard</h3><p class="text-slate-400 mt-2">Painel com ferramentas de IA e automação.</p><div class="flex flex-wrap gap-2 mt-4"><span class="tech">React</span><span class="tech">Gemini</span><span class="tech">ChatGPT</span></div><div class="flex gap-2 mt-5"><a href="#" class="btn-demo">↗ Demo</a><a href="#" class="btn-code">🐙 Código</a></div></div></div></div></div><div class="flex justify-center gap-2 mt-6" id="portDots"><span class="dot2 active"></span><span class="dot2"></span><span class="dot2"></span><span class="dot2"></span><span class="dot2"></span></div><div class="flex justify-center gap-3 mt-6"><button class="btn-prev" id="portPrevBtn">Ver Anterior</button><button class="btn-next" id="portNextBtn">Ver Mais</button></div></section>
 
-.portfolio-btn.secondary {
-  background: transparent;
-  border: 1px solid #334155;
-}
+<section class="consult-bg"><div><span class="consult-badge">🗓️ Consultoria Profissional</span><h2 class="consult-title mt-6">Transforme sua Ideia em Realidade</h2><p class="text-slate-300 text-[24px] leading-relaxed mt-6">Vamos conversar sobre seu projeto e criar uma solução sob medida para suas necessidades.</p></div><div class="mt-8"><div class="consult-card"><div class="consult-icon" style="background:rgba(34,211,238,.15);color:#22d3ee">⚡</div><div><h3 class="text-[22px] font-bold">Resposta em 24h</h3><p class="text-slate-400 text-[17px] mt-1">Primeiro contato garantido no próximo dia útil</p></div></div><div class="consult-card"><div class="consult-icon" style="background:rgba(168,85,247,.18);color:#a855f7">🛡️</div><div><h3 class="text-[22px] font-bold">Consultoria Gratuita</h3><p class="text-slate-400 text-[17px] mt-1">Primeira reunião de descoberta sem custo</p></div></div><div class="consult-card"><div class="consult-icon" style="background:rgba(236,72,153,.18);color:#ec4899">📈</div><div><h3 class="text-[22px] font-bold">Soluções Escaláveis</h3><p class="text-slate-400 text-[17px] mt-1">Arquitetura pensada para crescer com seu negócio</p></div></div></div>
 
-.portfolio-profile {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-bottom: 25px;
-}
+<div class="form-box mt-8">
+<div class="flex justify-between items-center"><span class="text-slate-400 text-[18px]" id="stepLabel">Passo 1 de 3</span><span class="text-slate-400 text-[18px]" id="stepPct">33%</span></div>
+<div class="bar" style="width:100%;margin-top:14px"><div class="bar-fill" id="formBar" style="width:33%"></div></div>
+<div class="step active" id="formStep1">
+<h3 class="text-[28px] font-bold mt-6">Informações Básicas</h3><p class="text-slate-400 text-[18px] mt-2">Como podemos te chamar e entrar em contato?</p>
+<label class="block mt-6 font-bold text-[18px]">Nome Completo <span class="text-red-500">*</span></label>
+<input id="fNome" class="input mt-2" placeholder="Digite seu nome completo"><p class="err" id="errNome">Campo obrigatório</p>
+<label class="block mt-5 font-bold text-[18px]">Email Profissional <span class="text-red-500">*</span></label>
+<input id="fEmail" class="input mt-2" placeholder="seu@email.com"><p class="err" id="errEmail">Email inválido</p>
+<label class="block mt-5 font-bold text-[18px]">Empresa/Organização <span class="text-slate-500 font-normal">(opcional)</span></label>
+<input class="input mt-2" placeholder="Nome da sua empresa">
+</div>
+<div class="step" id="formStep2">
+<h3 class="text-[28px] font-bold mt-6">Sobre o Projeto</h3><p class="text-slate-400 text-[18px] mt-2">Que tipo de solução você precisa?</p>
+<div class="mt-6" id="projOpts"><button type="button" class="opt-btn" onclick="selOpt(this)">🌐 Website / Landing Page</button><button type="button" class="opt-btn" onclick="selOpt(this)">📱 PWA / App Web</button><button type="button" class="opt-btn" onclick="selOpt(this)">🎨 Design / Branding</button><button type="button" class="opt-btn" onclick="selOpt(this)">🎬 Vídeo / Foto Edição</button><button type="button" class="opt-btn" onclick="selOpt(this)">🤖 Automação com IA</button><button type="button" class="opt-btn" onclick="selOpt(this)">🛡️ Consultoria / Segurança</button></div>
+<label class="block mt-4 font-bold text-[18px]">Orçamento Estimado</label><select class="input mt-2"><option>Até 50.000 Kz</option><option>50.000 - 150.000 Kz</option><option>150.000 - 300.000 Kz</option><option>Mais de 300.000 Kz</option></select>
+</div>
+<div class="step" id="formStep3">
+<h3 class="text-[28px] font-bold mt-6">Detalhes Finais</h3><p class="text-slate-400 text-[18px] mt-2">Conta um pouco mais sobre sua ideia.</p>
+<label class="block mt-6 font-bold text-[18px]">Sua Mensagem *</label><textarea id="fMsg" class="input mt-2" rows="4" placeholder="Descreva seu projeto, prazos e objetivos..."></textarea>
+<div class="mt-6 p-4 rounded-xl" style="background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.3)"><p class="text-[15px] text-slate-300">✅ Ao enviar, abriremos o WhatsApp com sua mensagem pronta. Resposta em até 24h úteis.</p></div>
+</div>
+<div class="flex justify-between items-center mt-8 pt-4" style="border-top:1px solid rgba(255,255,255,.08)"><button class="btn-form-back" onclick="formBack()">‹ &nbsp; Voltar</button><button class="btn-form-next" id="formNextBtn" onclick="formNext()">Próximo &nbsp; ›</button></div>
+</div>
+</section>
 
-.portfolio-avatar {
-  width: 82px;
-  height: 82px;
-  border-radius: 23px;
-  display: grid;
-  place-items: center;
-  font-size: 27px;
-  font-weight: 800;
-  border: 3px solid #a855f7;
-  background: #111827;
-}
+<section class="tech-bg">
+<div class="text-center"><span class="tech-badge">🧬 Stack & Identidade</span><h2 class="tech-title mt-6">Tecnologias &<br>Curiosidades</h2><p class="text-slate-300 text-[20px] leading-relaxed mt-5 px-2">Uma visão transparente das tecnologias que impulsionam este portfólio e algumas curiosidades que mostram minha motivação e visão.</p></div>
+<div class="sec-label mt-10"><span class="sec-bar" style="background:linear-gradient(180deg,#22d3ee,#a855f7)"></span>Distribuição de Tecnologias</div>
+<div class="tech-card mt-6"><div class="flex gap-4 items-center"><div class="tech-icon" style="background:rgba(34,211,238,.15);color:#22d3ee">⬢</div><div class="flex-1"><h3 class="text-[21px] font-bold">Tailwind CSS</h3><p class="text-slate-400">Design moderno e rápido</p></div><span class="font-bold text-[20px]">40%</span></div><div class="bar-track mt-4"><div class="bar-fill2" style="width:40%;background:linear-gradient(90deg,#22d3ee,#a855f7)"></div></div></div>
+<div class="tech-card"><div class="flex gap-4 items-center"><div class="tech-icon" style="background:rgba(255,255,255,.08)">📄</div><div class="flex-1"><h3 class="text-[21px] font-bold">CSS Puro</h3><p class="text-slate-400">Base & personalizações</p></div><span class="font-bold text-[20px]">20%</span></div><div class="bar-track mt-4"><div class="bar-fill2" style="width:20%;background:#94a3b8"></div></div></div>
+<div class="tech-card"><div class="flex gap-4 items-center"><div class="tech-icon" style="background:rgba(168,85,247,.2);color:#c084fc">B</div><div class="flex-1"><h3 class="text-[21px] font-bold">Bootstrap</h3><p class="text-slate-400">Componentes otimizados</p></div><span class="font-bold text-[20px]">15%</span></div><div class="bar-track mt-4"><div class="bar-fill2" style="width:15%;background:linear-gradient(90deg,#a855f7,#ec4899)"></div></div></div>
+<div class="tech-card"><div class="flex gap-4 items-center"><div class="tech-icon" style="background:rgba(250,204,21,.18);color:#facc15">JS</div><div class="flex-1"><h3 class="text-[21px] font-bold">JavaScript</h3><p class="text-slate-400">Interatividade & lógica</p></div><span class="font-bold text-[20px]">15%</span></div><div class="bar-track mt-4"><div class="bar-fill2" style="width:15%;background:linear-gradient(90deg,#facc15,#f97316)"></div></div></div>
+<div class="tech-card"><span class="pwa-focus">PWA Focus</span><div class="flex gap-4 items-center"><div class="tech-icon" style="background:rgba(34,197,94,.15);color:#4ade80">📱</div><div class="flex-1"><h3 class="text-[21px] font-bold">PWA</h3><p class="text-slate-400">App-like & offline ready</p></div><span class="font-bold text-[20px]">10%</span></div><div class="bar-track mt-4"><div class="bar-fill2" style="width:10%;background:#22c55e"></div></div></div>
+<div class="sec-label mt-10"><span class="sec-bar" style="background:linear-gradient(180deg,#f43f5e,#f97316)"></span>Curiosidades Sobre Mim</div>
+<div class="tech-card mt-6"><div class="flex gap-4 items-start"><div class="tech-icon" style="background:rgba(34,211,238,.15);color:#22d3ee">✨</div><div><h3 class="text-[21px] font-bold">Talento Único</h3><p class="text-slate-400 text-[17px] mt-1">Resolvo o cubo mágico 3x3 em média 1min e 40s — foco, padrão e estratégia.</p></div></div></div>
+<div class="tech-card"><div class="flex gap-4 items-start"><div class="tech-icon" style="background:rgba(168,85,247,.2);color:#a855f7">🚀</div><div><h3 class="text-[21px] font-bold">Maior Sonho Profissional</h3><p class="text-slate-400 text-[17px] mt-1">Atuar em empresas como Google ou Microsoft e criar um ecossistema PWA modular que funcione como um sistema operacional universal.</p></div></div></div>
+<div class="tech-card"><div class="flex gap-4 items-start"><div class="tech-icon" style="background:rgba(251,146,60,.18);color:#fb923c">♡</div><div><h3 class="text-[21px] font-bold">Objetivo Pessoal</h3><p class="text-slate-400 text-[17px] mt-1">Realizar o sonho da minha mãe e garantir qualidade de vida valorizando cada conquista.</p></div></div></div>
+<div class="tech-card"><div class="flex gap-4 items-start"><div class="tech-icon" style="background:rgba(250,204,21,.18);color:#facc15">🛡️</div><div><h3 class="text-[21px] font-bold">Paixão de Estudo</h3><p class="text-slate-400 text-[17px] mt-1">Cibersegurança ofensiva (phishing, MITM, engenharia social). Conhecimento diário como hábito essencial.</p></div></div></div>
+<div class="tech-card"><div class="flex gap-4 items-start"><div class="tech-icon" style="background:rgba(236,72,153,.18);color:#ec4899">💡</div><div><h3 class="text-[21px] font-bold">Visão de Vida</h3><p class="text-slate-400 text-[17px] mt-1">Inspiração em Joe Dispenza: pensamentos moldam a realidade. Erros são aprendizado — sempre avanço a partir da experiência.</p></div></div></div>
+<div class="final-card mt-6"><h3 class="text-[26px] font-bold leading-snug">Construído com foco em escalabilidade e experiência</h3><p class="text-slate-300 text-[17px] leading-relaxed mt-4">Cada escolha tecnológica equilibra velocidade de desenvolvimento, performance, acessibilidade e capacidade de evolução futura — preparando terreno para funcionalidades avançadas como recursos PWA e integrações dinâmicas.</p><div class="flex gap-3 mt-6"><div class="mini-box"><p class="text-slate-400">Foco Futuro</p><p class="font-black text-[22px] mt-1" style="color:#22d3ee">PWA+</p></div><div class="mini-box"><p class="text-slate-400">Visão</p><p class="font-black text-[22px] mt-1" style="background:linear-gradient(90deg,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Modular</p></div></div></div>
+</section>
 
-.portfolio-profile h3 {
-  font-size: 23px;
-  margin: 5px 0;
-}
+<!-- SECÇÃO FINAL - CONECTE-SE COMIGO -->
+<section class="contato-bg" id="contato">
+<div class="text-center">
+<span class="vamos-btn">💬 Vamos Conversar</span>
+<h2 class="conecte-title mt-6">Conecte-se Comigo</h2>
+<p class="text-slate-300 text-[22px] leading-relaxed mt-5 px-2">Interessado em colaborar? Envie uma mensagem e vamos discutir como posso ajudar a transformar suas ideias em realidade.</p>
+</div>
 
-.portfolio-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 25px;
-}
+<div class="form-box mt-8" style="background:#1e293b">
+<div class="flex justify-between items-center"><span class="text-slate-400 text-[18px]" id="stepLabel2">Passo 1 de 3</span><span class="text-slate-400 text-[18px]" id="stepPct2">33%</span></div>
+<div class="bar" style="width:100%;margin-top:14px"><div class="bar-fill" id="formBar2" style="width:33%;background:linear-gradient(90deg,#a855f7,#ec4899)"></div></div>
 
-.portfolio-tags span {
-  background: #151e2c;
-  border: 1px solid #334155;
-  padding: 10px 17px;
-  border-radius: 30px;
-  color: #cbd5e1;
-  font-size: 14px;
-}
+<div class="step active" id="cStep1">
+<h3 class="text-[28px] font-bold mt-6">Informações Básicas</h3>
+<p class="text-slate-400 text-[18px] mt-2">Como posso me dirigir a você?</p>
+<label class="block mt-6 font-bold text-[18px]">Nome Completo <span class="text-red-500">*</span></label>
+<input id="cNome" class="input mt-2" style="background:#2a364a" placeholder="Digite seu nome completo">
+<p class="err" id="errCNome">Campo obrigatório</p>
+<label class="block mt-5 font-bold text-[18px]">Email <span class="text-red-500">*</span></label>
+<input id="cEmail" class="input mt-2" style="background:#2a364a" placeholder="seu@email.com">
+<p class="err" id="errCEmail">Email inválido</p>
+<label class="block mt-5 font-bold text-[18px]">Telefone <span class="text-slate-500 font-normal">(opcional)</span></label>
+<input class="input mt-2" style="background:#2a364a" placeholder="+244 900 000 000">
+</div>
 
-.portfolio-heading {
-  font-size: 20px;
-  font-weight: 800;
-  margin: 55px 0 25px;
-}
+<div class="step" id="cStep2">
+<h3 class="text-[28px] font-bold mt-6">Sobre o Projeto</h3>
+<p class="text-slate-400 text-[18px] mt-2">Que tipo de solução você precisa?</p>
+<div class="mt-6"><button type="button" class="opt-btn" onclick="selOpt2(this)">🌐 Website / Landing Page</button><button type="button" class="opt-btn" onclick="selOpt2(this)">📱 PWA / App Web</button><button type="button" class="opt-btn" onclick="selOpt2(this)">🎨 Design / Branding</button><button type="button" class="opt-btn" onclick="selOpt2(this)">🎬 Vídeo / Foto Edição</button><button type="button" class="opt-btn" onclick="selOpt2(this)">🤖 Automação com IA</button></div>
+</div>
 
-.portfolio-list {
-  display: grid;
-  gap: 18px;
-  color: #94a3b8;
-  font-size: 17px;
-}
+<div class="step" id="cStep3">
+<h3 class="text-[28px] font-bold mt-6">Sua Mensagem</h3>
+<p class="text-slate-400 text-[18px] mt-2">Conta um pouco mais sobre sua ideia.</p>
+<textarea id="cMsg" class="input mt-4" rows="4" placeholder="Descreva seu projeto..."></textarea>
+<p class="text-slate-400 text-[15px] mt-4">✅ Ao enviar, abriremos o WhatsApp do Frederico com sua mensagem pronta.</p>
+</div>
 
-.portfolio-list a {
-  color: #94a3b8;
-  text-decoration: none;
-}
+<div class="mt-8"><button class="btn-final-next" id="cNextBtn" onclick="cNext()">Próximo &nbsp; ›</button></div>
+<div class="text-center mt-5"><button class="btn-form-back" onclick="cBack()">‹ &nbsp; Voltar</button></div>
+</div>
 
-.portfolio-social {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-}
+<div class="form-box mt-6" style="background:#1e293b">
+<div class="flex gap-3 items-center"><span class="sec-bar" style="background:linear-gradient(180deg,#22d3ee,#a855f7);height:36px"></span><h3 class="text-[26px] font-black">Informações de Contato</h3></div>
 
-.portfolio-social a {
-  padding: 16px;
-  background: #151e2c;
-  border: 1px solid #334155;
-  border-radius: 17px;
-  color: white;
-  text-decoration: none;
-}
+<a href="mailto:fredericoklezmerkola@gmail.com" class="contact-card mt-6" style="background:#2a364a"><div class="contact-icon" style="background:rgba(34,211,238,.2);color:#22d3ee">✉️</div><div style="min-width:0"><h4 class="text-[22px] font-bold">Email</h4><p class="text-slate-400 text-[16px] break-all">fredericoklezmerkola@gmail.com</p></div></a>
 
-@media(max-width:480px) {
-  .portfolio-cta h2 {font-size:25px;}
-  .portfolio-buttons {flex-direction:column;}
-  .portfolio-btn {width:100%;box-sizing:border-box;}
-}
+<a href="#" class="contact-card" style="background:#2a364a;border:1px solid rgba(168,85,247,.5)"><div class="contact-icon" style="background:rgba(168,85,247,.25);color:#c084fc">in</div><div><h4 class="text-[22px] font-bold">LinkedIn</h4><p class="text-slate-400 text-[16px]">Conecte-se profissionalmente</p></div></a>
+
+<a href="#" class="contact-card" style="background:#2a364a"><div class="contact-icon" style="background:rgba(236,72,153,.2);color:#ec4899">🐙</div><div><h4 class="text-[22px] font-bold">GitHub</h4><p class="text-slate-400 text-[16px]">Veja meus projetos</p></div></a>
+
+<a href="https://wa.me/244932064915" class="contact-card" style="background:#2a364a"><div class="contact-icon" style="background:rgba(251,146,60,.2);color:#fb923c">💬</div><div><h4 class="text-[22px] font-bold">WhatsApp</h4><p class="text-slate-400 text-[16px]">+244 932 064 915</p></div></a>
+
+<div class="disponivel mt-6"><span class="dot-green">●</span><div><h4 class="text-[19px] font-bold" style="color:#4ade80">Disponível para novos projetos</h4><p class="text-[16px] leading-relaxed mt-1" style="color:#86efac">Aberto para oportunidades freelance, colaborações e projetos inovadores. Resposta garantida em 24h.</p></div></div>
+</div>
+
+<div class="text-center mt-8"><span class="resposta-badge">⚡ Resposta garantida em até 24h úteis</span></div>
+</section>
+
+<footer class="footer">
+<h3 class="font-black text-[20px] tracking-widest">FREDERICO K.</h3>
+<p class="text-slate-400 text-[15px] mt-2">Frederico Ricardo Nguingui Konde Kola</p>
+<p class="text-slate-500 text-[14px] mt-1">© 2026 Frederico K. Todos os direitos reservados.</p>
+<div class="flex justify-center gap-3 mt-4">
+<a href="mailto:fredericoklezmerkola@gmail.com" class="bg-slate-800 px-4 py-2 rounded-full text-sm">📧 Email</a>
+<a href="https://wa.me/244932064915" class="bg-slate-800 px-4 py-2 rounded-full text-sm">💬 WhatsApp</a>
+<a href="#" class="bg-slate-800 px-4 py-2 rounded-full text-sm">🐙 GitHub</a>
+</div>
+</footer>
+
+<script>
+let p = 0;
+let bar = document.getElementById('barFill');
+let timer = setInterval(function(){ p += 12; if(p > 100) p = 100; bar.style.width = p + '%'; if(p >= 100){ clearInterval(timer); setTimeout(function(){ let l = document.getElementById('loader'); l.style.opacity = '0'; setTimeout(function(){ l.style.display = 'none'; }, 600); }, 300); } }, 220);
+let car = document.getElementById('carrossel');
+let dots = document.querySelectorAll('#dots .dot');
+let current = 0;
+function goTo(i){ if(i < 0) i = 3; if(i > 3) i = 0; current = i; let card = car.querySelector('.card'); let w = card.offsetWidth + 16; car.scrollTo({left: i * w, behavior:'smooth'}); dots.forEach(function(d,idx){ d.classList.toggle('active', idx===i); }); }
+document.getElementById('nextBtn').addEventListener('click', function(){ goTo(current+1); });
+document.getElementById('prevBtn').addEventListener('click', function(){ goTo(current-1); });
+car.addEventListener('scroll', function(){ let card = car.querySelector('.card'); let w = card.offsetWidth + 16; let index = Math.round(car.scrollLeft / w); if(index>3) index=3; if(index<0) index=0; current = index; dots.forEach(function(d,idx){ d.classList.toggle('active', idx===index); }); });
+dots.forEach(function(d,i){ d.addEventListener('click', function(){ goTo(i); }); });
+let pcar = document.getElementById('portCarrossel');
+let pcards = pcar.querySelectorAll('.port-card');
+let pdots = document.querySelectorAll('#portDots .dot2');
+let pcur = 0;
+function pGo(i){ let visible = Array.from(pcards).filter(c=>c.style.display!=='none'); if(i<0) i=visible.length-1; if(i>=visible.length) i=0; pcur=i; let target = visible[i]; pcar.scrollTo({left: target.offsetLeft - 10, behavior:'smooth'}); pdots.forEach(function(d,idx){ d.classList.toggle('active', idx===i%5); }); }
+document.getElementById('portNext').addEventListener('click', function(){ pGo(pcur+1); });
+document.getElementById('portPrev').addEventListener('click', function(){ pGo(pcur-1); });
+document.getElementById('portNextBtn').addEventListener('click', function(){ pGo(pcur+1); });
+document.getElementById('portPrevBtn').addEventListener('click', function(){ pGo(pcur-1); });
+pcar.addEventListener('scroll', function(){ let card = pcar.querySelector('.port-card'); let w = card.offsetWidth + 16; let idx = Math.round(pcar.scrollLeft / w); pcur = idx; pdots.forEach(function(d,i){ d.classList.toggle('active', i===idx%5); }); });
+pdots.forEach(function(d,i){ d.addEventListener('click', function(){ pGo(i); }); });
+let filters = document.querySelectorAll('.filter-btn');
+filters.forEach(function(btn){ btn.addEventListener('click', function(){ filters.forEach(b=>b.classList.remove('active')); btn.classList.add('active'); let f = btn.getAttribute('data-filter'); let count = 0; pcards.forEach(function(c){ let cats = c.getAttribute('data-cat'); let show = (f==='all' || cats.includes(f)); c.style.display = show ? 'block' : 'none'; if(show) count++; }); document.getElementById('countLabel').textContent = count; pGo(0); }); });
+let fStep = 1;
+function selOpt(el){ document.querySelectorAll('#projOpts .opt-btn').forEach(b=>b.classList.remove('selected')); el.classList.add('selected'); }
+function updateForm(){ document.querySelectorAll('#contato ~ * .step'); document.querySelectorAll('.form-box .step'); document.getElementById('formStep1').classList.toggle('active', fStep===1); document.getElementById('formStep2').classList.toggle('active', fStep===2); document.getElementById('formStep3').classList.toggle('active', fStep===3); document.getElementById('stepLabel').textContent = 'Passo '+fStep+' de 3'; document.getElementById('stepPct').textContent = (fStep===1?'33%':fStep===2?'66%':'100%'); document.getElementById('formBar').style.width = (fStep===1?'33%':fStep===2?'66%':'100%'); document.getElementById('formNextBtn').innerHTML = fStep===3 ? 'Enviar no WhatsApp ↗' : 'Próximo &nbsp; ›'; }
+function formNext(){ if(fStep===1){ let nome = document.getElementById('fNome').value.trim(); let email = document.getElementById('fEmail').value.trim(); let ok = true; if(nome.length<3){ document.getElementById('errNome').classList.add('show'); ok=false; } else document.getElementById('errNome').classList.remove('show'); if(!email.includes('@') || !email.includes('.')){ document.getElementById('errEmail').classList.add('show'); ok=false; } else document.getElementById('errEmail').classList.remove('show'); if(!ok) return; } if(fStep===3){ let nome = document.getElementById('fNome').value || 'Olá'; let msgEl = document.getElementById('fMsg'); let msgTxt = msgEl ? msgEl.value : ''; window.open('https://wa.me/244932064915?text='+encodeURIComponent('Olá Frederico! Sou '+nome+'. '+msgTxt+' | Email: '+document.getElementById('fEmail').value),'_blank'); return; } fStep++; updateForm(); }
+function formBack(){ if(fStep>1){ fStep--; updateForm(); } }
+// CONTATO FINAL
+let cStep = 1;
+function selOpt2(el){ document.querySelectorAll('#cStep2 .opt-btn').forEach(b=>b.classList.remove('selected')); el.classList.add('selected'); }
+function updateContato(){ document.getElementById('cStep1').classList.toggle('active', cStep===1); document.getElementById('cStep2').classList.toggle('active', cStep===2); document.getElementById('cStep3').classList.toggle('active', cStep===3); document.getElementById('stepLabel2').textContent = 'Passo '+cStep+' de 3'; document.getElementById('stepPct2').textContent = (cStep===1?'33%':cStep===2?'66%':'100%'); document.getElementById('formBar2').style.width = (cStep===1?'33%':cStep===2?'66%':'100%'); document.getElementById('cNextBtn').innerHTML = cStep===3 ? 'Enviar no WhatsApp ↗' : 'Próximo &nbsp; ›'; }
+function cNext(){ if(cStep===1){ let nome = document.getElementById('cNome').value.trim(); let email = document.getElementById('cEmail').value.trim(); let ok=true; if(nome.length<3){ document.getElementById('errCNome').classList.add('show'); ok=false; } else document.getElementById('errCNome').classList.remove('show'); if(!email.includes('@') || !email.includes('.')){ document.getElementById('errCEmail').classList.add('show'); ok=false; } else document.getElementById('errCEmail').classList.remove('show'); if(!ok) return; } if(cStep===3){ let nome = document.getElementById('cNome').value || 'Olá'; let email = document.getElementById('cEmail').value || ''; let msg = document.getElementById('cMsg').value || ''; window.open('https://wa.me/244932064915?text='+encodeURIComponent('Olá Frederico! Sou '+nome+'. '+msg+' | Meu email: '+email),'_blank'); return; } cStep++; updateContato(); }
+function cBack(){ if(cStep>1){ cStep--; updateContato(); } }
+</script>
+</body>
+</html>

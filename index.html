@@ -315,5 +315,21 @@ function updateContato(){ document.getElementById('cStep1').classList.toggle('ac
 function cNext(){ if(cStep===1){ let nome = document.getElementById('cNome').value.trim(); let email = document.getElementById('cEmail').value.trim(); let ok=true; if(nome.length<3){ document.getElementById('errCNome').classList.add('show'); ok=false; } else document.getElementById('errCNome').classList.remove('show'); if(!email.includes('@') || !email.includes('.')){ document.getElementById('errCEmail').classList.add('show'); ok=false; } else document.getElementById('errCEmail').classList.remove('show'); if(!ok) return; } if(cStep===3){ let nome = document.getElementById('cNome').value || 'Olá'; let email = document.getElementById('cEmail').value || ''; let msg = document.getElementById('cMsg').value || ''; window.open('https://wa.me/244932064915?text='+encodeURIComponent('Olá Frederico! Sou '+nome+'. '+msg+' | Meu email: '+email),'_blank'); return; } cStep++; updateContato(); }
 function cBack(){ if(cStep>1){ cStep--; updateContato(); } }
 </script>
-</body>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script>
+function googleTranslateElementInit(){
+new google.translate.TranslateElement({pageLanguage:'pt',includedLanguages:'pt,en,fr,es,de,zh-CN',autoDisplay:false},'google_translate_element');
+}
+function mudarIdioma(lang){
+var c='/pt/'+lang;
+document.cookie='googtrans='+c+';path=/';
+location.reload();
+}
+function mudarTema(){
+document.body.classList.toggle('light-mode');
+var b=document.getElementById('themeBtn');
+if(document.body.classList.contains('light-mode')){b.innerText='🌑 Escuro';localStorage.setItem('tema','claro');}else{b.innerText='🌙 Claro';localStorage.setItem('tema','escuro');}
+}
+if(localStorage.getItem('tema')=='claro'){document.body.classList.add('light-mode');}
+</script> </body>
 </html>
